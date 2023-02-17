@@ -1,58 +1,59 @@
 ---
 layout: home
-title: Jekyll Gitbook Theme
+title: Jekyll Chapterbook Theme
 permalink: /
 ---
 
-Make Jelly site have a GitBook look!
+This is a [Jekyll](https://jekyllrb.com/) theme based on [GitBook](https://www.gitbook.com/) that adds support for easily organizing pages into book chapters and parts.
+This theme doesn't rely on any plugins,
+so it works with [GitHub Pages](https://pages.github.com/).
+
+It was originally based on Tao He’s clever and immensely helpful [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook) theme, 
+which in turn is based on an early theme of [GitBook](https://www.gitbook.com/).
 
 ## Demo
 
-Live demo on Github Pages: [https://sighingnow.github.io/jekyll-gitbook](https://sighingnow.github.io/jekyll-gitbook)
+A live site that uses this theme can be seen at [https://fretboardfoundation.com](https://fretboardfoundation.com).
 
-[![Jekyll Themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com/jekyll-gitbook/)
 
-## Why Jekyll with GitBook
+## Why this theme
 
-GitBook is an amazing frontend style to present and organize contents (such as book chapters
-and blogs) on Web. The typical to deploy GitBook at [Github Pages][1]
-is building HTML files locally and then push to Github repository, usually to the `gh-pages`
-branch. It's quite annoying to repeat such workload and make it hard for people do version
-control via git for when there are generated HTML files to be staged in and out.
+This theme is intended to help with gradually writing a book over a long period of time,
+starting from an idea and slowly building out chapters and parts.
 
-This theme takes style definition out of generated GitBook site and provided the template
-for Jekyll to rendering markdown documents to HTML, thus the whole site can be deployed
-to [Github Pages][1] without generating and uploading HTML bundle every time when there are
-changes to the original repo.
+It was created with the following objectives:
 
-## How to Get Started
+- Support frequently reorganizing chapters and parts without breaking existing links.
+- Support all standard book parts, including front matter, back matter, etc.
+- Make the work in progress publicly available in a useful way, 
+  while making drafts that aren't ready for public consumption available without interrupting the flow of completed chapters.
+- Support quickly editing the book on-the-fly, especially from mobile.
+- Run natively on GitHub Pages without custom plugins.
+- Automatically number parts and chapters.
+- Make the markdown source files for each chapter  appear in order on the filesystem and on GitHub,
+  regardless of the chapter name, without having to manually renumber.
+  (This makes it easier to find the page you want to edit.)
+
+## How to use the theme
 
 This theme can be used just as other [Jekyll themes][1] and support [remote theme][12],
 see [the official guide][13] as well.
 
 You can introduce this jekyll theme into your own site by either
 
-- [Fork][3] this repository and add your markdown posts to the `_posts` folder.
-- Use as a remote theme in your [`_config.yml`][14](just like what we do for this
-  site itself),
+- [Fork this repository](https://github.com/jasongrimes/jekyll-chapterbook/fork) and add your markdown pages to the `_chapters` folder.
+- Use it as a remote theme in your [`_config.yml`](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml):
 
 ```yaml
-remote_theme: sighingnow/jekyll-gitbook
+remote_theme: jasongrimes/jekyll-chapterbook
 ```
 
-### Deploy Locally with Jekyll Serve
+### Deploy locally with Jekyll serve
 
-This theme can be ran locally using Ruby and Gemfiles.
+This theme can be run locally using Ruby. 
+See the GitHub documentation about [testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll).
 
-[Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll) - GitHub
-
-## Full-text search
-
-The search functionality in jekyll-gitbook theme is powered by the [gitbook-plugin-search-pro][5] plugin and is enabled by default.
-
-[https://sighingnow.github.io/jekyll-gitbook/?q=generated](https://sighingnow.github.io/jekyll-gitbook/?q=generated)
-
-## Code highlight
+## Code highlighting
 
 The code highlight style is configurable the following entry in `_config.yaml`:
 
@@ -76,31 +77,8 @@ toc:
     h_max: 3
 ```
 
-## Google Analytics, etc.
 
-The jekyll-gitboook theme supports embedding the [Google Analytics][7], [CNZZ][8] and [Application Insights][9] website analytical tools with the following
-minimal configuration in `_config.yaml`:
-
-```yaml
-tracker:
-  google_analytics: "<YOUR GOOGLE ANALYTICS KEY, e.g, UA-xxxxxx-x>"
-```
-
-Similarly, CNZZ can be added with the following configuration in `_config.yaml`
-
-```yaml
-tracker:
-  cnzz: "<YOUR CNZZ ANALYTICS KEY, e.g., xxxxxxxx>"
-```
-
-Application Insights can be added with the following configuration in `_config.yaml`
-
-```yaml
-tracker:
-  application_insights: "<YOUR APPLICATION INSIGHTS CONNECTION STRING>"
-```
-
-## Extra StyleSheet or Javascript elements
+## Extra CSS or javascript files
 
 You can add extra CSS or JavaScript references using configuration collections:
 
@@ -121,60 +99,14 @@ The fonts can be customized by modifying the `.book.font-family-0` and `.book.fo
 }
 ```
 
-## Tips, Warnings and Dangers blocks
-
-The jekyll-gitbook theme supports customized kramdown attributes (`{: .block-tip }`, `{: .block-warning }`,
-`{: .block-danger }`) like that displayed in [the discord.js website][11]. The marker can be used like
-
-```markdown
-> ##### TIP
->
-> This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have
-> this or a similar version after installation.
-{: .block-tip }
-```
-
-Rendered page can be previewed from
-
-[https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html](https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html)
-
-## Cover image inside pages
-
-The jekyll-gitbook theme supports adding a cover image to a specific page by adding
-a `cover` field to the page metadata:
-
-```diff
-  ---
-  title: Page with cover image
-  author: Tao He
-  date: 2022-05-24
-  category: Jekyll
-  layout: post
-+ cover: /assets/jekyll-gitbook/dinosaur.gif
-  ---
-```
-
-The effect can be previewed from
-
-[https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-05-24-page_cover.html](https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-05-24-page_cover.html)
 
 ## License
 
-This work is open sourced under the Apache License, Version 2.0.
+This work is open source,
+made available under the [Apache License, Version 2.0](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/LICENSE).
 
-Copyright 2019 Tao He.
+This work was originally based on [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook), 
+which is Copyright 2019 Tao He,
+and licensed under the [Apache License, Version 2.0](https://github.com/sighingnow/jekyll-gitbook/blob/f286e81abb57c91b7056d043d846cd308c8ea292/LICENSE).
 
-[1]: https://pages.github.com
-[2]: https://pages.github.com/themes
-[3]: https://github.com/sighingnow/jekyll-gitbook/fork
-[4]: https://github.com/allejo/jekyll-toc
-[5]: https://github.com/gitbook-plugins/gitbook-plugin-search-pro
-[6]: https://github.com/rouge-ruby/rouge/tree/master/lib/rouge/themes
-[7]: https://analytics.google.com/analytics/web/
-[8]: https://www.cnzz.com/
-[9]: https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-[10]: https://github.com/sighingnow/jekyll-gitbook/blob/master/gitbook/custom.css
-[11]: https://discordjs.guide/popular-topics/canvas.html#setting-up-napi-rs-canvas
-[12]: https://rubygems.org/gems/jekyll-remote-theme
-[13]: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
-[14]: https://github.com/sighingnow/jekyll-gitbook/blob/master/_config.yml
+
