@@ -1,0 +1,78 @@
+{% unless chapter-nav %}
+  {% capture chapter-nav %}
+  <div class="book-summary">
+    <nav role="navigation">
+      <ul class="summary chapter-summary">
+
+        {% if site.sidebar_nav_top %}
+          {% for item in site.sidebar_nav_top %}
+            <li class="chapter {% if item.url == page.url %}active{% endif %}">
+              <a href="{{site.baseurl}}{{item.url}}" class="">{{ item.label }}</a>
+            </li>
+          {% endfor %}
+          <li class="divider"></li>
+        {% endif %}
+
+        {% include chapter-iterate-init.html %}
+
+        {% for i in (0..site.chapters.size) %}
+
+          {% comment %}
+          #
+          # Assign chapter variables for the current page
+          #
+          {% endcomment %}
+          {% if page.id == i_chapter.id %}
+            {% include chapter-iterate-vars.html set="page" %}
+          {% else %}
+            {% if page_chapter and page_next_chapter == nil and i_chapter_is_visible %}
+              {% include chapter-iterate-vars.html set="page_next" %}
+            {% endif %}
+          {% endif %}
+
+          {% unless i_chapter_is_visible %}
+            {% include chapter-iterate-next.html %}
+            {% continue %}
+          {% endunless %}
+
+          {% if i_part_folder != i_prev_part_folder and i_part_unnumbered == false %}
+            <li class="header {% if i_part_is_draft %}draft{% endif %}">Part {{ i_part_num }}: {{ i_part_label }}</li>
+          {% endif %}
+
+          {% if page.url == i_chapter.url %}
+            <li class="chapter active">
+          {% else %}
+            <li class="chapter {%if i_chapter_is_draft %}draft{%endif%}">
+          {% endif %}
+
+            <a href="{{site.baseurl}}{{i_chapter.url}}">
+              {% if i_chapter_num %}
+                {{ i_chapter_num }}.
+              {% endif %}
+              {{ i_chapter.title | escape }}
+            </a>
+
+            {% if site.sidebar_toc.enabled %}
+              {% if page.url == i_chapter.url and page.disable_toc != true %}
+                {% include toc.html html=content h_min=site.sidebar_toc.h_min h_max=site.sidebar_toc.h_max %}
+              {% endif %}
+            {% endif %}
+          </li>
+
+          {% include chapter-iterate-next.html %}
+        {% endfor %}
+
+        {% if site.sidebar_nav_bottom %}
+          <li class="divider"></li>
+          {% for item in site.sidebar_nav_bottom %}
+            <li class="chapter {% if item.url == page.url %}active{% endif %}">
+              <a href="{{site.baseurl}}{{item.url}}" class="">{{ item.label }}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+
+      </ul>
+    </nav>
+  </div>
+  {% endcapture %}
+{% endunless %}
