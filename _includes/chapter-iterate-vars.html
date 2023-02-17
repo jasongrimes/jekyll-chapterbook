@@ -1,0 +1,356 @@
+{% if include.set == "prev" %}
+  {% assign i_prev_chapter = i_chapter %}
+  {% assign i_prev_chapter_idx = i_chapter_idx %}
+  {% assign i_prev_chapter_num = i_chapter_num %}
+  {% assign i_prev_chapter_is_draft = i_chapter_is_draft %}
+  {% assign i_prev_chapter_is_visible = i_chapter_is_visible %}
+  {% assign i_prev_chapter_sort_index = i_chapter_sort_index %}
+  {% assign i_prev_chapter_sort_index_ext = i_chapter_sort_index_ext %}
+  {% assign i_prev_part_num = i_part_num %}
+  {% assign i_prev_part_label = i_part_label %}
+  {% assign i_prev_part_unnumbered = i_part_unnumbered %}
+  {% assign i_prev_part_is_draft = i_part_is_draft %}
+  {% assign i_prev_part_folder = i_part_folder %}
+  {% assign i_prev_part_sort_index = i_part_sort_index %}
+  {% assign i_prev_part_sort_index_ext = i_part_sort_index_ext %}
+
+  {% if i_chapter_is_visible %}
+    {% assign i_prev_visible_chapter = i_chapter %}
+    {% assign i_prev_visible_chapter_idx = i_chapter_idx %}
+    {% assign i_prev_visible_chapter_num = i_chapter_num %}
+    {% assign i_prev_visible_chapter_is_draft = i_chapter_is_draft %}
+    {% assign i_prev_visible_chapter_is_visible = i_chapter_is_visible %}
+    {% assign i_prev_visible_chapter_sort_index = i_chapter_sort_index %}
+    {% assign i_prev_visible_chapter_sort_index_ext = i_chapter_sort_index_ext %}
+    {% assign i_prev_visible_part_num = i_part_num %}
+    {% assign i_prev_visible_part_label = i_part_label %}
+    {% assign i_prev_visible_part_unnumbered = i_part_unnumbered %}
+    {% assign i_prev_visible_part_is_draft = i_part_is_draft %}
+    {% assign i_prev_visible_part_folder = i_part_folder %}
+    {% assign i_prev_visible_part_sort_index = i_part_sort_index %}
+    {% assign i_prev_visible_part_sort_index_ext = i_part_sort_index_ext %}
+  {% endif %}
+{% endif %}
+
+{% if include.set == "page" %}
+  {% assign page_chapter = i_chapter %}
+  {% assign page_chapter_idx = i_chapter_idx %}
+  {% assign page_chapter_num = i_chapter_num %}
+  {% assign page_chapter_is_draft = i_chapter_is_draft %}
+  {% assign page_chapter_is_visible = i_chapter_is_visible %}
+  {% assign page_chapter_sort_index = i_chapter_sort_index %}
+  {% assign page_chapter_sort_index_ext = i_chapter_sort_index_ext %}
+  {% assign page_part_num = i_part_num %}
+  {% assign page_part_label = i_part_label %}
+  {% assign page_part_unnumbered = i_part_unnumbered %}
+  {% assign page_part_is_draft = i_part_is_draft %}
+  {% assign page_part_folder = i_part_folder %}
+  {% assign page_part_sort_index = i_part_sort_index %}
+  {% assign page_part_sort_index_ext = i_part_sort_index_ext %}
+
+  {% assign page_prev_chapter = i_prev_visible_chapter %}
+  {% assign page_prev_chapter_idx = i_prev_visible_chapter_idx %}
+  {% assign page_prev_chapter_num = i_prev_visible_chapter_num %}
+  {% assign page_prev_chapter_is_draft = i_prev_visible_chapter_is_draft %}
+  {% assign page_prev_chapter_is_visible = i_prev_visible_chapter_is_visible %}
+  {% assign page_prev_chapter_sort_index = i_prev_visible_chapter_sort_index %}
+  {% assign page_prev_chapter_sort_index_ext = i_prev_visible_chapter_sort_index_ext %}
+  {% assign page_prev_part_num = i_prev_visible_part_num %}
+  {% assign page_prev_part_label = i_prev_visible_part_label %}
+  {% assign page_prev_part_unnumbered = i_prev_visible_part_unnumbered %}
+  {% assign page_prev_part_is_draft = i_prev_visible_part_is_draft %}
+  {% assign page_prev_part_folder = i_prev_visible_part_folder %}
+  {% assign page_prev_part_sort_index = i_prev_visible_part_sort_index %}
+  {% assign page_prev_part_sort_index_ext = i_prev_visible_part_sort_index_ext %}
+{% endif %}
+
+{% if include.set == "page_next" %}
+  {% assign page_next_chapter = i_chapter %}
+  {% assign page_next_chapter_idx = i_chapter_idx %}
+  {% assign page_next_chapter_num = i_chapter_num %}
+  {% assign page_next_chapter_is_draft = i_chapter_is_draft %}
+  {% assign page_next_chapter_is_visible = i_chapter_is_visible %}
+  {% assign page_next_chapter_sort_index = i_chapter_sort_index %}
+  {% assign page_next_chapter_sort_index_ext = i_chapter_sort_index_ext %}
+  {% assign page_next_part_num = i_part_num %}
+  {% assign page_next_part_label = i_part_label %}
+  {% assign page_next_part_unnumbered = i_part_unnumbered %}
+  {% assign page_next_part_is_draft = i_part_is_draft %}
+  {% assign page_next_part_folder = i_part_folder %}
+  {% assign page_next_part_sort_index = i_part_sort_index %}
+  {% assign page_next_part_sort_index_ext = i_part_sort_index_ext %}
+{% endif %}
+
+
+{% if include.unset == "prev" or include.unset == "all-iterators" %}
+  {% assign i_prev_chapter = nil %}
+  {% assign i_prev_chapter_idx = nil %}
+  {% assign i_prev_chapter_num = nil %}
+  {% assign i_prev_chapter_is_draft = nil %}
+  {% assign i_prev_chapter_is_visible = nil %}
+  {% assign i_prev_chapter_sort_index = nil %}
+  {% assign i_prev_chapter_sort_index_ext = nil %}
+  {% assign i_prev_part_num = nil %}
+  {% assign i_prev_part_label = nil %}
+  {% assign i_prev_part_unnumbered = nil %}
+  {% assign i_prev_part_is_draft = nil %}
+  {% assign i_prev_part_folder = nil %}
+  {% assign i_prev_part_sort_index = nil %}
+  {% assign i_prev_part_sort_index_ext = nil %}
+
+  {% assign i_prev_visible_chapter = nil %}
+  {% assign i_prev_visible_chapter_idx = nil %}
+  {% assign i_prev_visible_chapter_num = nil %}
+  {% assign i_prev_visible_chapter_is_draft = nil %}
+  {% assign i_prev_visible_chapter_is_visible = nil %}
+  {% assign i_prev_visible_chapter_sort_index = nil %}
+  {% assign i_prev_visible_chapter_sort_index_ext = nil %}
+  {% assign i_prev_visible_part_num = nil %}
+  {% assign i_prev_visible_part_label = nil %}
+  {% assign i_prev_visible_part_unnumbered = nil %}
+  {% assign i_prev_visible_part_is_draft = nil %}
+  {% assign i_prev_visible_part_folder = nil %}
+  {% assign i_prev_visible_part_sort_index = nil %}
+  {% assign i_prev_visible_part_sort_index_ext = nil %}
+{% endif %}
+
+{% if include.unset == "current" or include.unset == "all-iterators" %}
+  {% assign i_chapter = nil %}
+  {% assign i_chapter_idx = nil %}
+  {% assign i_chapter_num = nil %}
+  {% assign i_chapter_is_draft = nil %}
+  {% assign i_chapter_is_visible = nil %}
+  {% assign i_chapter_sort_index = nil %}
+  {% assign i_chapter_sort_index_ext = nil %}
+  {% assign i_part_num = nil %}
+  {% assign i_part_label = nil %}
+  {% assign i_part_unnumbered = nil %}
+  {% assign i_part_is_draft = nil %}
+  {% assign i_part_folder = nil %}
+  {% assign i_part_sort_index = nil %}
+  {% assign i_part_sort_index_ext = nil %}
+
+  {% comment %}
+  #
+  # Globals used internally.
+  # Not carried over to i_prev_
+  #
+  {% endcomment %}
+  {% assign i_last_numeric_chapter_num = nil %}
+  {% assign i_last_numeric_part_num = nil %}
+{% endif %}
+
+{% if include.inspect == "iterators" %}
+  <table class="inspect-chapter-iterate-vars table-wrapper">
+    <tr>
+      <th colspan="2">Previous</th>
+      <th colspan="2">Current</th>
+    </tr>
+    <tr>
+      <td>i_prev_chapter.id</td>
+      <td>{{ i_prev_chapter.id }}</td>
+      <td>i_chapter.id</td>
+      <td>{{ i_chapter.id }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_chapter_idx</td>
+      <td>{{ i_prev_chapter_idx }}</td>
+      <td>i_chapter_idx</td>
+      <td>{{ i_chapter_idx }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_chapter_num</td>
+      <td>{{ i_prev_chapter_num }}</td>
+      <td>i_chapter_num</td>
+      <td>{{ i_chapter_num }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_chapter_is_draft</td>
+      <td>{{ i_prev_chapter_is_draft }}</td>
+      <td>i_chapter_is_draft</td>
+      <td>{{ i_chapter_is_draft }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_chapter_is_visible</td>
+      <td>{{ i_prev_chapter_is_visible }}</td>
+      <td>i_chapter_is_visible</td>
+      <td>{{ i_chapter_is_visible }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_chapter_sort_index</td>
+      <td>{{ i_prev_chapter_sort_index }}</td>
+      <td>i_chapter_sort_index</td>
+      <td>{{ i_chapter_sort_index }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_chapter_sort_index_ext</td>
+      <td>{{ i_prev_chapter_sort_index_ext }}</td>
+      <td>i_chapter_sort_index_ext</td>
+      <td>{{ i_chapter_sort_index_ext }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_part_num</td>
+      <td>{{ i_prev_part_num }}</td>
+      <td>i_part_num</td>
+      <td>{{ i_part_num }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_part_label</td>
+      <td>{{ i_prev_part_label }}</td>
+      <td>i_part_label</td>
+      <td>{{ i_part_label }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_part_unnumbered</td>
+      <td>{{ i_prev_part_unnumbered }}</td>
+      <td>i_part_unnumbered</td>
+      <td>{{ i_part_unnumbered }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_part_is_draft</td>
+      <td>{{ i_prev_part_is_draft }}</td>
+      <td>i_part_is_draft</td>
+      <td>{{ i_part_is_draft }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_part_folder</td>
+      <td>{{ i_prev_part_folder }}</td>
+      <td>i_part_folder</td>
+      <td>{{ i_part_folder }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_part_sort_index</td>
+      <td>{{ i_prev_part_sort_index }}</td>
+      <td>i_part_sort_index</td>
+      <td>{{ i_part_sort_index }}</td>
+    </tr>
+    <tr>
+      <td>i_prev_part_sort_index_ext</td>
+      <td>{{ i_prev_part_sort_index_ext }}</td>
+      <td>i_part_sort_index_ext</td>
+      <td>{{ i_part_sort_index_ext }}</td>
+    </tr>
+  </table>
+{% endif %}
+
+{% if include.inspect == "page" %}
+  <table class="inspect-chapter-iterate-vars table-wrapper">
+    <tr>
+      <th colspan="2">page</th>
+      <th colspan="2">prev</th>
+      <th colspan="2">next</th>
+    </tr>
+    <tr>
+      <th>page_chapter.id</th>
+      <td>{{ page_chapter.id }}</td>
+      <th>page_prev_chapter.id</th>
+      <td>{{ page_prev_chapter.id }}</td>
+      <th>page_next_chapter.id</th>
+      <td>{{ page_next_chapter.id }}</td>
+    </tr>
+    <tr>
+      <th>page_chapter_idx</th>
+      <td>{{ page_chapter_idx }}</td>
+      <th>page_prev_chapter_idx</th>
+      <td>{{ page_prev_chapter_idx }}</td>
+      <th>page_next_chapter_idx</th>
+      <td>{{ page_next_chapter_idx }}</td>
+    </tr>
+    <tr>
+      <th>page_chapter_num</th>
+      <td>{{ page_chapter_num }}</td>
+      <th>page_prev_chapter_num</th>
+      <td>{{ page_prev_chapter_num }}</td>
+      <th>page_next_chapter_num</th>
+      <td>{{ page_next_chapter_num }}</td>
+    </tr>
+    <tr>
+      <th>page_chapter_is_draft</th>
+      <td>{{ page_chapter_is_draft }}</td>
+      <th>page_prev_chapter_is_draft</th>
+      <td>{{ page_prev_chapter_is_draft }}</td>
+      <th>page_next_chapter_is_draft</th>
+      <td>{{ page_next_chapter_is_draft }}</td>
+    </tr>
+    <tr>
+      <th>page_chapter_is_visible</th>
+      <td>{{ page_chapter_is_visible }}</td>
+      <th>page_prev_chapter_is_visible</th>
+      <td>{{ page_prev_chapter_is_visible }}</td>
+      <th>page_next_chapter_is_visible</th>
+      <td>{{ page_next_chapter_is_visible }}</td>
+    </tr>
+    <tr>
+      <th>page_chapter_sort_index</th>
+      <td>{{ page_chapter_sort_index }}</td>
+      <th>page_prev_chapter_sort_index</th>
+      <td>{{ page_prev_chapter_sort_index }}</td>
+      <th>page_next_chapter_sort_index</th>
+      <td>{{ page_next_chapter_sort_index }}</td>
+    </tr>
+    <tr>
+      <th>page_chapter_sort_index_ext</th>
+      <td>{{ page_chapter_sort_index_ext }}</td>
+      <th>page_prev_chapter_sort_index_ext</th>
+      <td>{{ page_prev_chapter_sort_index_ext }}</td>
+      <th>page_next_chapter_sort_index_ext</th>
+      <td>{{ page_next_chapter_sort_index_ext }}</td>
+    </tr>
+    <tr>
+      <th>page_part_num</th>
+      <td>{{ page_part_num }}</td>
+      <th>page_prev_part_num</th>
+      <td>{{ page_prev_part_num }}</td>
+      <th>page_next_part_num</th>
+      <td>{{ page_next_part_num }}</td>
+    </tr>
+    <tr>
+      <th>page_part_label</th>
+      <td>{{ page_part_label }}</td>
+      <th>page_prev_part_label</th>
+      <td>{{ page_prev_part_label }}</td>
+      <th>page_next_part_label</th>
+      <td>{{ page_next_part_label }}</td>
+    </tr>
+    <tr>
+      <th>page_part_unnumbered</th>
+      <td>{{ page_part_unnumbered }}</td>
+      <th>page_prev_part_unnumbered</th>
+      <td>{{ page_prev_part_unnumbered }}</td>
+      <th>page_next_part_unnumbered</th>
+      <td>{{ page_next_part_unnumbered }}</td>
+    </tr>
+    <tr>
+      <th>page_part_is_draft</th>
+      <td>{{ page_part_is_draft }}</td>
+      <th>page_prev_part_is_draft</th>
+      <td>{{ page_prev_part_is_draft }}</td>
+      <th>page_next_part_is_draft</th>
+      <td>{{ page_next_part_is_draft }}</td>
+    </tr>
+    <tr>
+      <th>page_part_folder</th>
+      <td>{{ page_part_folder }}</td>
+      <th>page_prev_part_folder</th>
+      <td>{{ page_prev_part_folder }}</td>
+      <th>page_next_part_folder</th>
+      <td>{{ page_next_part_folder }}</td>
+    </tr>
+    <tr>
+      <th>page_part_sort_index</th>
+      <td>{{ page_part_sort_index }}</td>
+      <th>page_prev_part_sort_index</th>
+      <td>{{ page_prev_part_sort_index }}</td>
+      <th>page_next_part_sort_index</th>
+      <td>{{ page_next_part_sort_index }}</td>
+    </tr>
+    <tr>
+      <th>page_part_sort_index_ext</th>
+      <td>{{ page_part_sort_index_ext }}</td>
+      <th>page_prev_part_sort_index_ext</th>
+      <td>{{ page_prev_part_sort_index_ext }}</td>
+      <th>page_next_part_sort_index_ext</th>
+      <td>{{ page_next_part_sort_index_ext }}</td>
+    </tr>
+  </table>
+{% endif %}

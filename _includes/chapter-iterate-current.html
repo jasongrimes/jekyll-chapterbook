@@ -1,0 +1,85 @@
+{% assign i_chapter = site.chapters[i_chapter_idx] %}
+
+{% if i_chapter %}
+  {% comment %}
+  #
+  # Determine if chapter is visible and/or draft
+  #
+  {% endcomment %}
+
+  {% assign i_chapter_is_draft = false %}
+  {% assign i_chapter_is_visible = true %}
+  {% assign i_chapter_sort_index = i_chapter.path | split: "/" | last | split: "-" | first %}
+  {% if i_chapter_sort_index contains "." %}
+    {% assign i_chapter_sort_index_ext = i_chapter_sort_index | split: "." | last %}
+  {% else %}
+    {% assign i_chapter_sort_index_ext = nil %}
+  {% endif %}
+  {% if i_chapter_sort_index_ext == "draft" %}
+    {% assign i_chapter_is_draft = true %}
+    {% unless jekyll.environment == "development" and site.show_drafts_in_dev %}
+      {% assign i_chapter_is_visible = false %}
+    {% endunless %}
+  {% endif %}
+
+  {% comment %}
+  #
+  # Determine part info other than number
+  #
+  {% endcomment %}
+
+  {% assign i_part_folder = i_chapter.path | split: "/" | slice: 1 | first %}
+  {% if i_part_folder %}
+    {% assign i_part_sort_index = i_part_folder | split: "-" | first %}
+    {% if i_part_sort_index contains "." %}
+      {% assign i_part_sort_index_ext = i_part_sort_index | split: "." | last %}
+    {% else %}
+      {% assign i_part_sort_index_ext = nil %}
+    {% endif %}
+
+    {% if i_part_sort_index_ext == "draft" %}
+      {% assign i_part_is_draft = true %}
+    {% else %}
+      {% assign i_part_is_draft = false %}
+    {% endif %}
+
+    {% if i_part_sort_index == "000" or i_part_sort_index == "999" %}
+      {% assign i_part_unnumbered = true %}
+      {% assign i_part_label = nil %}
+    {% else %}
+      {% assign i_part_unnumbered = false %}
+      {% assign i_part_label = i_part_folder | split: "-" | shift | join: " " | capitalize %}
+    {% endif %}
+
+  {% endif %}
+
+  {% comment %}
+  #
+  # Determine part and chapter numbers
+  #
+  {% endcomment %}
+
+  {% if i_part_unnumbered %}
+    {% assign i_chapter_num = nil %}
+    {% assign i_part_num = nil %}
+  {% else %}
+    {% if i_chapter_is_draft %}
+      {% assign i_chapter_num = "X" %}
+    {% else %}
+      {% assign i_chapter_num = i_last_numeric_chapter_num | plus: 1 %}
+      {% assign i_last_numeric_chapter_num = i_chapter_num %}
+    {% endif %}
+    {% if i_part_folder != i_prev_part_folder %}
+      {% if i_part_is_draft %}
+        {% assign i_part_num = "X" %}
+      {% else %}
+        {% assign i_part_num = i_last_numeric_part_num | plus: 1 %}
+        {% assign i_last_numeric_part_num = i_part_num %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+{% else %}
+  {% include chapter-iterate-vars.html unset="current" %}
+{% endif %}
+

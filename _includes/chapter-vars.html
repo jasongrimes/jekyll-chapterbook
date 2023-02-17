@@ -1,0 +1,149 @@
+{% assign chapter = nil %}
+{% assign chapter_is_draft = nil %}
+{% assign chapter_is_visible = nil %}
+{% assign chapter_sort_index = nil %}
+{% assign chapter_sort_index_ext = nil %}
+{% assign part_label = nil %}
+{% assign part_unnumbered = nil %}
+{% assign part_is_draft = nil %}
+{% assign part_folder = nil %}
+{% assign part_sort_index = nil %}
+{% assign part_sort_index_ext = nil %}
+
+{% comment %} Only set if specified via include.withnums: {% endcomment %}
+{% assign chapter_num = nil %}
+{% assign part_num = nil %}
+
+{% if include.id %}
+  {% assign chapter = site.chapters | where: "id", include.id | first %}
+{% elsif include.slug %}
+  {% assign chapter = site.chapters | where: "slug", include.slug | first %}
+{% elsif include.idx %}
+  {% assign chapter = site.chapters[include.idx] %}
+{% endif %}
+
+{% if chapter %}
+  {% assign chapter_is_draft = false %}
+  {% assign chapter_is_visible = true %}
+  {% assign chapter_sort_index = chapter.path | split: "/" | last | split: "-" | first %}
+
+  {% if chapter_sort_index contains "." %}
+    {% assign chapter_sort_index_ext = chapter_sort_index | split: "." | last %}
+  {% else %}
+    {% assign chapter_sort_index_ext = nil %}
+  {% endif %}
+
+  {% if chapter_sort_index_ext == "draft" %}
+    {% assign chapter_is_draft = true %}
+    {% unless jekyll.environment == "development" and site.show_drafts_in_dev %}
+      {% assign chapter_is_visible = false %}
+    {% endunless %}
+  {% endif %}
+
+  {% assign part_folder = chapter.path | split: "/" | slice: 1 | first %}
+  {% if part_folder %}
+    {% assign part_sort_index = part_folder | split: "-" | first %}
+    {% if part_sort_index contains "." %}
+      {% assign part_sort_index_ext = part_sort_index | split: "." | last %}
+    {% else %}
+      {% assign part_sort_index_ext = nil %}
+    {% endif %}
+
+    {% if part_sort_index_ext == "draft" %}
+      {% assign part_is_draft = true %}
+    {% else %}
+      {% assign part_is_draft = false %}
+    {% endif %}
+
+    {% if part_sort_index == "000" or part_sort_index == "999" %}
+      {% assign part_unnumbered = true %}
+      {% assign part_label = nil %}
+    {% else %}
+      {% assign part_unnumbered = false %}
+      {% assign part_label = part_folder | split: "-" | shift | join: " " | capitalize %}
+    {% endif %}
+  {% endif %}
+
+  {% comment %} Get part and chapter numbers {% endcomment %}
+  {% if include.withnum %}
+    {% unless part_unnumbered %}
+      {% if include.withnum == "chapter" and chapter_is_draft %}
+        {% assign chapter_num = "X" %}
+      {% elsif include.withnum == "part" and part_is_draft %}
+        {% assign part_num = "X" %}
+      {% elsif part_is_draft and chapter_is_draft %}
+        {% assign part_num = "X" %}
+        {% assign chapter_num = "X" %}
+      {% else %}
+        {% comment %} Iterate over chapters if it can't be avoided {% endcomment %}
+        {% include chapter-iterate-init.html %}
+        {% for i in (0..site.chapters.size) %}
+          {% if chapter.id == i_chapter.id %}
+            {% assign chapter_num = i_chapter_num %}
+            {% assign part_num = i_part_num %}
+          {% else %}
+            {% include chapter-iterate-next.html %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endunless %}
+  {% endif %}
+{% endif %}
+
+{% if include.inspect %}
+  <table class="inspect-chapter-iterate-vars table-wrapper">
+    <tr>
+      <th>chapter.id</th>
+      <td>{{ chapter.id }}</td>
+    </tr>
+    <tr>
+      <th>chapter_is_draft</th>
+      <td>{{ chapter_is_draft }}</td>
+    </tr>
+    <tr>
+      <th>chapter_is_visible</th>
+      <td>{{ chapter_is_visible }}</td>
+    </tr>
+    <tr>
+      <th>chapter_sort_index</th>
+      <td>{{ chapter_sort_index }}</td>
+    </tr>
+    <tr>
+      <th>chapter_sort_index_ext</th>
+      <td>{{ chapter_sort_index_ext }}</td>
+    </tr>
+    <tr>
+      <th>part_label</th>
+      <td>{{ part_label }}</td>
+    </tr>
+    <tr>
+      <th>part_unnumbered</th>
+      <td>{{ part_unnumbered }}</td>
+    </tr>
+    <tr>
+      <th>part_is_draft</th>
+      <td>{{ part_is_draft }}</td>
+    </tr>
+    <tr>
+      <th>part_folder</th>
+      <td>{{ part_folder }}</td>
+    </tr>
+    <tr>
+      <th>part_sort_index</th>
+      <td>{{ part_sort_index }}</td>
+    </tr>
+    <tr>
+      <th>part_sort_index_ext</th>
+      <td>{{ part_sort_index_ext }}</td>
+    </tr>
+    <tr>
+      <th>chapter_num</th>
+      <td>{{ chapter_num }}</td>
+    </tr>
+    <tr>
+      <th>part_num</th>
+      <td>{{ part_num }}</td>
+    </tr>
+  </table>
+{% endif %}
+

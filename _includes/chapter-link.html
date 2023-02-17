@@ -1,0 +1,3 @@
+{%- capture _linklabel -%}
+  {% include chapter-vars.html slug=include.slug withnum="chapter" %}
+{%- endcapture -%}<a class="chapter-link" href="{{site.baseurl}}{{chapter.url}}{% if include.anchor %}#{{ include.anchor }}{% endif %}">{% if chapter_num %}Chapter {{ chapter_num }}. {% endif %}{{ chapter.title | escape }}</a>
