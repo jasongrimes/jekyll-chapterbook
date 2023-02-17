@@ -34,12 +34,13 @@ It was created with the following objectives:
   regardless of the chapter name, without having to manually renumber.
   (This makes it easier to find the page you want to edit.)
 
-## How to use the theme
+## Getting started
 
-This theme can be used just as other [Jekyll themes][1] and support [remote theme][12],
-see [the official guide][13] as well.
+This theme can be used just as other [Jekyll themes](https://pages.github.com/themes),
+and supports [remote theme](https://rubygems.org/gems/jekyll-remote-theme).
+See [the official guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll) for more information.
 
-You can introduce this jekyll theme into your own site by either
+You can introduce this jekyll theme into your own site in one of the following ways:
 
 - [Fork this repository](https://github.com/jasongrimes/jekyll-chapterbook/fork) and add your markdown pages to the `_chapters` folder.
 - Use it as a remote theme in your [`_config.yml`](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml):
@@ -102,11 +103,13 @@ The fonts can be customized by modifying the `.book.font-family-0` and `.book.fo
 
 ## License
 
+Copyright &copy; 2023 Jason Grimes.
+
 This work is open source,
 made available under the [Apache License, Version 2.0](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/LICENSE).
 
-This work was originally based on [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook), 
-which is Copyright 2019 Tao He,
+Originally based on [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook), 
+which was Copyright 2019 Tao He,
 and licensed under the [Apache License, Version 2.0](https://github.com/sighingnow/jekyll-gitbook/blob/f286e81abb57c91b7056d043d846cd308c8ea292/LICENSE).
 
 
