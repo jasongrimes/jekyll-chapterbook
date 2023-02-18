@@ -100,6 +100,16 @@ just like chapters.
 But unlike chapters, 
 the directory name (without the numeric prefix) is also shown in the book as the part name. 
 
+```
+_chapters/
+    010-thesis/
+        010-overview.md
+        020-blah-blah.md
+    020-antithesis/
+        010-underview.md
+        030-blather.md
+```
+
 ### Special parts for "front" and "back" matter
 
 Books typically include material at the front,
@@ -115,6 +125,23 @@ there are two optional special part directories:
 `000-front/` and `999-back/`.
 Chapter pages stored in these special part directories appear before or after the other parts,
 and the chapters within them are not numbered.
+
+```
+_chapters/
+    000-front/
+        010-introduction.md
+    010-thesis/
+        010-overview.md
+        020-blah-blah.md
+    020-antithesis/
+        010-underview.md
+        030-blather.md
+    999-back/
+        010-references.md
+```
+
+
+
 
 
 ## Code highlighting
