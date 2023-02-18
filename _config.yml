@@ -1,30 +1,17 @@
+remote_theme: jasongrimes/jekyll-chapterbook
+
 # Configurations
-title:            Jekyll Gitbook
-longtitle:        Jekyll Gitbook
-author:           HE Tao
-email:            sighingnow@gmail.com
+title:            Jekyll Chapterbook
+longtitle:        Jekyll Chapterbook
+author:           Jason Grimes
+email:            jason@grimesit.com
 description: >
-  Build Jekyll site with the GitBook style.
+  A Jekyll theme based on GitBook with support for chapters and parts.
 
-version:          1.0
-gitbook_version:  3.2.3
-
-url:              'https://sighingnow.github.io'
-baseurl:          '/jekyll-gitbook'
-rss:              RSS
-
-# bootstrap: use the remote theme for the site itself
-remote_theme: sighingnow/jekyll-gitbook
-
-toc:
-  enabled: true
-  h_min: 1
-  h_max: 3
-
-# customize the link favicon in header, will be {{site.baseurl}}/{{site.favicon_path}}
+# Customize the link favicon in header. Will be {{site.baseurl}}/{{site.favicon_path}}
 favicon_path:     /assets/gitbook/images/favicon.ico
 
-# markdown render engine.
+# Markdown render engine.
 markdown:         kramdown
 kramdown:
   auto_ids:               true
@@ -40,16 +27,8 @@ syntax_highlighter_style: colorful
 
 markdown_ext:     markdown,mkdown,mkdn,mkd,md
 
-# Permalinks
-permalink:        /:categories/:year-:month-:day-:title:output_ext
-
 exclude:
   - _drafts
-
-collections:
-  pages:
-    output: true
-    permalink: /:collection/:path/
 
 page_width: 800px
 
@@ -61,3 +40,67 @@ plugins:
   - jekyll-feed
   - jekyll-readme-index
   - jemoji
+
+# Chapters can be hidden from navigation by adding ".draft" to the index at the start of their filename.
+# (For example, rename 010-introduction.md to 010.draft-introduction.md)
+#
+# To make the drafts appear in the navigation in development environments,
+# set show_drafts_in_dev to true.
+show_drafts_in_dev: false
+
+# Override in page front matter with disable_toc: true
+sidebar_toc:
+  enabled: false
+  h_min: 2
+  h_max: 3
+
+# Override in page front matter with disable_toc: true
+in_chapter_toc:
+  enabled: true
+  h_min: 2
+  h_max: 3
+
+copyright:
+  start_year: 2022
+  link_slug: copyright
+
+bottom_nav:
+- label: Home
+  url: /
+- label: Contents
+  url: /toc
+- label: About
+  url: /about
+- label: Privacy
+  url: /privacy
+
+sidebar_nav_top:
+- label: About this site
+  url: /about
+- label: Draft outline
+  url: /outline
+
+sidebar_nav_bottom:
+- label: Privacy statement
+  url: /privacy
+
+github_edit:
+  enabled: true
+  base_url: https://github.com/jasongrimes/jekyll-chapterbook/edit/main/
+
+collections:
+  chapters:
+    output: true
+  pages:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "chapters"
+    values:
+      layout: "chapter"
+      permalink: /:slug:output_ext
+
+extra_css:
