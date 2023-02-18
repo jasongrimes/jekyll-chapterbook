@@ -61,19 +61,21 @@ and stored in the `_chapters` directory.
 The file name of a chapter is never shown in the book---chapters 
 are automatically numbered,
 and the chapter name and link comes from the frontmatter `title` and `slug`.
-The chapter file name should begin with a number and a dash,
+The chapter file name is only used for ordering. 
+It should begin with a number and a dash,
 so it appears in the correct order,
 plus a name that makes it easy for you to identify.
 
 For example:
 
-    _chapters/
-        010-intro.md
-        020-thesis.md
-        030-antithesis.md
-        040-synthesis.md
-        050-conclusion.md
-
+```
+_chapters/
+    010-intro.md
+    020-thesis.md
+    030-antithesis.md
+    040-synthesis.md
+    050-conclusion.md
+```
 
 
 
