@@ -38,7 +38,6 @@ It was created with the following objectives:
 
 Use this theme like any other Jekyll theme.
 See [the official guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll) for details.
-
 Use this theme for your site in one of the following ways:
 - [Fork this repository](https://github.com/jasongrimes/jekyll-chapterbook/fork) and add your markdown pages to the `_chapters` folder.
 - Use it as a remote theme in your [`_config.yml`](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml):
@@ -54,7 +53,7 @@ See the GitHub documentation about [testing your GitHub Pages site locally with 
 
 ## File organization
 
-### Chapter files
+### Chapter file names
 
 Each chapter is written in its own Jekyll "page",
 and stored in the `_chapters` directory.
@@ -93,6 +92,29 @@ _chapters/
 
 ### Parts
 
+Chapters can optionally be grouped into "Parts",
+by adding subdirectories to the `_chapters` directory,
+and moving the chapter files into the appropriate part directory.
+Part directory names should begin with a number so they appear in the correct order,
+just like chapters.
+But unlike chapters, 
+the directory name (without the numeric prefix) is also shown in the book as the part name. 
+
+### Special parts for "front" and "back" matter
+
+Books typically include material at the front,
+like a table of contents and introduction,
+and material at the back,
+like a glossary or index.
+This front and back matter is not included in the rest of the book's chapter and page numbering,
+and it is never grouped into a "part",
+even when the other chapters are.
+
+To support this special material,
+there are two optional special part directories:
+`000-front/` and `999-back/`.
+Chapter pages stored in these special part directories appear before or after the other parts,
+and the chapters within them are not numbered.
 
 
 ## Code highlighting
