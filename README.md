@@ -39,8 +39,7 @@ It was created with the following objectives:
 Use this theme like any other Jekyll theme.
 See [the official guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll) for details.
 
-You can introduce this jekyll theme into your own site in one of the following ways:
-
+Use this theme for your site in one of the following ways:
 - [Fork this repository](https://github.com/jasongrimes/jekyll-chapterbook/fork) and add your markdown pages to the `_chapters` folder.
 - Use it as a remote theme in your [`_config.yml`](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml):
 
@@ -54,6 +53,8 @@ This theme can be run locally using Ruby.
 See the GitHub documentation about [testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll).
 
 ## File organization
+
+### Chapter files
 
 Each chapter is written in its own Jekyll "page",
 and stored in the `_chapters` directory.
@@ -73,10 +74,24 @@ _chapters/
     010-intro.md
     020-thesis.md
     030-antithesis.md
-    040-synthesis.md
-    050-conclusion.md
+    040-conclusion.md
 ```
 
+By using 3-digit numbers and incrementing them by 10 in this way,
+we can easily reorganize files without having to rename them all.
+For example,
+we could add a "synthesis" chapter between "30-antithesis" and "40-conclusion" by prefixing it with a number between 30 and 40. 
+
+```
+_chapters/
+    010-intro.md
+    020-thesis.md
+    030-antithesis.md
+    035-synthesis.md
+    040-conclusion.md
+```
+
+### Parts
 
 
 
