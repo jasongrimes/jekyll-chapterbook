@@ -133,14 +133,22 @@ _chapters/
     010-thesis/
         010-overview.md
         020-blah-blah.md
-    020-antithesis/
+    050-antithesis/
         010-underview.md
         030-blather.md
     999-back/
         010-references.md
 ```
 
-
+The above would render as something like this:
+- Introduction
+- Part I: Thesis
+  - Chapter 1: Overview of my thesis
+  - Chapter 2: Some blah chapter
+- Part II: Antithesis
+  - Chapter 3: Under the overview
+  - Chapter 4: Blather...
+- References
 
 
 
