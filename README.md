@@ -36,9 +36,8 @@ It was created with the following objectives:
 
 ## Getting started
 
-This theme can be used just as other [Jekyll themes](https://pages.github.com/themes),
-and supports [remote theme](https://rubygems.org/gems/jekyll-remote-theme).
-See [the official guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll) for more information.
+Use this theme like any other Jekyll theme.
+See [the official guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll) for details.
 
 You can introduce this jekyll theme into your own site in one of the following ways:
 
@@ -53,6 +52,31 @@ remote_theme: jasongrimes/jekyll-chapterbook
 
 This theme can be run locally using Ruby. 
 See the GitHub documentation about [testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll).
+
+## File organization
+
+Each chapter is written in its own Jekyll "page",
+and stored in the `_chapters` directory.
+
+The file name of a chapter is never shown in the book---chapters 
+are automatically numbered,
+and the chapter name and link comes from the frontmatter `title` and `slug`.
+The chapter file name should begin with a number and a dash,
+so it appears in the correct order,
+plus a name that makes it easy for you to identify.
+
+For example:
+
+    _chapters/
+        010-intro.md
+        020-thesis.md
+        030-antithesis.md
+        040-synthesis.md
+        050-conclusion.md
+
+
+
+
 
 ## Code highlighting
 
