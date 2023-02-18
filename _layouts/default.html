@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+  <head>
+    {% include build-chapter-nav.html %}
+
+    {%- include head.html -%}
+
+    {% if page_prev_chapter %}
+      <link rel="prev" href="{{site.baseurl}}{{page_prev_chapter.url}}" />
+    {% else %}
+      <link rel="prev" href="{{site.baseurl}}/" />
+    {% endif %}
+
+    {% if page_next_chapter %}
+      <link rel="next" href="{{site.baseurl}}{{page_next_chapter.url}}" />
+    {% endif %}
+
+  </head>
+  <body>
+    <div class="book">
+
+      {{ chapter-nav }}
+
+      <div class="book-body">
+        <div class="book-header" role="navigation">
+          {% if site.github_edit.enabled %}
+            <a href="{{ site.github_edit.base_url }}{{ page.path }}" target="_blank" title="Edit on GitHub" class="github-edit-link">
+              <i class="fa fa-github"></i>
+            </a>
+          {% endif %}
+          <h1>
+            <a href="{{site.baseurl}}/" >{{ site.title | escape }}</a>
+          </h1>
+        </div><!-- .book-header -->
+
+        <div class="body-inner">
+          <div class="page-wrapper" tabindex="-1" role="main">
+            <div class="page-inner {% if page.class %}{{ page.class }}{% endif %}">
+
+              {{ content }}
+
+            </div> <!-- .page-inner -->
+          </div> <!-- .page-wrapper -->
+        </div> <!-- .body-inner -->
+        <div class="page-footer">
+          {% if site.bottom_nav %}
+            <div class="bottom-nav">
+              {% for item in site.bottom_nav %}
+                {% unless forloop.first %} - {% endunless %}
+                  <a href="{{ site.baseurl }}{{ item.url }}">
+                    {{ item.label }}
+                  </a>
+                {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if site.copyright %}
+            <div class="copyright">
+              {% assign latest_year = "now" | date: "%Y" %}
+              {% capture copyright_start_year %}{{ site.copyright.start_year }}{% endcapture %}
+              {% if site.copyright.link_slug %}<a href="{{ site.baseurl }}/{{ site.copyright.link_slug }}">{% endif %}
+              &copy;
+              {% if copyright_start_year and copyright_start_year != latest_year %}{{ copyright_start_year}}-{% endif %}{{ latest_year }}
+              {{ site.author }}
+              {% if site.copyright.link_slug %}</a>{% endif %}
+            </div>
+          {% endif %}
+
+        </div><!-- .chapter-footer -->
+
+      </div> <!-- .book-body -->
+    </div> <!-- .book -->
+
+    {%- include footer.html -%}
+
+    <script>
+        // var gitbook = gitbook || [];
+        gitbook.push(function() {
+          gitbook.page.hasChanged({%- include gitbook-metadata.json.tpl -%});
+        });
+    </script>
+  </body>
+</html>
+
