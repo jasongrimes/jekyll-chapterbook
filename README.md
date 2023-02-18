@@ -13,8 +13,8 @@ which in turn is based on an early theme of [GitBook](https://www.gitbook.com/).
 
 ## Demo
 
-A live site that uses this theme can be seen at [https://fretboardfoundation.com](https://fretboardfoundation.com).
-
+A live site that uses this theme can be seen at [fretboardfoundation.com](https://fretboardfoundation.com)
+([GitHub repo](https://github.com/jasongrimes/fretboardfoundation)).
 
 ## Why this theme
 
