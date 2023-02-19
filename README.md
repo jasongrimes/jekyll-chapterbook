@@ -168,8 +168,10 @@ A chapter can be marked as a "draft" by renaming the file and adding `.draft` to
 
 Draft chapters are not listed in the table of contents,
 and they are not included in the chapter numberings.
-But drafts _are_ listed in the book outline.
+(To see how all the drafts _would_ be numbered if they weren't drafts,
+set `show_drafts_in_dev: false` in [_config.yml]().)
 
+But drafts _are_ listed in the book outline.
 This enables a workflow in which you start with an outline of your book,
 made with empty draft chapters having just a `title` and maybe an `abstract`,
 ordered and grouped into parts as needed (and often changed, at first).
