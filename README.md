@@ -296,7 +296,12 @@ Parameters:
 The `toc-chapters-full.html` helper allows you to make a table of contents page,
 including chapter abstracts (if any).
 
-For example, create a `_chapters/000-front/010-toc.md` page with the following contents.
+Parameters:
+- `show_drafts`: If `true`, also show draft chapters. Useful for showing an "outline" view of the book.
+
+For example,
+to create a table of contents at the front of your book with the URL `/toc`,
+create a `_chapters/000-front/010-toc.md` page with contents like the following.
 
 ```yaml
 ---
@@ -309,6 +314,23 @@ The chapters currently available are listed below.
 See the [outline](outline) to learn what else is planned. 
 
 {% include toc-chapters-full.html %}
+```
+
+To create an outline page,
+add a file like `/draft-outline.md` with contents like the following.
+
+```yaml
+---
+title: Draft outline
+permalink: /outline
+layout: page
+---
+
+An outline of the chapters planned for this book.
+Most of them  have yet to be written.
+Only the chapters with a checkmark appear in the contents and navigation. 
+
+{% include toc-chapters-full.html show_drafts=true %}
 ```
 
 ### Wide tables
