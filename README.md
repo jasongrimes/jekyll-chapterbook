@@ -36,7 +36,7 @@ It was created with the following objectives:
 
 ## Getting started
 
-Use this theme like any other Jekyll theme.
+Install this theme like any other Jekyll theme.
 See [the official guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll) for details.
 Use this theme for your site in one of the following ways:
 - [Fork this repository](https://github.com/jasongrimes/jekyll-chapterbook/fork) and add your markdown pages to the `_chapters` folder.
