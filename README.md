@@ -263,7 +263,8 @@ In order for this theme to work natively with GitHub pages,
 it can't use any custom Jekyll plugins.
 But it _can_ do any logic and data manipulation supported by the template language, Liquid.
 
-So this theme makes extensive use of Liquid templates to act as "helper methods" by including them in a page.
+So this theme makes extensive use of Liquid templates to act as "helper methods",
+by including them in a page and passing them parameters using Jekyll's standard `[include](https://jekyllrb.com/docs/includes/)` tag.
 
 For example,
 to link to a chapter with its current `title` and chapter number,
@@ -286,15 +287,19 @@ See {% include chapter-link.html slug="harmony-intro" %}.
 
 ...renders as: See [Chapter 6: Introduction to Western Harmony](/harmony-intro).
 
-
-
-### Figures
-
-### Wide tables
+Parameters:
+- `slug`: Required. The `slug` of the chapter to link to.
+- `anchor`: An optional anchor tag to append to the chapter link.
 
 ### Tables of contents
 
+### Wide tables
+
+### Figures
+
 ### References
+
+### Inspect chapterbook variables
 
 
 ## Extra CSS or javascript files
