@@ -219,6 +219,25 @@ bottom_nav:
   url: /privacy
 ```
 
+## Non-book pages
+
+Your site will probably have other pages besides the contents of your book
+(like an about page, a home page, etc.).
+
+Create these like a regular Jekyll page and store them in the project root directory.
+In the page front matter,
+set `layout: page` and make sure to set the `title` and `permalink`.
+
+```yaml
+title: About this site
+permalink: /about
+layout: page
+```
+
+Then manually add links to your page using the permalink. 
+
+## Home page
+
 ## Chapter links
 
 ## Figures
@@ -229,7 +248,6 @@ bottom_nav:
 
 ## References
 
-## Non-book pages
 
 ## Extra CSS or javascript files
 
