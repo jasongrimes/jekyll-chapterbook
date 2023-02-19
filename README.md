@@ -333,14 +333,11 @@ Only the chapters with a checkmark appear in the contents and navigation.
 {% include toc-chapters-full.html show_drafts=true %}
 ```
 
-### Wide tables
-
 ### Figures
-
-### References
 
 ### Inspect chapterbook variables
 
+## Wide tables
 
 ## Extra CSS or javascript files
 
@@ -362,6 +359,8 @@ The fonts can be customized by modifying the `.book.font-family-0` and `.book.fo
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 ```
+
+## References
 
 
 ## License
