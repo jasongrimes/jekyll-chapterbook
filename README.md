@@ -277,6 +277,17 @@ see {% include chapter-link.html slug="harmony-intro" %}.
 
 ### Chapter links
 
+The `chapter-link.html` helper renders a link to the chapter with the specified `slug`,
+using its current title and (optionally) chapter number.
+
+```markdown
+See {% include chapter-link.html slug="harmony-intro" %}.
+```
+
+...renders as: See [Chapter 6: Introduction to Western Harmony](/harmony-intro).
+
+
+
 ### Figures
 
 ### Wide tables
