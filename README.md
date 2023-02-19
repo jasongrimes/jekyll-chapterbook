@@ -293,6 +293,24 @@ Parameters:
 
 ### Tables of contents
 
+The `toc-chapters-full.html` helper allows you to make a table of contents page,
+including chapter abstracts (if any).
+
+For example, create a `_chapters/000-front/010-toc.md` page with the following contents.
+
+```yaml
+---
+title: Table of contents
+slug: toc
+---
+
+This book is still a work in progress.
+The chapters currently available are listed below. 
+See the [outline](outline) to learn what else is planned. 
+
+{% include toc-chapters-full.html %}
+```
+
 ### Wide tables
 
 ### Figures
