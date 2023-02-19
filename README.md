@@ -354,7 +354,26 @@ wrap them in the following HTML code (directly in the markdown file):
 
 ```html
 <div class="table-wrapper" markdown="block">
+
+| Semi-tones (frets) | Interval   | Note from C | Short scale degree name | Scale degree name | Frequency ratio (dissonance) |
+|:--:|:-------------------|:------:|:------:|:----------------------|:-----:|
+| 0  | unison (P1)        | C      | 1      | tonic, one            | 1:1   |
+| 1  | minor second (m2)  | C#/ Db | b2     | flat two              | 25:24 |
+| 2  | major second (M2)  | D      | 2      | two                   | 9:8   |
+
+</div>
 ```
+
+...renders as:
+<div class="table-wrapper" markdown="block">
+
+| Semi-tones (frets) | Interval   | Note from C | Short scale degree name | Scale degree name | Frequency ratio (dissonance) |
+|:--:|:-------------------|:------:|:------:|:----------------------|:-----:|
+| 0  | unison (P1)        | C      | 1      | tonic, one            | 1:1   |
+| 1  | minor second (m2)  | C#/ Db | b2     | flat two              | 25:24 |
+| 2  | major second (M2)  | D      | 2      | two                   | 9:8   |
+
+</div>
 
 ## Extra CSS or javascript files
 
