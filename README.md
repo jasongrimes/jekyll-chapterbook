@@ -161,18 +161,6 @@ This theme uses the following front matter variables in chapter pages.
 - `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
 
 
-## How to generate TOC
-
-The jekyll-gitbook theme leverages [jekyll-toc][4] to generate the *Contents* for the page.
-The TOC feature is not enabled by default. To use the TOC feature, modify the TOC
-configuration in `_config.yml`:
-
-```yaml
-toc:
-    enabled: true
-    h_min: 1
-    h_max: 3
-```
 
 
 ## Extra CSS or javascript files
