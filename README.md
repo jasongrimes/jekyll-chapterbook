@@ -402,24 +402,26 @@ The fonts can be customized by modifying the `.book.font-family-0` and `.book.fo
 If you want to include citations and references in your book,
 here are a few tips.
 
+### Citations in text
+
 Use the [Scribbr citation generator](https://www.scribbr.com/citation/generator/) to generate citations in your desired style.
 (The following examples use APA style.)
 
-In-text example, 
-with a link to the refetences chapter:
+Here's an example citation, 
+with a link to the references chapter:
 
 ```
 [(Vincent, 2011)](references#vincent-2011)
 ```
 
-[(Vincent, 2011)](references#vincent-2011)
+...which renders as: [(Vincent, 2011)](references#vincent-2011)
 
-Reference list:
+### Reference list
 
-Use the `class: references` Front matter variable in the references chapter,
+Use the `class: references` front matter variable in the references chapter,
 so that the citations are formatted with hanging indents.
 
-Include a link in the citation (like the ISBN search below), 
+Include a link in each reference (like the ISBN search below), 
 and assign it an `id` attribute with `{:#my-id}` so the anchor links from in-text citations work.
 
 ```
@@ -427,10 +429,10 @@ Vincent, R. (2011). *Three-Note Voicings and Beyond.* Sher Music Co.
 [ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=1-883217-66-0){:#vincent-2011}
 ```
 
+...renders as:
+
 Vincent, R. (2011). *Three-Note Voicings and Beyond.* Sher Music Co.
-[ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=1-883217-66-0){:#vincent-2011}
-
-
+[ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=1-883217-66-0)
 
 ## License
 
