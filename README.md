@@ -90,7 +90,7 @@ _chapters/
     040-conclusion.md
 ```
 
-### Parts
+### Part directories
 
 Chapters can optionally be grouped into "Parts",
 by adding subdirectories to the `_chapters` directory,
