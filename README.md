@@ -279,7 +279,7 @@ see {% include chapter-link.html slug="harmony-intro" %}.
 ### Chapter links
 
 The `chapter-link.html` helper renders a link to the chapter with the specified `slug`,
-using its current title and (optionally) chapter number.
+using its current title and chapter number.
 
 ```markdown
 See {% include chapter-link.html slug="harmony-intro" %}.
