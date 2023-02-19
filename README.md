@@ -207,6 +207,14 @@ Then manually add links to your page using the permalink.
 Create your site's home page at `/index.md`,
 and use `layout: home`.
 
+```yaml
+---
+layout: home
+title: Fretboard Foundation
+subtitle: Practical building-blocks for intermediate guitarists.
+---
+```
+
 If there is no `/index.md`,
 the `/README.md` will be used instead.
 
