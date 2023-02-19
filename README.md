@@ -160,8 +160,21 @@ This theme uses the following front matter variables in chapter pages.
 - `published`: If `false`, the chapter will not be rendered and will not be included in the chapter numbering. 
 - `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
 
+## Drafts
 
+## Navigation
 
+## Chapter links
+
+## Figures
+
+## Wide tables
+
+## Full table of contents
+
+## References
+
+## Non-book pages
 
 ## Extra CSS or javascript files
 
