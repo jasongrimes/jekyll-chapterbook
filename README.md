@@ -110,7 +110,7 @@ _chapters/
         030-blather.md
 ```
 
-### Special parts for "front" and "back" matter
+### Special parts for book front and back matter
 
 Books typically include material at the front,
 like a table of contents and introduction,
