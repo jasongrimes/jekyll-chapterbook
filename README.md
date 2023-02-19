@@ -282,15 +282,15 @@ see {% include chapter-link.html slug="harmony-intro" %}.
 The `chapter-link.html` helper renders a link to the chapter with the specified `slug`,
 using its current title and chapter number.
 
-Parameters:
-- `slug`: Required. The `slug` of the chapter to link to.
-- `anchor`: An optional anchor tag to append to the chapter link.
-
 ```
 See {% include chapter-link.html slug="harmony-intro" %}.
 ```
 
 ...renders as: See [Chapter 6: Introduction to Western Harmony](/harmony-intro).
+
+Parameters:
+- `slug`: Required. The `slug` of the chapter to link to.
+- `anchor`: An optional anchor tag to append to the chapter link.
 
 ### Tables of contents
 
@@ -335,6 +335,13 @@ Only the chapters with a checkmark appear in the contents and navigation.
 ```
 
 ### Figures
+
+The `figure.html` helper renders images as figures in the book.
+
+Parameters:
+- `url`: The relative URL to the image (appended to `site.baseurl`).
+- `caption`: An optional caption to render beneath the figure.
+- `class`: an optional `class` attribute to add to the the HTML `<figure>` tag.
 
 ### Inspect chapterbook variables
 
