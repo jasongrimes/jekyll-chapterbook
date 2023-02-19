@@ -55,7 +55,7 @@ See the GitHub documentation about [testing your GitHub Pages site locally with 
 
 ### Chapter file names
 
-Each chapter is written in its own Jekyll [`page`](https://jekyllrb.com/docs/pages/),
+Each chapter is written in its own [Jekyll page](https://jekyllrb.com/docs/pages/),
 and stored in the `_chapters` directory.
 
 The file name of a chapter is never shown in the book---chapters 
