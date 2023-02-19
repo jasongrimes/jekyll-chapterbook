@@ -182,7 +182,17 @@ remove the `.draft` from the file name so it appears in the book.
 
 ## Navigation
 
+The book's automatically-generated table of contents is shown in the sidebar.
+To show additional links above the toc in the sidebar,
+define them in `sidebar_nav_top` in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
 
+```yaml
+sidebar_nav_top:
+- label: About this site
+  url: /about
+- label: Draft outline
+  url: /outline
+```
 
 ## Chapter links
 
@@ -190,7 +200,7 @@ remove the `.draft` from the file name so it appears in the book.
 
 ## Wide tables
 
-## Full table of contents
+## Tables of contents
 
 ## References
 
