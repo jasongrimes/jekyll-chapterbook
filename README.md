@@ -204,6 +204,21 @@ sidebar_nav_bottom:
   url: /privacy
 ```
 
+To change the links shown at the bottom of every page,
+define them in `bottom_nav` in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
+
+```yaml
+bottom_nav:
+- label: Home
+  url: /
+- label: Contents
+  url: /toc
+- label: About
+  url: /about
+- label: Privacy
+  url: /privacy
+```
+
 ## Chapter links
 
 ## Figures
