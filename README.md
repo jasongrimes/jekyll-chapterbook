@@ -158,7 +158,7 @@ This theme uses the following front matter variables in chapter pages.
 - `slug`: Used to create the chapter URL and for internal links.
 - `abstract`: Shown at the top of a chapter and in the full table of contents.
 - `published`: If `false`, the chapter will not be rendered and will not be included in the chapter numbering. 
-
+- `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
 
 
 ## How to generate TOC
