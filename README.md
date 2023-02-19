@@ -94,7 +94,7 @@ _chapters/
 
 Chapters can optionally be grouped into "Parts",
 by adding subdirectories to the `_chapters` directory,
-and moving the chapter files into the appropriate part directory.
+and moving the chapter files into them.
 Part directory names should begin with a number so they appear in the correct order,
 just like chapters.
 But unlike chapters, 
