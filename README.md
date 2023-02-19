@@ -300,13 +300,13 @@ Parameters:
 - `show_drafts`: If `true`, also show draft chapters. Useful for showing an "outline" view of the book.
 
 For example,
-to create a table of contents at the front of your book with the URL `/toc`,
+to create a table of contents at the front of your book with the URL `/contents`,
 create a `_chapters/000-front/010-toc.md` page with contents like the following.
 
 ```yaml
 ---
 title: Table of contents
-slug: toc
+slug: contents
 ---
 
 This book is still a work in progress.
