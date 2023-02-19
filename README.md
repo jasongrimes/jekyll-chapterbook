@@ -162,7 +162,15 @@ This theme uses the following front matter variables in chapter pages.
 
 ## Drafts
 
+A chapter can be marked as a "draft" by renaming the file and adding `.draft` to the numeric prefix, like this:
+    010.draft-introduction.md
+
+Draft chapters are not listed in the table of contents,
+but they _are_ listed in the book outline.
+
 ## Navigation
+
+
 
 ## Chapter links
 
