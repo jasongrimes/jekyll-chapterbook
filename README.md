@@ -150,18 +150,16 @@ The above would render as something like this:
   - Chapter 4: Blather...
 - References
 
+## Chapter front matter variables
+
+This theme uses the following front matter variables in chapter pages.
+
+- `title`: The chapter name / page title.
+- `slug`: Used to create the chapter URL and for internal links.
+- `abstract`: Shown at the top of a chapter and in the full table of contents.
+- `published`: If `false`, the chapter will not be rendered and will not be included in the chapter numbering. 
 
 
-## Code highlighting
-
-The code highlight style is configurable the following entry in `_config.yaml`:
-
-```yaml
-syntax_highlighter_style: colorful
-```
-
-The default code highlight style is `colorful`, the full supported styles can be found from [the rouge repository][6]. Customized
-style can be added to [./assets/gitbook/rouge/](./assets/gitbook/rouge/).
 
 ## How to generate TOC
 
