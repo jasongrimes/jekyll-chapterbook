@@ -180,6 +180,31 @@ Then you can flesh out the chapters over time,
 and when ready,
 remove the `.draft` from the file name so it appears in the book.  
 
+## Non-book pages
+
+Your site will probably have other pages besides the contents of your book
+(like an about page, a home page, etc.).
+
+Create these like a regular Jekyll page and store them in the project root directory.
+In the page front matter,
+set `layout: page` and make sure to set the `title` and `permalink`.
+
+```yaml
+title: About this site
+permalink: /about
+layout: page
+```
+
+Then manually add links to your page using the permalink. 
+
+## Home page
+
+Create your site's home page at `/index.md`,
+and use `layout: home`.
+
+If there is no `/index.md`,
+the `/README.md` will be used instead.
+
 ## Navigation
 
 The book's automatically-generated table of contents is shown in the sidebar.
@@ -218,25 +243,6 @@ bottom_nav:
 - label: Privacy
   url: /privacy
 ```
-
-## Non-book pages
-
-Your site will probably have other pages besides the contents of your book
-(like an about page, a home page, etc.).
-
-Create these like a regular Jekyll page and store them in the project root directory.
-In the page front matter,
-set `layout: page` and make sure to set the `title` and `permalink`.
-
-```yaml
-title: About this site
-permalink: /about
-layout: page
-```
-
-Then manually add links to your page using the permalink. 
-
-## Home page
 
 ## Chapter links
 
