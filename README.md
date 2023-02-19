@@ -257,15 +257,33 @@ bottom_nav:
   url: /privacy
 ```
 
-## Chapter links
+## Include "helpers"
 
-## Figures
+In order for this theme to work natively with GitHub pages,
+it can't use any custom Jekyll plugins.
+But it _can_ do any logic and data manipulation supported by the template language, Liquid.
 
-## Wide tables
+So this theme makes extensive use of Liquid templates to act as "helper methods" by including them in a page.
 
-## Tables of contents
+For example,
+to link to a chapter with its current `title` and chapter number,
+include the `chapter-link.html` helper in your markdown page,
+and pass it the `slug` of the chapter to link to.
 
-## References
+```markdown
+For more information,
+see {% include chapter-link.html slug="harmony-intro" %}.
+```
+
+### Chapter links
+
+### Figures
+
+### Wide tables
+
+### Tables of contents
+
+### References
 
 
 ## Extra CSS or javascript files
