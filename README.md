@@ -116,6 +116,10 @@ Books typically include material at the front,
 like a table of contents and introduction,
 and material at the back,
 like a glossary or index.
+(In book publishing,
+this is called "front matter" and "back matter",
+not to be confused with the "front matter" variables in Jekyll pages).
+
 This front and back matter is not included in the rest of the book's chapter and page numbering,
 and it is never grouped into a "part",
 even when the other chapters are.
