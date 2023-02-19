@@ -154,17 +154,7 @@ The above would render as something like this:
   - Chapter 4: Blather...
 - References
 
-## Chapter front matter variables
-
-This theme uses the following front matter variables in chapter pages.
-
-- `title`: The chapter name / page title.
-- `slug`: Used to create the chapter URL and for internal links.
-- `abstract`: Shown at the top of a chapter and in the full table of contents.
-- `published`: If `false`, the chapter will not be rendered and will not be included in the chapter numbering. 
-- `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
-
-## Drafts
+### Drafts
 
 A chapter can be marked as a "draft" by renaming the file and adding `.draft` to the numeric prefix, like this:
 
@@ -183,6 +173,17 @@ ordered and grouped into parts as needed (and often changed, at first).
 Then you can flesh out the chapters over time,
 and when ready,
 remove the `.draft` from the file name so it appears in the book.  
+
+
+## Chapter front matter variables
+
+This theme uses the following front matter variables in chapter pages.
+
+- `title`: The chapter name / page title.
+- `slug`: Used to create the chapter URL and for internal links.
+- `abstract`: Shown at the top of a chapter and in the full table of contents.
+- `published`: If `false`, the chapter will not be rendered and will not be included in the chapter numbering. 
+- `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
 
 ## Non-book pages
 
