@@ -184,6 +184,7 @@ This theme uses the following front matter variables in chapter pages.
 - `abstract`: Shown at the top of a chapter and in the full table of contents.
 - `published`: If `false`, the chapter will not be rendered and will not be included in the chapter numbering. 
 - `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
+- `class`: Optionally specify CSS class(es) to add to the `<div>` wrapping the page.
 
 ## Non-book pages
 
@@ -281,15 +282,15 @@ see {% include chapter-link.html slug="harmony-intro" %}.
 The `chapter-link.html` helper renders a link to the chapter with the specified `slug`,
 using its current title and chapter number.
 
-```markdown
+Parameters:
+- `slug`: Required. The `slug` of the chapter to link to.
+- `anchor`: An optional anchor tag to append to the chapter link.
+
+```
 See {% include chapter-link.html slug="harmony-intro" %}.
 ```
 
 ...renders as: See [Chapter 6: Introduction to Western Harmony](/harmony-intro).
-
-Parameters:
-- `slug`: Required. The `slug` of the chapter to link to.
-- `anchor`: An optional anchor tag to append to the chapter link.
 
 ### Tables of contents
 
