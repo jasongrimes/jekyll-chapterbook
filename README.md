@@ -263,7 +263,7 @@ In order for this theme to work natively with GitHub pages,
 it can't use any custom Jekyll plugins.
 But it _can_ do any logic and data manipulation supported by the template language, Liquid.
 
-So this theme makes extensive use of Liquid templates to act as "helper methods",
+So this theme makes extensive use of Liquid templates to act as "helpers",
 by including them in a page and passing them parameters using Jekyll's standard [`include`](https://jekyllrb.com/docs/includes/) tag.
 
 For example,
