@@ -169,6 +169,14 @@ A chapter can be marked as a "draft" by renaming the file and adding `.draft` to
 Draft chapters are not listed in the table of contents,
 but they _are_ listed in the book outline.
 
+This enables a workflow in which you start with an outline of your book,
+made with empty draft chapters having just a `title` and maybe an `abstract`,
+ordered and grouped into parts as needed (and often changed, at first).
+
+Then you can flesh out the chapters over time,
+and when ready,
+remove the `.draft` from the file name so it appears in the book.  
+
 ## Navigation
 
 
