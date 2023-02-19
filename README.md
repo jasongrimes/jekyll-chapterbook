@@ -350,7 +350,8 @@ Parameters:
 Tables can be created using normal [GitHub-flavored markdown](https://github.github.com/gfm/#tables-extension-). 
 
 To prevent wide tables from breaking the book layout,
-wrap them in the following HTML code (directly in the markdown file):
+wrap them in a `<div>` directly in the markdown file, 
+with `class="table-wrapper"` and the attribute `markdown="block"`.
 
 ```html
 <div class="table-wrapper" markdown="block">
