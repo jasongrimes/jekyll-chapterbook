@@ -10,7 +10,7 @@
 {% assign part_sort_index = nil %}
 {% assign part_sort_index_ext = nil %}
 
-{% comment %} Only set if specified via include.withnums: {% endcomment %}
+{% comment %} Only set if specified via include.withnum: {% endcomment %}
 {% assign chapter_num = nil %}
 {% assign part_num = nil %}
 
@@ -40,7 +40,10 @@
     {% endunless %}
   {% endif %}
 
-  {% assign part_folder = chapter.path | split: "/" | slice: 1 | first %}
+  {% assign part_folder = chapter.path | split: "/" | slice: -2 | first %}
+  {% if part_folder == "_chapters" %}
+    {% assign part_folder = nil %}
+  {% endif %}
   {% if part_folder %}
     {% assign part_sort_index = part_folder | split: "-" | first %}
     {% if part_sort_index contains "." %}
@@ -74,7 +77,7 @@
       {% elsif part_is_draft and chapter_is_draft %}
         {% assign part_num = "X" %}
         {% assign chapter_num = "X" %}
-      {% else %}
+        {% else %}
         {% comment %} Iterate over chapters if it can't be avoided {% endcomment %}
         {% include chapter-iterate-init.html %}
         {% for i in (0..site.chapters.size) %}
@@ -93,8 +96,39 @@
 {% if include.inspect %}
   <table class="inspect-chapter-iterate-vars table-wrapper">
     <tr>
+      <th colspan="2" class="divider">
+        chapter inherits from page
+        <div style="font-weight: normal; text-align: left; text-transform: none;">
+          The <b>chapter</b> object is identical to the 
+          <a href="https://jekyllrb.com/docs/variables/#page-variables">built-in Jekyll <b>page</b></a>
+          object with the same <b>id</b>.
+        </div>
+      </th>
+    </tr>
+    <tr>
+      <th>page.id</th>
+      <td>{{ page.id }}</td>
+    </tr>
+    <tr>
       <th>chapter.id</th>
       <td>{{ chapter.id }}</td>
+    </tr>
+    <tr>
+      <th>chapter.title </th>
+      <td>{{ chapter.title }}</td>
+    </tr>
+    <tr>
+      <th>chapter.slug </th>
+      <td>{{ chapter.slug }}</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>See <a href="https://jekyllrb.com/docs/variables/#page-variables"><b>page</b> documentation</a></td>
+    </tr>
+    <tr>
+      <th colspan="2" class="divider">
+        Chapter metadata
+      </th>
     </tr>
     <tr>
       <th>chapter_is_draft</th>
@@ -111,6 +145,11 @@
     <tr>
       <th>chapter_sort_index_ext</th>
       <td>{{ chapter_sort_index_ext }}</td>
+    </tr>
+    <tr>
+      <th colspan="2" class="divider">
+        Part metadata
+      </th>
     </tr>
     <tr>
       <th>part_label</th>
@@ -137,6 +176,11 @@
       <td>{{ part_sort_index_ext }}</td>
     </tr>
     <tr>
+      <th colspan="2" class="divider">
+        Numbering
+      </th>
+    </tr>
+    <tr>
       <th>chapter_num</th>
       <td>{{ chapter_num }}</td>
     </tr>
@@ -146,4 +190,3 @@
     </tr>
   </table>
 {% endif %}
-

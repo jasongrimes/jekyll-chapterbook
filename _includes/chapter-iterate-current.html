@@ -1,13 +1,11 @@
 {% assign i_chapter = site.chapters[i_chapter_idx] %}
 
-{% if i_chapter %}
+  {% if i_chapter %}
   {% comment %}
   #
   # Determine if chapter is visible and/or draft
   #
-  {% endcomment %}
-
-  {% assign i_chapter_is_draft = false %}
+  {% endcomment %}{% assign i_chapter_is_draft = false %}
   {% assign i_chapter_is_visible = true %}
   {% assign i_chapter_sort_index = i_chapter.path | split: "/" | last | split: "-" | first %}
   {% if i_chapter_sort_index contains "." %}
@@ -28,7 +26,11 @@
   #
   {% endcomment %}
 
-  {% assign i_part_folder = i_chapter.path | split: "/" | slice: 1 | first %}
+  {% assign i_part_folder = i_chapter.path | split: "/" | slice: -2 | first %}
+  {% if i_part_folder == "_chapters" %}
+    {% assign i_part_folder = nil %}
+    {% assign i_part_unnumbered = false %}
+  {% endif %}
   {% if i_part_folder %}
     {% assign i_part_sort_index = i_part_folder | split: "-" | first %}
     {% if i_part_sort_index contains "." %}
@@ -69,7 +71,7 @@
       {% assign i_chapter_num = i_last_numeric_chapter_num | plus: 1 %}
       {% assign i_last_numeric_chapter_num = i_chapter_num %}
     {% endif %}
-    {% if i_part_folder != i_prev_part_folder %}
+    {% if i_part_folder and i_part_folder != i_prev_part_folder %}
       {% if i_part_is_draft %}
         {% assign i_part_num = "X" %}
       {% else %}
@@ -80,6 +82,5 @@
   {% endif %}
 
 {% else %}
-  {% include chapter-iterate-vars.html unset="current" %}
+  {% include chapter-iterate-vars.html unset = "current" %}
 {% endif %}
-

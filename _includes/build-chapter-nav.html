@@ -35,7 +35,7 @@
             {% continue %}
           {% endunless %}
 
-          {% if i_part_folder != i_prev_part_folder and i_part_unnumbered == false %}
+          {% if i_part_folder and i_part_folder != i_prev_part_folder and i_part_unnumbered == false %}
             <li class="header {% if i_part_is_draft %}draft{% endif %}">Part {{ i_part_num }}: {{ i_part_label }}</li>
           {% endif %}
 
