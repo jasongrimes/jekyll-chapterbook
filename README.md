@@ -397,17 +397,19 @@ The fonts can be customized by modifying the `.book.font-family-0` and `.book.fo
 }
 ```
 
-## References
+## References and citations
 
 If you want to include citations and references in your book,
 here are a few tips.
 
-### Citations in text
+### Citation generator
 
 Use the [Scribbr citation generator](https://www.scribbr.com/citation/generator/) to generate citations in your desired style.
 (The following examples use APA style.)
 
-Here's an example citation, 
+### Citations in text
+
+Here's an example citation to be included in a text, 
 with a link to the references chapter:
 
 ```
@@ -418,8 +420,11 @@ with a link to the references chapter:
 
 ### Reference list
 
-Use the `class: references` front matter variable in the references chapter,
-so that the citations are formatted with hanging indents.
+Use a "references" chapter in the book's end matter to list all of the complete citations,
+and receive inbound links from the in-text citations.
+
+In the front matter of the references page,
+set `class: references` so that the citations are formatted with hanging indents.
 
 Include a link in each reference (like the ISBN search below), 
 and assign it an `id` attribute with `{:#my-id}` so the anchor links from in-text citations work.
