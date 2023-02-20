@@ -1,0 +1,6 @@
+<figure class="figure color-callout-light with-border {% if include.class %}{{ include.class }}{% endif %}">
+  <a href="{{ site.baseurl }}{{ include.url }}" target="_blank" title="{{ include.caption }} (Click to open figure in a new window.)">
+    <img src="{{ site.baseurl }}{{ include.url }}" alt="{{ include.caption }}" border="0">
+  </a>
+  <figcaption class="color-callout-dark">{{ include.caption }}</figcaption>
+</figure>
