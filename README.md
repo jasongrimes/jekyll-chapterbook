@@ -147,6 +147,8 @@ _chapters/
 ```
 
 The above would render as something like this:
+- Contents
+- Preface
 - Introduction
 - Part I: Thesis
   - Chapter 1: Overview of my thesis
