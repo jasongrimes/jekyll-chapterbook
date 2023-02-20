@@ -133,13 +133,15 @@ and the chapters within them are not numbered.
 ```
 _chapters/
     000-front/
-        010-introduction.md
+        010-toc.md
+        015-preface.md
+        020-introduction.md
     010-thesis/
         010-overview.md
         020-blah-blah.md
     050-antithesis/
         010-underview.md
-        030-blather.md
+        030-not-blah.md
     999-back/
         010-references.md
 ```
@@ -148,10 +150,10 @@ The above would render as something like this:
 - Introduction
 - Part I: Thesis
   - Chapter 1: Overview of my thesis
-  - Chapter 2: Some blah chapter
+  - Chapter 2: Blah, I say
 - Part II: Antithesis
   - Chapter 3: Under the overview
-  - Chapter 4: Blather...
+  - Chapter 4: Not blah, I retort
 - References
 
 ### Drafts
