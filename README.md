@@ -23,8 +23,8 @@ starting from an idea and slowly building out chapters and parts.
 
 It was created with the following objectives:
 
+- Support all standard parts of a book, including front matter, back matter, chapters, parts, etc.
 - Support frequently reorganizing chapters and parts without breaking existing links.
-- Support all standard book parts, including front matter, back matter, etc.
 - Make the work in progress publicly available in a useful way, 
   while making drafts that aren't ready for public consumption available without interrupting the flow of completed chapters.
 - Support quickly editing the book on-the-fly, especially from mobile.
