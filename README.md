@@ -168,7 +168,7 @@ set `show_drafts_in_dev: true` in [_config.yml](https://github.com/jasongrimes/j
 But drafts _are_ listed in the book outline.
 This enables a workflow in which you start with an outline of your book,
 made with empty draft chapters having just a `title` and maybe an `abstract`,
-ordered and grouped into parts as needed (and often changed, at first).
+ordered and grouped into parts as needed (and frequently reorganized).
 
 Then you can flesh out the chapters over time,
 and when ready,
