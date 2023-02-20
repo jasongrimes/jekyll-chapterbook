@@ -1,0 +1,63 @@
+<ul class="toc-chapters-full {% if include.show_drafts %}show-drafts{% endif %}">
+
+  {% include chapter-iterate-init.html %}
+
+  {% for i in (0..site.chapters.size) %}
+
+    {% if i_chapter.id == page.id %}
+      {% include chapter-iterate-next.html %}
+      {% continue %}
+    {% endif %}
+
+    {% assign _is_new_part = false %}
+      {% if i_part_folder != i_prev_part_folder %}
+      {% assign _is_new_part = true %}
+    {% endif %}
+
+    {% if _is_new_part and _in_nested_part %}
+      </ul></li>
+      {% assign _in_nested_part = false %}
+    {% endif %}
+
+    {% unless i_chapter_is_visible %}
+      {% unless include.show_drafts and i_chapter_is_draft %}
+        {% include chapter-iterate-next.html %}
+        {% continue %}
+      {% endunless %}
+    {% endunless %}
+
+
+    {% if _is_new_part and i_part_label %}
+      <li class="part">
+        <div class="part-label">
+          Part {{ i_part_num }}: {{ i_part_label }}
+        </div>
+        <ul>
+      {% assign _in_nested_part = true %}
+    {% endif %}
+
+    <li class="chapter {% if include.show_drafts %}{% if i_chapter_is_draft %}draft{% else %}not-draft{% endif %}{% endif %}">
+      <a href="{{site.baseurl}}{{ i_chapter.url }}">
+        <div class="chapter-label">
+          {% unless i_part_unnumbered %}
+            <span class="chapter-num">Chapter {{ i_chapter_num }}.</span>
+          {% endunless %}
+          {{ i_chapter.title | escape }}
+        </div>
+        {% if i_chapter.abstract %}
+        <div class="abstract">
+          {{ i_chapter.abstract }}
+        </div>
+        {% endif %}
+      </a>
+    </li>
+
+
+    {% include chapter-iterate-next.html %}
+  {% endfor %}
+
+  {% if _in_nested_part %}
+    </ul></li>
+    {% assign _in_nested_part = false %}
+  {% endif %}
+</ul>
