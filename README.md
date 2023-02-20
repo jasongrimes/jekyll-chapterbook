@@ -439,6 +439,12 @@ Vincent, R. (2011). *Three-Note Voicings and Beyond.* Sher Music Co.
 Vincent, R. (2011). *Three-Note Voicings and Beyond.* Sher Music Co.
 [ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=1-883217-66-0)
 
+## Configuration
+
+This theme uses the following settings in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
+
+
+
 ## License
 
 Copyright &copy; 2023 Jason Grimes.
