@@ -86,7 +86,7 @@ sidebar_nav_bottom:
 
 github_edit:
   enabled: true
-  base_url: https://github.com/jasongrimes/jekyll-chapterbook/edit/main/
+  base_url: https://github.com/jasongrimes/jekyll-chapterbook/edit/master/
 
 collections:
   chapters:

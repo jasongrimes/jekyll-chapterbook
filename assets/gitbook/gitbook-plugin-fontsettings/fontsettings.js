@@ -191,6 +191,7 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
             icon: 'fa fa-font',
             label: 'Font Settings',
             className: 'font-settings',
+            // position: 'right', // JG
             dropdown: [
                 [
                     {
@@ -245,5 +246,3 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
         setFamilies:     setFamilies
     };
 });
-
-
