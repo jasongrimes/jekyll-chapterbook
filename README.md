@@ -47,15 +47,12 @@ For example, you could:
 remote_theme: jasongrimes/jekyll-chapterbook
 ```
 
-This theme can be [run locally using `jekyll serve`](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll), 
-like any other GitHub pages site. 
-
 ## File organization
 
 ### Chapter file names
 
 Each chapter is written in its own [Jekyll page](https://jekyllrb.com/docs/pages/),
-and stored in the `_chapters` directory.
+and stored in the [`_chapters/`](https://github.com/jasongrimes/jekyll-chapterbook/tree/master/_chapters) directory.
 
 The file name of a chapter is never shown in the book---chapters 
 are automatically numbered,
@@ -272,6 +269,8 @@ But it _can_ do any logic and data manipulation supported by the template langua
 So this theme makes extensive use of Liquid templates to act as "helpers",
 by including them in a page and passing them parameters using Jekyll's standard [`include`](https://jekyllrb.com/docs/includes/) tag.
 
+See [helpers in the demo](https://jasongrimes.github.io/jekyll-chapterbook/helpers.html) for details.
+
 ### Chapter links
 
 The `chapter-link.html` helper renders a link to the chapter with the specified `slug`,
@@ -303,6 +302,8 @@ Parameters:
 ```
 {% endraw %}
 
+See [example table of contents](https://jasongrimes.github.io/jekyll-chapterbook/toc.html) 
+and [draft outline](https://jasongrimes.github.io/jekyll-chapterbook/outline) in the demo.
 
 ### Figures
 
