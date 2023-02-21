@@ -38,6 +38,8 @@ It was created with the following objectives:
 
 ## Getting started
 
+### Install the theme
+
 Install this theme [like any other Jekyll theme](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll).
 For example, you could:
 - [Fork this repository](https://github.com/jasongrimes/jekyll-chapterbook/fork) and add your markdown pages to the `_chapters` folder.
@@ -46,6 +48,60 @@ For example, you could:
 ```yaml
 remote_theme: jasongrimes/jekyll-chapterbook
 ```
+
+### Create some chapters
+
+Each chapter is written in its own [Jekyll page](https://jekyllrb.com/docs/pages/),
+and stored in the [`_chapters/`](https://github.com/jasongrimes/jekyll-chapterbook/tree/master/_chapters) directory.
+
+Name your chapters something like `010-my-chapter.md`, `020-my-next-chapter.md`, etc.
+(The numbers are used to list chapters in the desired order.
+More on that later.)
+
+Create chapters with the following front matter:
+
+```yaml
+---
+title: 
+slug:
+abstract:
+---
+```
+
+- `title`: The chapter name / page title.
+- `slug`: Used to create the chapter URL and for internal links. Must be unique.
+- `abstract`: (Optional.) Shown at the top of a chapter and in the full table of contents.
+
+Chapters also support these other front matter variables,
+though they are less common.
+
+- `published`: If `false`, the chapter will not be rendered and will not be included in the chapter numbering. 
+- `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
+- `class`: Optionally specify CSS class(es) to add to the `<div>` wrapping the page.
+
+### Internal links
+
+To link to another page in markdown, use the page's `slug`.
+
+{% raw %}
+```
+See the [table of contents](toc).
+```
+{% endraw %}
+...renders as:
+See the [table of contents](toc).
+
+To link to a chapter,
+using its chapter number and `title`,
+use the `chapter-link.html` helper:
+
+For example:
+```
+See {% include chapter-link.html slug="variables" %}.
+```
+
+See an [example chapter link](https://jasongrimes.github.io/jekyll-chapterbook/helpers#chapter-links) in the demo.
+
 
 ## File organization
 
@@ -177,16 +233,6 @@ remove the `.draft` from the file name so it appears in the book.
 See an [example draft chapter](https://jasongrimes.github.io/jekyll-chapterbook/draft.html).
 
 
-## Chapter front matter variables
-
-This theme uses the following front matter variables in chapter pages.
-
-- `title`: The chapter name / page title.
-- `slug`: Used to create the chapter URL and for internal links.
-- `abstract`: Shown at the top of a chapter and in the full table of contents.
-- `published`: If `false`, the chapter will not be rendered and will not be included in the chapter numbering. 
-- `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
-- `class`: Optionally specify CSS class(es) to add to the `<div>` wrapping the page.
 
 ## Non-book pages
 

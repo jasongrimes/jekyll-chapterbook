@@ -2,6 +2,7 @@
 title: References
 slug: references
 class: references
+disable_toc: true
 ---
 
 This is an example chapter for citing references. 
@@ -13,10 +14,10 @@ Here's an example citation to be included in a text,
 with a link to the references chapter:
 
 ```
-[(Vincent, 2011)](references#vincent-2011)
+[(Berg, 1997)](references#berg-1997)
 ```
 
-...which renders as: [(Vincent, 2011)](references#vincent-2011)
+...which renders as [(Berg, 1997)](references#berg-1997).
 
 ### Reference list
 
