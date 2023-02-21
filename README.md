@@ -88,6 +88,7 @@ To link to another page in markdown, use the page's `slug`.
 See the [table of contents](toc).
 ```
 {% endraw %}
+
 ...renders as:
 See the [table of contents](toc).
 
@@ -96,9 +97,12 @@ using its chapter number and `title`,
 use the `chapter-link.html` helper:
 
 For example:
+
+{% raw %}
 ```
 See {% include chapter-link.html slug="variables" %}.
 ```
+{% endraw %}
 
 See an [example chapter link](https://jasongrimes.github.io/jekyll-chapterbook/helpers#chapter-links) in the demo.
 
