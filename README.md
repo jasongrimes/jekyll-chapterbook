@@ -81,7 +81,9 @@ though they are less common.
 
 ### Internal links
 
-To link to another page in markdown, use the page's `slug`.
+To link to another page in markdown, 
+use the page's `slug` or `permalink`. 
+For example, to link to a page with `slug: toc`:
 
 {% raw %}
 ```
@@ -89,11 +91,8 @@ See the [table of contents](toc).
 ```
 {% endraw %}
 
-...renders as:
-See the [table of contents](toc).
-
-To link to a chapter,
-using its chapter number and `title`,
+To insert a link to a chapter,
+labeled with the chapter `title` and chapter number. 
 use the `chapter-link.html` helper:
 
 For example:
