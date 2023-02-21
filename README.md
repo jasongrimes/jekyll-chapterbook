@@ -314,6 +314,8 @@ Parameters:
 - `caption`: An optional caption to render beneath the figure.
 - `class`: an optional `class` attribute to add to the the HTML `<figure>` tag.
 
+See [example figure](https://jasongrimes.github.io/jekyll-chapterbook/helpers.html#figures) 
+
 ### Theme variables
 
 The `chapter-vars.html` helper sets a number of variables related to chapters and parts
