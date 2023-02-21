@@ -47,6 +47,8 @@ Berg, C. (1997). *Mastering Guitar Technique: Process and Essence (Classic Guita
 
 ...which renders as below.
 
+<div class="references" markdown="block">
+
 ## References
 
 Berg, C. (1997). *Mastering Guitar Technique: Process and Essence (Classic Guitar).* Mel Bay Publications, Inc.
