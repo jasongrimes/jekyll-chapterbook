@@ -10,8 +10,6 @@ To prevent wide tables from breaking the book layout on mobile devices,
 wrap them in a `<div>` directly in the markdown file, 
 with `class="table-wrapper"` and the attribute `markdown="block"`.
 
-See an example of [mobile-friendly wide tables](https://jasongrimes.github.io/jekyll-chapterbook/wide-tables.html) in the demo.
-
 ```html
 <div class="table-wrapper" markdown="block">
 
