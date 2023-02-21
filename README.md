@@ -13,10 +13,11 @@ which in turn is based on an early theme of [GitBook](https://www.gitbook.com/).
 
 ## Demo
 
-A demo of this theme can be seen at [jasongrimes.github.io/jekyll-chapterbook/](https://jasongrimes.github.io/jekyll-chapterbook/). Also see the [GitHub repo](https://github.com/jasongrimes/jekyll-chapterbook).
+A demo of this theme can be seen at [jasongrimes.github.io/jekyll-chapterbook/](https://jasongrimes.github.io/jekyll-chapterbook/). 
+Also see its [GitHub repo](https://github.com/jasongrimes/jekyll-chapterbook).
 
 A live site with a more complex configuration can be seen at [fretboardfoundation.com](https://fretboardfoundation.com).
-Also see the [GitHub repo](https://github.com/jasongrimes/fretboardfoundation).
+Also see its [GitHub repo](https://github.com/jasongrimes/fretboardfoundation).
 
 ## Why this theme
 
