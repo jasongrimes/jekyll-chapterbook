@@ -39,9 +39,3 @@ with `class="table-wrapper"` and the attribute `markdown="block"`.
 This file is located at: {{ page.path }}
 ```
 ---
-
----
-```
-This file is located at: {{ page.path }}
-```
----
