@@ -366,49 +366,10 @@ The fonts can be customized by modifying the `.book.font-family-0` and `.book.fo
 If you want to include citations and references in your book,
 here are a few tips.
 
-### Citation generator
-
 Use the [Scribbr citation generator](https://www.scribbr.com/citation/generator/) to generate citations in your desired style.
 (The following examples use APA style.)
 
-### Citations in text
-
-Here's an example citation to be included in a text, 
-with a link to the references chapter:
-
-```
-[(Vincent, 2011)](references#vincent-2011)
-```
-
-...which renders as: [(Vincent, 2011)](references#vincent-2011)
-
-### Reference list
-
-Use a "references" chapter in the book's end matter to list all of the complete citations,
-and receive inbound links from the in-text citations.
-In the front matter of the references page,
-set `class: references` so that the citations are formatted with hanging indents.
-
-See an ]example references list](https://jasongrimes.github.io/jekyll-chapterbook/references.html) in the demo.
-
-Include a link in each reference (like the ISBN search below), 
-and assign it an `id` attribute with `{:#my-id}` so the anchor links from in-text citations work.
-
-```
-Vincent, R. (2011). *Three-Note Voicings and Beyond.* Sher Music Co.
-[ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=1-883217-66-0){:#vincent-2011}
-```
-
-...renders as:
-
-Vincent, R. (2011). *Three-Note Voicings and Beyond.* Sher Music Co.
-[ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=1-883217-66-0)
-
-## Configuration
-
-This theme uses the following settings in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
-
-
+See [example citations and references list](https://jasongrimes.github.io/jekyll-chapterbook/references.html) in the demo.
 
 ## License
 
