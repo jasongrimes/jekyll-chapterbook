@@ -13,11 +13,15 @@ which in turn is based on an early theme of [GitBook](https://www.gitbook.com/).
 
 ## Demo
 
-A demo of this theme can be seen at [jasongrimes.github.io/jekyll-chapterbook/](https://jasongrimes.github.io/jekyll-chapterbook/). 
-Also see its [GitHub repo](https://github.com/jasongrimes/jekyll-chapterbook).
+See a live demo of this theme on GitHub pages:
+[jasongrimes.github.io/jekyll-chapterbook/](https://jasongrimes.github.io/jekyll-chapterbook/). 
+Also see its 
+[GitHub repo](https://github.com/jasongrimes/jekyll-chapterbook).
 
-A live site with a more complex configuration can be seen at [fretboardfoundation.com](https://fretboardfoundation.com).
-Also see its [GitHub repo](https://github.com/jasongrimes/fretboardfoundation).
+A live site with a more complex configuration can be seen at 
+[fretboardfoundation.com](https://fretboardfoundation.com).
+Also see its 
+[GitHub repo](https://github.com/jasongrimes/fretboardfoundation).
 
 ## Why this theme
 
@@ -106,6 +110,26 @@ See {% include chapter-link.html slug="variables" %}.
 
 See an [example chapter link](https://jasongrimes.github.io/jekyll-chapterbook/helpers#chapter-links) in the demo.
 
+### Configure GitHub edit links
+
+At the top right of every page,
+there's a link to edit that page on GitHub.
+This allows you to make quick edits while reviewing.
+Upon saving the edit form at GitHub,
+your Jekyll site can be automatically rebuilt and deployed.
+
+This even works reasonably well from a mobile device.
+The ability to review and edit from mobile is one of my favorite features of this theme.
+
+Configure the GitHub link to your own project in `github_edit` in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
+
+```yaml
+github_edit:
+  enabled: true
+  base_url: https://github.com/jasongrimes/jekyll-chapterbook/edit/master/
+```
+
+[See the demo for an example.](https://jasongrimes.github.io/jekyll-chapterbook/)
 
 ## File organization
 
