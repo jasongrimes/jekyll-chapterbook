@@ -6,8 +6,11 @@
 
         {% if site.sidebar_nav_top %}
           {% for item in site.sidebar_nav_top %}
+            {% assign item_url = item.url %}
+            {% assign starts_with = item_url | slice: 0,4 %}
+            {% if starts_with != "http" %}{% assign item_url = item_url | prepend: site.baseurl %}{% endif %}
             <li class="chapter {% if item.url == page.url %}active{% endif %}">
-              <a href="{{site.baseurl}}{{item.url}}" class="">{{ item.label }}</a>
+              <a href="{{ item_url }}" class="">{{ item.label }}</a>
             </li>
           {% endfor %}
           <li class="divider"></li>
