@@ -67,7 +67,7 @@
           {% for item in site.sidebar_nav_bottom %}
             {% assign item_url = item.url %}
             {% assign starts_with = item_url | slice: 0,4 %}
-            {% if starts_with != "http" %}{% assign item_url = site.baseurl | prepend: item_url %}{% endif %}
+            {% if starts_with != "http" %}{% assign item_url = item_url | prepend: site.baseurl %}{% endif %}
             <li class="chapter {% if item.url == page.url %}active{% endif %}">
               <a href="{{item_url}}" class="">{{ item.label }}</a>
             </li>
