@@ -302,7 +302,7 @@ Parameters:
 ```
 {% endraw %}
 
-See [example table of contents](https://jasongrimes.github.io/jekyll-chapterbook/toc.html) 
+See an [example table of contents](https://jasongrimes.github.io/jekyll-chapterbook/toc.html) 
 and [draft outline](https://jasongrimes.github.io/jekyll-chapterbook/outline) in the demo.
 
 ### Figures
@@ -314,7 +314,7 @@ Parameters:
 - `caption`: An optional caption to render beneath the figure.
 - `class`: an optional `class` attribute to add to the the HTML `<figure>` tag.
 
-See [example figure](https://jasongrimes.github.io/jekyll-chapterbook/helpers.html#figures) 
+See an [example figure](https://jasongrimes.github.io/jekyll-chapterbook/helpers.html#figures) in the demo.
 
 ### Theme variables
 
@@ -328,6 +328,8 @@ Parameters:
 - `withnum`: For performance reasons, chapter and part numbers are not computed unless `withnum` is `true`. (To compute only chapter or only part numbers, set `withnum=part` or `withnum=chapter` instead.)
 - `inspect`: If true, render the variables to the page, for debugging.
 
+See [example chapter vars](https://jasongrimes.github.io/jekyll-chapterbook/variables.html) in the demo.
+
 ## Wide tables
 
 Tables can be created using normal [GitHub-flavored markdown](https://github.github.com/gfm/#tables-extension-). 
@@ -336,40 +338,19 @@ To prevent wide tables from breaking the book layout on mobile devices,
 wrap them in a `<div>` directly in the markdown file, 
 with `class="table-wrapper"` and the attribute `markdown="block"`.
 
-```html
-<div class="table-wrapper" markdown="block">
-
-| Semi-tones (frets) | Interval   | Note from C | Short scale degree name | Scale degree name | Frequency ratio (dissonance) |
-|:--:|:-------------------|:------:|:------:|:----------------------|:-----:|
-| 0  | unison (P1)        | C      | 1      | tonic, one            | 1:1   |
-| 1  | minor second (m2)  | C#/ Db | b2     | flat two              | 25:24 |
-| 2  | major second (M2)  | D      | 2      | two                   | 9:8   |
-
-</div>
-```
-
-...renders as:
-<div class="table-wrapper" markdown="block">
-
-| Semi-tones (frets) | Interval   | Note from C | Short scale degree name | Scale degree name | Frequency ratio (dissonance) |
-|:--:|:-------------------|:------:|:------:|:----------------------|:-----:|
-| 0  | unison (P1)        | C      | 1      | tonic, one            | 1:1   |
-| 1  | minor second (m2)  | C#/ Db | b2     | flat two              | 25:24 |
-| 2  | major second (M2)  | D      | 2      | two                   | 9:8   |
-
-</div>
+See an example of [mobile-friendly wide tables](https://jasongrimes.github.io/jekyll-chapterbook/wide-tables.html) in the demo.
 
 ## Extra CSS or javascript files
 
-You can add extra CSS or JavaScript references using configuration collections:
+You can add extra CSS or JavaScript references in `_config.yml`:
 
-- extra_css: for additional style sheets. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
-- extra_header_js: for additional scripts to be included in the `<head>` tag, after the `extra_css` has been added. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
-- extra_footer_js: for additional scripts to be included at the end of the HTML document, just before the site tracking script. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
+- `extra_css`: for additional style sheets. If the url does not start with http, the path must be relative to the root of the site, without a starting `/`.
+- `extra_header_js`: for additional scripts to be included in the `<head>` tag, after the `extra_css` has been added. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
+- `extra_footer_js`: for additional scripts to be included at the end of the HTML document, just before the site tracking script. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
 
 ## Customizing font settings
 
-The fonts can be customized by modifying the `.book.font-family-0` and `.book.font-family-1` entry in [`./assets/gitbook/custom.css`][10],
+The fonts can be customized by modifying the `.book.font-family-0` and `.book.font-family-1` entry in `./assets/gitbook/custom.css`.
 
 ```css
 .book.font-family-0 {
@@ -405,9 +386,10 @@ with a link to the references chapter:
 
 Use a "references" chapter in the book's end matter to list all of the complete citations,
 and receive inbound links from the in-text citations.
-
 In the front matter of the references page,
 set `class: references` so that the citations are formatted with hanging indents.
+
+See an ]example references list](https://jasongrimes.github.io/jekyll-chapterbook/references.html) in the demo.
 
 Include a link in each reference (like the ISBN search below), 
 and assign it an `id` attribute with `{:#my-id}` so the anchor links from in-text citations work.
