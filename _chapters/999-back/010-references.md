@@ -23,11 +23,20 @@ with a link to the references chapter:
 
 Use a "references" chapter in the book's end matter to list all of the complete citations,
 and receive inbound links from the in-text citations.
-In the front matter of the references page,
-set `class: references` so that the citations are formatted with hanging indents.
 
-Include a link in each reference (like the ISBN search below), 
-and assign it an `id` attribute with `{:#my-id}` so the anchor links from in-text citations work.
+To use a "hanging indent" citation style like APA,
+either set `class: references` in the front matter of the references page,
+wrap them in a div like this directly in the markdown:
+
+{% raw %}
+```html
+<div class="references" markdown="block">
+```
+{% endraw %}
+
+In order to make inbound anchor links from in-text citations work,
+we have to include a link in each reference (like the ISBN search below),
+and assign it an `id` attribute with `{:#my-id}`.
 
 {% raw %}
 ```
@@ -36,9 +45,9 @@ Berg, C. (1997). *Mastering Guitar Technique: Process and Essence (Classic Guita
 ```
 {% endraw %}
 
-## References
+...which renders as below.
 
-<div class="references" markdown="block">
+## References
 
 Berg, C. (1997). *Mastering Guitar Technique: Process and Essence (Classic Guitar).* Mel Bay Publications, Inc.
 [ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=9781610650588){:#berg-1997}
