@@ -269,7 +269,7 @@ ordered and grouped into parts as needed (and frequently reorganized).
 
 Then you can flesh out the chapters over time,
 and when ready,
-remove the `.draft` from the op file name so it appears in the book.
+remove the `.draft` from the file name so it appears in the book.
 
 See an [example draft chapter](https://jasongrimes.github.io/jekyll-chapterbook/draft.html)
 and an [example outline](https://jasongrimes.github.io/jekyll-chapterbook/outline.html).
