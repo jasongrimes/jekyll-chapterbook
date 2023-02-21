@@ -11,7 +11,7 @@ so it works natively with [GitHub Pages](https://pages.github.com/).
 This theme was originally based on Tao He’s clever and immensely helpful [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook) theme, 
 which in turn is based on an early theme of [GitBook](https://www.gitbook.com/).
 
-## Demo
+## Demos
 
 ### Demo on GitHub pages
 
