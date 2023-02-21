@@ -5,10 +5,10 @@ permalink: /
 ---
 
 This is a [Jekyll](https://jekyllrb.com/) theme based on [GitBook](https://www.gitbook.com/) that adds support for easily organizing pages into book chapters and parts.
-This theme doesn't rely on any plugins,
+It doesn't rely on any plugins,
 so it works with [GitHub Pages](https://pages.github.com/).
 
-It was originally based on Tao He’s clever and immensely helpful [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook) theme, 
+This theme was originally based on Tao He’s clever and immensely helpful [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook) theme, 
 which in turn is based on an early theme of [GitBook](https://www.gitbook.com/).
 
 ## Demo
@@ -36,9 +36,8 @@ It was created with the following objectives:
 
 ## Getting started
 
-Install this theme like any other Jekyll theme.
-See [the official guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll) for details.
-Use this theme for your site in one of the following ways:
+Install this theme [like any other Jekyll theme](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll).
+For example, you could:
 - [Fork this repository](https://github.com/jasongrimes/jekyll-chapterbook/fork) and add your markdown pages to the `_chapters` folder.
 - Use it as a remote theme in your [`_config.yml`](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml):
 
@@ -46,10 +45,8 @@ Use this theme for your site in one of the following ways:
 remote_theme: jasongrimes/jekyll-chapterbook
 ```
 
-### Deploy locally with Jekyll serve
-
-This theme can be run locally using Ruby. 
-See the GitHub documentation about [testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll).
+This theme can be [run locally using `jekyll serve`](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll), 
+like any other GitHub pages site. 
 
 ## File organization
 
@@ -304,39 +301,13 @@ including chapter abstracts (if any).
 Parameters:
 - `show_drafts`: If `true`, also show draft chapters. Useful for showing an "outline" view of the book.
 
-For example,
-to create a table of contents at the front of your book with the URL `/contents`,
-create a `_chapters/000-front/010-toc.md` page with contents like the following.
 
-```yaml
----
-title: Table of contents
-slug: contents
----
-
-This book is still a work in progress.
-The chapters currently available are listed below. 
-See the [outline](outline) to learn what else is planned. 
-
+{% raw %}
+```liquid
 {% include chapterbook-toc.html %}
 ```
+{% endraw %}
 
-To create an outline page,
-add a file like `/draft-outline.md` with contents like the following.
-
-```yaml
----
-title: Draft outline
-permalink: /outline
-layout: page
----
-
-An outline of the chapters planned for this book.
-Most of them  have yet to be written.
-Only the chapters with a checkmark appear in the contents and navigation. 
-
-{% include chapterbook-toc.html show_drafts=true %}
-```
 
 ### Figures
 
@@ -347,7 +318,17 @@ Parameters:
 - `caption`: An optional caption to render beneath the figure.
 - `class`: an optional `class` attribute to add to the the HTML `<figure>` tag.
 
-### Inspect chapterbook variables
+### Theme variables
+
+The `chapter-vars.html` helper sets a number of variables related to chapters and parts
+which can be accessed in markdown files or Liquid templates.
+It can also render the variables for inspection, for debugging.
+
+Parameters:
+- `id`: The `page.id` of the chapter page for which to set variables.
+- `slug`: The `page.slug` of the chapter page for which to set variables (ignored if `id` is passed).
+- `withnum`: For performance reasons, chapter and part numbers are not computed unless `withnum` is `true`. (To compute only chapter or only part numbers, set `withnum=part` or `withnum=chapter` instead.)
+- `inspect`: If true, render the variables to the page, for debugging.
 
 ## Wide tables
 
