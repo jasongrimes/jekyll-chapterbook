@@ -1,5 +1,5 @@
 ---
-title: Include helpers
+title: Helper includes
 slug: helpers
 abstract: Helper methods, of a sort, using Jekyll includes.
 ---
