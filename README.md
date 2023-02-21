@@ -85,7 +85,7 @@ though they are less common.
 - `class`: Optionally specify CSS class(es) to add to the `<div>` wrapping the page.
 
 Here's the [markdown for an example chapter](https://raw.githubusercontent.com/jasongrimes/jekyll-chapterbook/master/_chapters/010-getting-started.md)
-and here is [that example page rendered in the demo](https://jasongrimes.github.io/jekyll-chapterbook/getting-started.html).
+and here is that [example chapter rendered in the demo](https://jasongrimes.github.io/jekyll-chapterbook/getting-started.html).
 
 ### Internal links
 
