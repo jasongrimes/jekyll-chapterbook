@@ -6,7 +6,7 @@ abstract: A guide to quickly setting up your site with this theme.
 
 This is an example chapter page.
 
-[Learn more about getting started with this theme.]({{ site.baseurl }}#getting-started)
+[Learn more about getting started with this theme.]({{ site.baseurl }}/#getting-started)
 
 ---
 ```
