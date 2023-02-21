@@ -6,7 +6,8 @@ layout: default
 
 {% if page_chapter_is_draft %}
   <div class="markdown-section color-callout-light with-border" style="padding: 5px; padding-left: 10px; font-size: 16px; margin-bottom: 20px;">
-    This chapter is a <b>draft</b>.
+    This chapter is a
+    <b>draft</b>.
     <a href="{{site.baseurl}}/outline">See the outline.</a>
   </div>
 {% endif %}
@@ -14,21 +15,27 @@ layout: default
 {% if page_chapter %}
   {% unless page_part_unnumbered and page_chapter_num == nil %}
     <div class="header-chapter-num">
-      {% unless page_part_unnumbered %}
-        <span class="part-label">
-          Part {{ page_part_num }}:
-          {{ page_part_label }} -
-        </span>
-      {% endunless %}
-      {% if page_chapter_num %}
-        Chapter {{ page_chapter_num}}.
+      {% if page_part_folder %}
+        {% unless page_part_unnumbered %}
+          <span class="part-label">
+            Part {{ page_part_num }}:
+            {{ page_part_label }} -
+          </span>
+        {% endunless %}
       {% endif %}
-    </div><!-- .header-chapter-num -->
+      {% if page_chapter_num %}
+        Chapter {{ page_chapter_num }}.
+      {% endif %}
+    </div>
+    <!-- .header-chapter-num -->
   {% endunless %}
 {% endif %}
 
 {% if page.title %}
-  <h1 id="{{ page.id }}" data-level="1.1" class="no_toc">{{ page.title | escape }}</h1>
+  <h1
+    id="{{ page.id }}"
+    data-level="1.1"
+    class="no_toc">{{ page.title | escape }}</h1>
 {% endif %}
 
 <section class="normal markdown-section">
@@ -62,48 +69,52 @@ layout: default
   <div class="chapter-pager">
 
     {% if page_next_chapter %}
-    <a href="{{site.baseurl}}{{ page_next_chapter.url }}"
-       class="chapter-next {% unless page_prev_chapter %}pager-unique{% endunless %}"
-       aria-label="Next page: {{ page_next_chapter.title | escape }}"
-       data-level="1.1" data-path="{{site.baseurl}}{{ page_next_chapter.url }}">
-      <div class="pager-arrow">
-        <i class="fa fa-arrow-right"></i>
-      </div>
-      <div class="pager-labels">
-        <div class="part">
-          Next
-          {% if page_next_part_label %}- {{ page_next_part_label }}{% endif %}
-          {%- if page_next_chapter_num %}: Chapter {{ page_next_chapter_num}}.{% endif %}
+      <a
+        href="{{site.baseurl}}{{ page_next_chapter.url }}"
+        class="chapter-next {% unless page_prev_chapter %}pager-unique{% endunless %}"
+        aria-label="Next page: {{ page_next_chapter.title | escape }}"
+        data-level="1.1"
+        data-path="{{site.baseurl}}{{ page_next_chapter.url }}">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
         </div>
-        <div class="chapter-label">
-          {{ page_next_chapter.title | escape }}
+        <div class="pager-labels">
+          <div class="part">
+            Next
+            {% if page_next_part_label %}- {{ page_next_part_label }}{% endif %}
+            {%- if page_next_chapter_num %}: Chapter {{ page_next_chapter_num }}.{% endif %}
+          </div>
+          <div class="chapter-label">
+            {{ page_next_chapter.title | escape }}
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
     {% endif %}
 
     {% if page_prev_chapter %}
-    <a href="{{site.baseurl}}{{ page_prev_chapter.url }}"
-       class="chapter-prev {% unless page_next_chapter %}pager-unique{% endunless %}"
-       aria-label="Previous page: {{ page_prev_chapter.title | escape }}"
-       data-level="1.1" data-path="{{site.baseurl}}{{ page_prev_chapter.url }}">
-      <div class="pager-arrow">
-        <i class="fa fa-arrow-left"></i>
-      </div>
-      <div class="pager-labels">
-        <div class="part">
-          Previous
-          {% if page_prev_part_label %}- {{ page_prev_part_label }}{% endif %}
-          {%- if page_prev_chapter_num %}: Chapter {{ page_prev_chapter_num}}.{% endif %}
+      <a
+        href="{{site.baseurl}}{{ page_prev_chapter.url }}"
+        class="chapter-prev {% unless page_next_chapter %}pager-unique{% endunless %}"
+        aria-label="Previous page: {{ page_prev_chapter.title | escape }}"
+        data-level="1.1"
+        data-path="{{site.baseurl}}{{ page_prev_chapter.url }}">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
         </div>
-        <div class="chapter-label">
-          {{ page_prev_chapter.title | escape }}
+        <div class="pager-labels">
+          <div class="part">
+            Previous
+            {% if page_prev_part_label %}- {{ page_prev_part_label }}{% endif %}
+            {%- if page_prev_chapter_num %}: Chapter {{ page_prev_chapter_num }}.{% endif %}
+          </div>
+          <div class="chapter-label">
+            {{ page_prev_chapter.title | escape }}
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
     {% endif %}
 
     <div style="clear: both;"></div>
-  </div><!-- .chapter-pager -->
+  </div>
+  <!-- .chapter-pager -->
 {% endif %}
-
