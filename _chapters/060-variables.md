@@ -42,7 +42,19 @@ To inspect all the variables:
 
 {% include chapter-vars.html inspect="true" withnum="true" id=page.id %}
 
+To set variables for a different chapter,
+you can pass the chapter's `slug`,
+like this:
 
+{% raw %}
+```
+{% include chapter-vars.html withnum="true" slug="toc" inspect="true" %}
+```
+{% endraw %}
+
+...which renders this:
+
+{% include chapter-vars.html withnum="true" slug="toc" inspect="true" %}
 
 ---
 ```
