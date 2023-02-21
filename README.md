@@ -116,7 +116,7 @@ At the top right of every page,
 there's a link to edit that page on GitHub.
 This allows you to make quick edits while reviewing.
 Upon saving the edit form at GitHub,
-your Jekyll site can be automatically rebuilt and deployed.
+your GitHub Pages site can be automatically rebuilt and deployed.
 
 This even works reasonably well from a mobile device.
 The ability to review and edit from mobile is one of my favorite features of this theme.
