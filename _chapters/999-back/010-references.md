@@ -5,7 +5,7 @@ disable_toc: true
 class: references
 ---
 
-<div class="not-references">
+<div class="not-references" markdown="block">
 
 This is an example chapter for citing references. 
 
