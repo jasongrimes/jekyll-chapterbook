@@ -121,7 +121,7 @@ See an [example chapter link](https://jasongrimes.github.io/jekyll-chapterbook/h
 
 ### Configure GitHub edit links
 
-At the top right of every page,
+In the top navigation for every page,
 there's a link to edit that page on GitHub.
 This allows you to make quick edits while reviewing.
 Upon saving the edit form at GitHub,
