@@ -6,7 +6,7 @@ permalink: /
 
 This is a [Jekyll](https://jekyllrb.com/) theme based on [GitBook](https://www.gitbook.com/) that adds support for easily organizing pages into book chapters and parts.
 It doesn't rely on any plugins,
-so it works with [GitHub Pages](https://pages.github.com/).
+so it works natively with [GitHub Pages](https://pages.github.com/).
 
 This theme was originally based on Tao He’s clever and immensely helpful [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook) theme, 
 which in turn is based on an early theme of [GitBook](https://www.gitbook.com/).
