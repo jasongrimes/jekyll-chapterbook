@@ -8,38 +8,66 @@ email:            jason@grimesit.com
 description: >
   A Jekyll theme based on GitBook with support for chapters and parts.
 
+# A copyright notice will be shown at the bottom of each page,
+# with the current year and the author name.
+# Set a link_slug to link to a copyright page.
+# Set a start_year to have the copyright render as "start_year - current_year" (if the years are different)
+# Set copyright: false to disable.
+copyright:
+  start_year: 2023
+  link_slug: copyright
+
 # Customize the link favicon in header. Will be {{site.baseurl}}/{{site.favicon_path}}
-favicon_path:     /assets/gitbook/images/favicon.ico
+favicon_path: /assets/gitbook/images/favicon.ico
 
-# Markdown render engine.
-markdown:         kramdown
-kramdown:
-  auto_ids:               true
-  input:                  GFM
-  math_engine:            mathjax
-  smart_quotes:           lsquo,rsquo,ldquo,rdquo
-  toc_levels:             1..6
-  syntax_highlighter:     rouge
-  syntax_highlighter_opts:
-    guess_lang:           true
+#
+# Navigation menus
+#
 
-syntax_highlighter_style: colorful
+# Links shown above the TOC in the sidebar
+sidebar_nav_top:
+- label: About this theme
+  url: /
 
-markdown_ext:     markdown,mkdown,mkdn,mkd,md
+# Links shown below the TOC in the sidebar
+sidebar_nav_bottom:
+- label: Draft outline
+  url: /outline
 
-exclude:
-  - _drafts
+# Navigation shown at the bottom of the page
+bottom_nav:
+- label: Home
+  url: /
+- label: Contents
+  url: /toc
+- label: GitHub
+  url: https://github.com/jasongrimes/jekyll-chapterbook
 
-page_width: 800px
+# Whether to show chapter headings as a table of contents at the top of each chapter page.
+# Override in page front matter with disable_toc: true
+in_chapter_toc:
+  enabled: true
+  h_min: 2
+  h_max: 3
 
-destination:      ./_site
-incremental:      false
-regenerate:       true
+# Whether to show chapter heading sub-navigation beneath the active chapter in the sidebar.
+# Override in page front matter with disable_toc: true
+sidebar_toc:
+  enabled: false
+  h_min: 2
+  h_max: 3
 
-plugins:
-  - jekyll-feed
-  - jekyll-readme-index
-  - jemoji
+# 
+# End navigation menus
+#
+
+# Show a link to edit each page on GitHub
+github_edit:
+  enabled: true
+  base_url: https://github.com/jasongrimes/jekyll-chapterbook/edit/master/
+
+# Custom CSS
+extra_css:
 
 # Chapters can be hidden from navigation by adding ".draft" to the index at the start of their filename.
 # (For example, rename 010-introduction.md to 010.draft-introduction.md)
@@ -48,45 +76,23 @@ plugins:
 # set show_drafts_in_dev to true.
 show_drafts_in_dev: false
 
-# Override in page front matter with disable_toc: true
-sidebar_toc:
-  enabled: false
-  h_min: 2
-  h_max: 3
 
-# Override in page front matter with disable_toc: true
-in_chapter_toc:
-  enabled: true
-  h_min: 2
-  h_max: 3
 
-copyright:
-  start_year: 2022
-  link_slug: copyright
 
-bottom_nav:
-- label: Home
-  url: /
-- label: Contents
-  url: /toc
-- label: About
-  url: /about
-- label: Privacy
-  url: /privacy
 
-sidebar_nav_top:
-- label: About this site
-  url: /about
-- label: Draft outline
-  url: /outline
+exclude:
+  - _drafts
 
-sidebar_nav_bottom:
-- label: Privacy statement
-  url: /privacy
+page_width: 800px
 
-github_edit:
-  enabled: true
-  base_url: https://github.com/jasongrimes/jekyll-chapterbook/edit/master/
+destination: ./_site
+incremental: false
+regenerate: true
+
+plugins:
+#  - jekyll-feed
+  - jekyll-readme-index
+#  - jemoji
 
 collections:
   chapters:
@@ -103,4 +109,16 @@ defaults:
       layout: "chapter"
       permalink: /:slug:output_ext
 
-extra_css:
+# Markdown render engine.
+markdown:         kramdown
+kramdown:
+  auto_ids:               true
+  input:                  GFM
+  math_engine:            mathjax
+  smart_quotes:           lsquo,rsquo,ldquo,rdquo
+  toc_levels:             1..6
+  syntax_highlighter:     rouge
+  syntax_highlighter_opts:
+    guess_lang:           true
+syntax_highlighter_style: colorful
+markdown_ext:     markdown,mkdown,mkdn,mkd,md
