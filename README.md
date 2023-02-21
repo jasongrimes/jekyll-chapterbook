@@ -15,7 +15,7 @@ which in turn is based on an early theme of [GitBook](https://www.gitbook.com/).
 
 ### Demo on GitHub pages
 
-[jasongrimes.github.io/jekyll-chapterbook/](https://jasongrimes.github.io/jekyll-chapterbook/). 
+[jasongrimes.github.io/jekyll-chapterbook/](https://jasongrimes.github.io/jekyll-chapterbook/)
 
 Also see its 
 [GitHub repo](https://github.com/jasongrimes/jekyll-chapterbook).
