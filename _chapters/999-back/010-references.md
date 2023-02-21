@@ -2,7 +2,40 @@
 title: References
 slug: references
 class: references
+disable_toc: true
 ---
+
+This is an example chapter for citing references. 
+
+
+### Citations in text
+
+Here's an example citation to be included in a text, 
+with a link to the references chapter:
+
+```
+[(Berg, 1997)](references#berg-1997)
+```
+
+...which renders as [(Berg, 1997)](references#berg-1997).
+
+### Reference list
+
+Use a "references" chapter in the book's end matter to list all of the complete citations,
+and receive inbound links from the in-text citations.
+In the front matter of the references page,
+set `class: references` so that the citations are formatted with hanging indents.
+
+Include a link in each reference (like the ISBN search below), 
+and assign it an `id` attribute with `{:#my-id}` so the anchor links from in-text citations work.
+
+{% raw %}
+```
+Berg, C. (1997). *Mastering Guitar Technique: Process and Essence (Classic Guitar).* Mel Bay Publications, Inc.
+[ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=9781610650588){:#berg-1997}
+```
+{% endraw %}
+
 
 Berg, C. (1997). *Mastering Guitar Technique: Process and Essence (Classic Guitar).* Mel Bay Publications, Inc.
 [ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=9781610650588){:#berg-1997}

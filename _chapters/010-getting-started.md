@@ -4,16 +4,9 @@ slug: getting-started
 abstract: A guide to quickly setting up your site with this theme.
 ---
 
-## Install the theme
+This is an example chapter page.
 
-## Create some draft chapters
-
-## Linking to chapters and pages 
-
-## Including tables and figures
-
-## Adding book front and back matter
-
+[Learn more about getting started with this theme.](/#getting-started)
 
 ---
 ```

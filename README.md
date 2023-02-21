@@ -38,6 +38,8 @@ It was created with the following objectives:
 
 ## Getting started
 
+### Install the theme
+
 Install this theme [like any other Jekyll theme](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll).
 For example, you could:
 - [Fork this repository](https://github.com/jasongrimes/jekyll-chapterbook/fork) and add your markdown pages to the `_chapters` folder.
@@ -47,15 +49,66 @@ For example, you could:
 remote_theme: jasongrimes/jekyll-chapterbook
 ```
 
-This theme can be [run locally using `jekyll serve`](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll), 
-like any other GitHub pages site. 
+### Create some chapters
+
+Each chapter is written in its own [Jekyll page](https://jekyllrb.com/docs/pages/),
+and stored in the [`_chapters/`](https://github.com/jasongrimes/jekyll-chapterbook/tree/master/_chapters) directory.
+
+Name your chapters something like `010-my-chapter.md`, `020-my-next-chapter.md`, etc.
+(The numbers are used to list chapters in the desired order.
+More on that later.)
+
+Create chapters with the following front matter:
+
+```yaml
+---
+title: 
+slug:
+abstract:
+---
+```
+
+- `title`: The chapter name / page title.
+- `slug`: Used to create the chapter URL and for internal links. Must be unique.
+- `abstract`: (Optional.) Shown at the top of a chapter and in the full table of contents.
+
+Chapters also support these other front matter variables,
+though they are less common.
+
+- `published`: If `false`, the chapter will not be rendered and will not be included in the chapter numbering. 
+- `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
+- `class`: Optionally specify CSS class(es) to add to the `<div>` wrapping the page.
+
+### Internal links
+
+To link to another page in markdown, use the page's `slug`.
+
+{% raw %}
+```
+See the [table of contents](toc).
+```
+{% endraw %}
+...renders as:
+See the [table of contents](toc).
+
+To link to a chapter,
+using its chapter number and `title`,
+use the `chapter-link.html` helper:
+
+For example:
+```
+See {% include chapter-link.html slug="variables" %}.
+```
+
+See an [example chapter link](https://jasongrimes.github.io/jekyll-chapterbook/helpers#chapter-links) in the demo.
+
 
 ## File organization
 
 ### Chapter file names
 
 Each chapter is written in its own [Jekyll page](https://jekyllrb.com/docs/pages/),
-and stored in the `_chapters` directory.
+and stored in the [`_chapters/`](https://github.com/jasongrimes/jekyll-chapterbook/tree/master/_chapters) directory.
 
 The file name of a chapter is never shown in the book---chapters 
 are automatically numbered,
@@ -180,16 +233,6 @@ remove the `.draft` from the file name so it appears in the book.
 See an [example draft chapter](https://jasongrimes.github.io/jekyll-chapterbook/draft.html).
 
 
-## Chapter front matter variables
-
-This theme uses the following front matter variables in chapter pages.
-
-- `title`: The chapter name / page title.
-- `slug`: Used to create the chapter URL and for internal links.
-- `abstract`: Shown at the top of a chapter and in the full table of contents.
-- `published`: If `false`, the chapter will not be rendered and will not be included in the chapter numbering. 
-- `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
-- `class`: Optionally specify CSS class(es) to add to the `<div>` wrapping the page.
 
 ## Non-book pages
 
@@ -272,6 +315,8 @@ But it _can_ do any logic and data manipulation supported by the template langua
 So this theme makes extensive use of Liquid templates to act as "helpers",
 by including them in a page and passing them parameters using Jekyll's standard [`include`](https://jekyllrb.com/docs/includes/) tag.
 
+See [helpers in the demo](https://jasongrimes.github.io/jekyll-chapterbook/helpers.html) for details.
+
 ### Chapter links
 
 The `chapter-link.html` helper renders a link to the chapter with the specified `slug`,
@@ -303,6 +348,8 @@ Parameters:
 ```
 {% endraw %}
 
+See an [example table of contents](https://jasongrimes.github.io/jekyll-chapterbook/toc.html) 
+and [draft outline](https://jasongrimes.github.io/jekyll-chapterbook/outline) in the demo.
 
 ### Figures
 
@@ -312,6 +359,8 @@ Parameters:
 - `url`: The relative URL to the image (appended to `site.baseurl`).
 - `caption`: An optional caption to render beneath the figure.
 - `class`: an optional `class` attribute to add to the the HTML `<figure>` tag.
+
+See an [example figure](https://jasongrimes.github.io/jekyll-chapterbook/helpers.html#figures) in the demo.
 
 ### Theme variables
 
@@ -325,6 +374,8 @@ Parameters:
 - `withnum`: For performance reasons, chapter and part numbers are not computed unless `withnum` is `true`. (To compute only chapter or only part numbers, set `withnum=part` or `withnum=chapter` instead.)
 - `inspect`: If true, render the variables to the page, for debugging.
 
+See [example chapter vars](https://jasongrimes.github.io/jekyll-chapterbook/variables.html) in the demo.
+
 ## Wide tables
 
 Tables can be created using normal [GitHub-flavored markdown](https://github.github.com/gfm/#tables-extension-). 
@@ -333,40 +384,19 @@ To prevent wide tables from breaking the book layout on mobile devices,
 wrap them in a `<div>` directly in the markdown file, 
 with `class="table-wrapper"` and the attribute `markdown="block"`.
 
-```html
-<div class="table-wrapper" markdown="block">
-
-| Semi-tones (frets) | Interval   | Note from C | Short scale degree name | Scale degree name | Frequency ratio (dissonance) |
-|:--:|:-------------------|:------:|:------:|:----------------------|:-----:|
-| 0  | unison (P1)        | C      | 1      | tonic, one            | 1:1   |
-| 1  | minor second (m2)  | C#/ Db | b2     | flat two              | 25:24 |
-| 2  | major second (M2)  | D      | 2      | two                   | 9:8   |
-
-</div>
-```
-
-...renders as:
-<div class="table-wrapper" markdown="block">
-
-| Semi-tones (frets) | Interval   | Note from C | Short scale degree name | Scale degree name | Frequency ratio (dissonance) |
-|:--:|:-------------------|:------:|:------:|:----------------------|:-----:|
-| 0  | unison (P1)        | C      | 1      | tonic, one            | 1:1   |
-| 1  | minor second (m2)  | C#/ Db | b2     | flat two              | 25:24 |
-| 2  | major second (M2)  | D      | 2      | two                   | 9:8   |
-
-</div>
+See an example of [mobile-friendly wide tables](https://jasongrimes.github.io/jekyll-chapterbook/wide-tables.html) in the demo.
 
 ## Extra CSS or javascript files
 
-You can add extra CSS or JavaScript references using configuration collections:
+You can add extra CSS or JavaScript references in `_config.yml`:
 
-- extra_css: for additional style sheets. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
-- extra_header_js: for additional scripts to be included in the `<head>` tag, after the `extra_css` has been added. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
-- extra_footer_js: for additional scripts to be included at the end of the HTML document, just before the site tracking script. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
+- `extra_css`: for additional style sheets. If the url does not start with http, the path must be relative to the root of the site, without a starting `/`.
+- `extra_header_js`: for additional scripts to be included in the `<head>` tag, after the `extra_css` has been added. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
+- `extra_footer_js`: for additional scripts to be included at the end of the HTML document, just before the site tracking script. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
 
 ## Customizing font settings
 
-The fonts can be customized by modifying the `.book.font-family-0` and `.book.font-family-1` entry in [`./assets/gitbook/custom.css`][10],
+The fonts can be customized by modifying the `.book.font-family-0` and `.book.font-family-1` entry in `./assets/gitbook/custom.css`.
 
 ```css
 .book.font-family-0 {
@@ -382,48 +412,10 @@ The fonts can be customized by modifying the `.book.font-family-0` and `.book.fo
 If you want to include citations and references in your book,
 here are a few tips.
 
-### Citation generator
-
 Use the [Scribbr citation generator](https://www.scribbr.com/citation/generator/) to generate citations in your desired style.
 (The following examples use APA style.)
 
-### Citations in text
-
-Here's an example citation to be included in a text, 
-with a link to the references chapter:
-
-```
-[(Vincent, 2011)](references#vincent-2011)
-```
-
-...which renders as: [(Vincent, 2011)](references#vincent-2011)
-
-### Reference list
-
-Use a "references" chapter in the book's end matter to list all of the complete citations,
-and receive inbound links from the in-text citations.
-
-In the front matter of the references page,
-set `class: references` so that the citations are formatted with hanging indents.
-
-Include a link in each reference (like the ISBN search below), 
-and assign it an `id` attribute with `{:#my-id}` so the anchor links from in-text citations work.
-
-```
-Vincent, R. (2011). *Three-Note Voicings and Beyond.* Sher Music Co.
-[ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=1-883217-66-0){:#vincent-2011}
-```
-
-...renders as:
-
-Vincent, R. (2011). *Three-Note Voicings and Beyond.* Sher Music Co.
-[ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=1-883217-66-0)
-
-## Configuration
-
-This theme uses the following settings in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
-
-
+See [example citations and references list](https://jasongrimes.github.io/jekyll-chapterbook/references.html) in the demo.
 
 ## License
 
