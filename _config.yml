@@ -15,7 +15,7 @@ description: >
 # Set copyright: false to disable.
 copyright:
   start_year: 2023
-  link_slug: copyright
+  link_slug: 
 
 # Customize the link favicon in header. Will be {{site.baseurl}}/{{site.favicon_path}}
 favicon_path: /assets/gitbook/images/favicon.ico
