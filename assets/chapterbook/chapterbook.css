@@ -551,3 +551,9 @@ figure.row.of-4 {
 table.inspect-chapter-iterate-vars {
     display: flex;
 }
+table.inspect-chapter-iterate-vars th { text-align: right; }
+
+table.inspect-chapter-iterate-vars th.divider { 
+    text-align: center; 
+    text-transform: uppercase;
+}
