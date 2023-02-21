@@ -18,9 +18,11 @@ To set variables for the current chapter:
 
 {% raw %}
 ```
-{% include chapter-vars.html withnum="true" id=page.id %}
+{% include chapter-vars.html id=page.id withnum="true" %}
 ```
 {% endraw %}
+
+{% include chapter-vars.html id=page.id withnum="true" %}
 
 Then access them like this: 
 
@@ -30,17 +32,21 @@ Chapter number: {{ chapter_num }}
 ```
 {% endraw %}
 
-To inspect all the variables:
+...which renders:
+Chapter number: {{ chapter_num }}
+
+To inspect all the variables, 
+for debugging:
 
 {% raw %}
 ```
-{% include chapter-vars.html inspect="true" withnum="true" id=page.id %}
+{% include chapter-vars.html id=page.id inspect="true" withnum="true" %}
 ```
 {% endraw %}
 
 ...which renders this:
 
-{% include chapter-vars.html inspect="true" withnum="true" id=page.id %}
+{% include chapter-vars.html id=page.id inspect="true" withnum="true" %}
 
 To set variables for a different chapter,
 you can pass the chapter's `slug`,
@@ -48,13 +54,14 @@ like this:
 
 {% raw %}
 ```
-{% include chapter-vars.html withnum="true" slug="toc" inspect="true" %}
+{% include chapter-vars.html slug="toc" withnum="true" inspect="true" %}
 ```
 {% endraw %}
 
 ...which renders this:
 
-{% include chapter-vars.html withnum="true" slug="toc" inspect="true" %}
+{% include chapter-vars.html slug="toc" withnum="true" inspect="true" %}
+
 
 ---
 ```
