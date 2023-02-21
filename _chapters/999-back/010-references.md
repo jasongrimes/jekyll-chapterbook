@@ -26,7 +26,7 @@ and receive inbound links from the in-text citations.
 
 To use a "hanging indent" citation style like APA,
 either set `class: references` in the front matter of the references page,
-wrap them in a div like this directly in the markdown:
+or wrap them in a div like this directly in the markdown:
 
 {% raw %}
 ```html
