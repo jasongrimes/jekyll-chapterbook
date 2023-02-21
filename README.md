@@ -13,13 +13,18 @@ which in turn is based on an early theme of [GitBook](https://www.gitbook.com/).
 
 ## Demo
 
-See a live demo of this theme on GitHub pages:
+### Demo on GitHub pages
+
 [jasongrimes.github.io/jekyll-chapterbook/](https://jasongrimes.github.io/jekyll-chapterbook/). 
+
 Also see its 
 [GitHub repo](https://github.com/jasongrimes/jekyll-chapterbook).
 
+### Example live site
+
 A live site with a more complex configuration can be seen at 
 [fretboardfoundation.com](https://fretboardfoundation.com).
+
 Also see its 
 [GitHub repo](https://github.com/jasongrimes/fretboardfoundation).
 
@@ -241,6 +246,9 @@ The above would render as something like this:
   - Chapter 3: Under the overview
   - Chapter 4: Not blah, I retort
 - References
+
+See a live site with multiple parts and front and back matter at
+
 
 ### Drafts
 
