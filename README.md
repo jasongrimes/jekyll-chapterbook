@@ -84,11 +84,15 @@ though they are less common.
 - `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
 - `class`: Optionally specify CSS class(es) to add to the `<div>` wrapping the page.
 
+Here's the [markdown for an example chapter](https://raw.githubusercontent.com/jasongrimes/jekyll-chapterbook/master/_chapters/010-getting-started.md)
+and here is [that example page rendered in the demo](https://jasongrimes.github.io/jekyll-chapterbook/getting-started.html).
+
 ### Internal links
 
-To link to another page in markdown, 
+To help ensure internal links don't break in different environments,
+when linking to another page in markdown, 
 use the page's `slug` or `permalink`. 
-For example, to link to a page with `slug: toc`:
+For example, to link to a page with `slug:toc`:
 
 {% raw %}
 ```
