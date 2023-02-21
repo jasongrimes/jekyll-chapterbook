@@ -248,9 +248,10 @@ The above would render as something like this:
 - References
 
 See a live site with multiple parts and front and back matter at
+[fretboardfoundation.com/toc](https://fretboardfoundation.com/toc)
+and its [_chapters/](https://github.com/jasongrimes/fretboardfoundation/tree/main/_chapters) directory.
 
-
-### Drafts
+### Drafts and outlines
 
 A chapter can be marked as a "draft" by renaming the file and adding `.draft` to the numeric prefix, like this:
 
@@ -261,18 +262,17 @@ and they are not included in the chapter numberings.
 (To see in your dev environment how all the drafts _would_ be numbered if they weren't drafts,
 set `show_drafts_in_dev: true` in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).)
 
-But drafts _are_ listed in the book outline.
+But drafts _are_ listed in the book "outline".
 This enables a workflow in which you start with an outline of your book,
 made with empty draft chapters having just a `title` and maybe an `abstract`,
 ordered and grouped into parts as needed (and frequently reorganized).
 
 Then you can flesh out the chapters over time,
 and when ready,
-remove the `.draft` from the file name so it appears in the book.
+remove the `.draft` from the op file name so it appears in the book.
 
-See an [example draft chapter](https://jasongrimes.github.io/jekyll-chapterbook/draft.html).
-
-
+See an [example draft chapter](https://jasongrimes.github.io/jekyll-chapterbook/draft.html)
+and an [example outline](https://jasongrimes.github.io/jekyll-chapterbook/outline.html).
 
 ## Non-book pages
 
