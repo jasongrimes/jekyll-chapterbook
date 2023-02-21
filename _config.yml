@@ -40,10 +40,8 @@ sidebar_nav_bottom:
 bottom_nav:
 - label: Home
   url: /
-- label: Contents
+- label: Table of Contents
   url: /toc
-- label: Privacy
-  url: /privacy
 - label: GitHub
   url: https://github.com/jasongrimes/jekyll-chapterbook
 
