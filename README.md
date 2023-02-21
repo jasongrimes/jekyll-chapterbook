@@ -351,9 +351,11 @@ The `chapter-link.html` helper renders a link to the chapter with the specified 
 using its current title and chapter number.
 
 For example:
+{% raw %}
 ```
 See {% include chapter-link.html slug="harmony-intro" %}.
 ```
+{% endraw %}
 
 Parameters:
 - `slug`: Required. The `slug` of the chapter to link to.
