@@ -2,10 +2,8 @@
 title: References
 slug: references
 disable_toc: true
-class: references
+#class: references
 ---
-
-<div class="not-references" markdown="block">
 
 This is an example chapter for citing references. 
 
@@ -38,9 +36,9 @@ Berg, C. (1997). *Mastering Guitar Technique: Process and Essence (Classic Guita
 ```
 {% endraw %}
 
-</div>
-
 ## References
+
+<div class="references" markdown="block">
 
 Berg, C. (1997). *Mastering Guitar Technique: Process and Essence (Classic Guitar).* Mel Bay Publications, Inc.
 [ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=9781610650588){:#berg-1997}
@@ -60,6 +58,7 @@ Tagg, P. (2018). *Everyday Tonality II (towards a tonal theory of what most peop
 Vincent, R. (2011). *Three-Note Voicings and Beyond.* Sher Music Co.
 [ISBN search](https://en.wikipedia.org/wiki/Special:BookSources?isbn=1-883217-66-0){:#vincent-2011}
 
+</div>
 
 ---
 ```
