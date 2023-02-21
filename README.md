@@ -13,8 +13,10 @@ which in turn is based on an early theme of [GitBook](https://www.gitbook.com/).
 
 ## Demo
 
-A live site that uses this theme can be seen at [fretboardfoundation.com](https://fretboardfoundation.com)
-([GitHub repo](https://github.com/jasongrimes/fretboardfoundation)).
+A demo of this theme can be seen at [jasongrimes.github.io/jekyll-chapterbook/](https://jasongrimes.github.io/jekyll-chapterbook/). Also see the [GitHub repo](https://github.com/jasongrimes/jekyll-chapterbook).
+
+A live site with a more complex configuration can be seen at [fretboardfoundation.com](https://fretboardfoundation.com).
+Also see the [GitHub repo](https://github.com/jasongrimes/fretboardfoundation).
 
 ## Why this theme
 
@@ -173,7 +175,9 @@ ordered and grouped into parts as needed (and frequently reorganized).
 
 Then you can flesh out the chapters over time,
 and when ready,
-remove the `.draft` from the file name so it appears in the book.  
+remove the `.draft` from the file name so it appears in the book.
+
+See an [example draft chapter](https://jasongrimes.github.io/jekyll-chapterbook/draft.html).
 
 
 ## Chapter front matter variables
@@ -202,7 +206,9 @@ permalink: /about
 layout: page
 ```
 
-Then manually add links to your page using the permalink. 
+Then manually add links to your page using the permalink.
+
+Here's an [example of a non-book page](https://jasongrimes.github.io/jekyll-chapterbook/privacy.html).
 
 ## Home page
 
@@ -231,8 +237,6 @@ define them in `sidebar_nav_top` in [_config.yml](https://github.com/jasongrimes
 sidebar_nav_top:
 - label: About this site
   url: /about
-- label: Draft outline
-  url: /outline
 ```
 
 To show additional links at the bottom of the sidebar,
@@ -268,30 +272,21 @@ But it _can_ do any logic and data manipulation supported by the template langua
 So this theme makes extensive use of Liquid templates to act as "helpers",
 by including them in a page and passing them parameters using Jekyll's standard [`include`](https://jekyllrb.com/docs/includes/) tag.
 
-For example,
-to link to a chapter with its current `title` and chapter number,
-include the `chapter-link.html` helper in your markdown page,
-and pass it the `slug` of the chapter to link to.
-
-```markdown
-For more information,
-see {% include chapter-link.html slug="harmony-intro" %}.
-```
-
 ### Chapter links
 
 The `chapter-link.html` helper renders a link to the chapter with the specified `slug`,
 using its current title and chapter number.
 
+For example:
 ```
 See {% include chapter-link.html slug="harmony-intro" %}.
 ```
 
-...renders as: See [Chapter 6: Introduction to Western Harmony](/harmony-intro).
-
 Parameters:
 - `slug`: Required. The `slug` of the chapter to link to.
 - `anchor`: An optional anchor tag to append to the chapter link.
+
+See an [example chapter link](https://jasongrimes.github.io/jekyll-chapterbook/helpers#chapter-links).
 
 ### Tables of contents
 

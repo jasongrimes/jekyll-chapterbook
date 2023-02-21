@@ -31,8 +31,10 @@ sidebar_nav_top:
 
 # Links shown below the TOC in the sidebar
 sidebar_nav_bottom:
-- label: Draft outline
+- label: Example book - draft outline
   url: /outline
+- label: Fork at GitHub
+  url: https://github.com/jasongrimes/jekyll-chapterbook/fork
 
 # Navigation shown at the bottom of the page
 bottom_nav:
@@ -40,6 +42,8 @@ bottom_nav:
   url: /
 - label: Contents
   url: /toc
+- label: Privacy
+  url: /privacy
 - label: GitHub
   url: https://github.com/jasongrimes/jekyll-chapterbook
 
