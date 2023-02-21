@@ -400,7 +400,8 @@ See an [example figure](https://jasongrimes.github.io/jekyll-chapterbook/helpers
 
 The `chapter-vars.html` helper sets a number of variables related to chapters and parts
 which can be accessed in markdown files or Liquid templates.
-It can also render the variables for inspection, for debugging.
+It can also render the variables for inspection, 
+to help with debugging.
 
 Parameters:
 - `id`: The `page.id` of the chapter page for which to set variables.
