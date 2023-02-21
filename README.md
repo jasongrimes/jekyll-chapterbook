@@ -93,7 +93,7 @@ See the [table of contents](toc).
 {% endraw %}
 
 To insert a link to a chapter,
-labeled with the chapter `title` and chapter number. 
+labeled with the chapter `title` and chapter number,
 use the `chapter-link.html` helper:
 
 For example:
