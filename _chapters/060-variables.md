@@ -4,8 +4,8 @@ slug: variables
 abstract: This theme makes a number of variables related to chapters and parts available to markdown files and Liquid templates.
 ---
 
-The `chapter-vars.html` helper sets a number of variables related to chapters and parts
-which can be accessed in markdown files or Liquid templates.
+The `chapter-vars.html` helper sets a number of variables for this theme,
+which can be accessed in markdown files and Liquid templates.
 It can also render the variables for inspection.
 
 Parameters:
