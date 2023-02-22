@@ -28,12 +28,12 @@ Then access them like this:
 
 {% raw %}
 ```
-Chapter number: {{ chapter_num }}
+Chapter number: **{{ chapter_num }}**
 ```
 {% endraw %}
 
 ...which renders:
-Chapter number: {{ chapter_num }}
+Chapter number: **{{ chapter_num }}**
 
 To inspect all the variables, 
 for debugging:
