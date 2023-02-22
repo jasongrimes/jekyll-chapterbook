@@ -28,7 +28,7 @@ Then access them like this:
 
 {% raw %}
 ```
-Chapter number: **{{ chapter_num }}**
+**Chapter number:** {{ chapter_num }}
 ```
 {% endraw %}
 
