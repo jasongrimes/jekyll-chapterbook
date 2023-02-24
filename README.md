@@ -54,7 +54,7 @@ Install this theme [like any other Jekyll theme](https://docs.github.com/en/page
 For example, you could:
 - [Fork this repository](https://github.com/jasongrimes/jekyll-chapterbook/fork) and add your markdown pages to the `_chapters` folder.
 - Use it as a remote theme in your `_config.yml`,
-and then copy in the configuration from  [`jekyll-chapterbook/_config.yml`](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml):
+and then copy in the configuration from  [`jekyll-chapterbook/_config.yml`](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
 
 ```yaml
 remote_theme: jasongrimes/jekyll-chapterbook
