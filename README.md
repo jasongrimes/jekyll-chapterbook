@@ -93,6 +93,27 @@ though they are less common.
 Here's the [markdown for an example chapter](https://raw.githubusercontent.com/jasongrimes/jekyll-chapterbook/master/_chapters/010-getting-started.md)
 and here is that [example chapter rendered in the demo](https://jasongrimes.github.io/jekyll-chapterbook/getting-started.html).
 
+### Configure GitHub edit links
+
+In the top navigation for every page,
+there's a link to edit that page on GitHub.
+This allows you to make quick edits while reviewing.
+Upon saving the edit form at GitHub,
+your GitHub Pages site can be automatically rebuilt and deployed.
+
+This even works reasonably well from a mobile device.
+The ability to review and edit from mobile is one of my favorite features of this theme.
+
+Configure the GitHub link to your own project in `github_edit` in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
+
+```yaml
+github_edit:
+  enabled: true
+  base_url: https://github.com/jasongrimes/jekyll-chapterbook/edit/master/
+```
+
+[See the demo for an example.](https://jasongrimes.github.io/jekyll-chapterbook/)
+
 ### Internal links
 
 To help ensure internal links don't break in different environments,
@@ -119,27 +140,6 @@ See {% include chapter-link.html slug="variables" %}.
 {% endraw %}
 
 See an [example chapter link](https://jasongrimes.github.io/jekyll-chapterbook/helpers#chapter-links) in the demo.
-
-### Configure GitHub edit links
-
-In the top navigation for every page,
-there's a link to edit that page on GitHub.
-This allows you to make quick edits while reviewing.
-Upon saving the edit form at GitHub,
-your GitHub Pages site can be automatically rebuilt and deployed.
-
-This even works reasonably well from a mobile device.
-The ability to review and edit from mobile is one of my favorite features of this theme.
-
-Configure the GitHub link to your own project in `github_edit` in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
-
-```yaml
-github_edit:
-  enabled: true
-  base_url: https://github.com/jasongrimes/jekyll-chapterbook/edit/master/
-```
-
-[See the demo for an example.](https://jasongrimes.github.io/jekyll-chapterbook/)
 
 ## File organization
 
