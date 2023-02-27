@@ -430,6 +430,10 @@ with `class="table-wrapper"` and the attribute `markdown="block"`.
 
 See an example of [mobile-friendly wide tables](https://jasongrimes.github.io/jekyll-chapterbook/wide-tables.html) in the demo.
 
+## References and citations
+
+See [example citations and references list](https://jasongrimes.github.io/jekyll-chapterbook/references.html) in the demo.
+
 ## Extra CSS or javascript files
 
 You can add extra CSS or JavaScript references in `_config.yml`:
@@ -451,15 +455,6 @@ The fonts can be customized by modifying the `.book.font-family-0` and `.book.fo
 }
 ```
 
-## References and citations
-
-If you want to include citations and references in your book,
-here are a few tips.
-
-Use the [Scribbr citation generator](https://www.scribbr.com/citation/generator/) to generate citations in your desired style.
-(The following examples use APA style.)
-
-See [example citations and references list](https://jasongrimes.github.io/jekyll-chapterbook/references.html) in the demo.
 
 ## License
 
