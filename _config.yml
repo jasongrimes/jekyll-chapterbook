@@ -10,12 +10,12 @@ description: >
 
 # A copyright notice will be shown at the bottom of each page,
 # with the current year and the author name.
-# Set a link_slug to link to a copyright page.
+# Set a url to link to a copyright page.
 # Set a start_year to have the copyright render as "start_year - current_year" (if the years are different)
 # Set copyright: false to disable.
 copyright:
   start_year: 2023
-  link_slug: 
+  url: 
 
 # Customize the link favicon in header. Will be {{site.baseurl}}/{{site.favicon_path}}
 favicon_path: assets/gitbook/images/favicon.ico
