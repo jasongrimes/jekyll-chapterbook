@@ -5,20 +5,22 @@
 
     {%- include head.html -%}
 
-    {% if page_prev_chapter %}
-      <link rel="prev" href="{{site.baseurl}}{{page_prev_chapter.url}}" />
-    {% else %}
-      <link rel="prev" href="{{site.baseurl}}/" />
-    {% endif %}
+    {% if page.collection == "chapters" %}
+      {% if page_prev_chapter %}
+        {{ page_prev_chapter }}
+        <link rel="prev" href="{{site.baseurl}}{{page_prev_chapter.url}}" />
+      {% else %}
+        <link rel="prev" href="{{site.baseurl}}/index.html" />
+      {% endif %}
 
-    {% if page_next_chapter %}
-      <link rel="next" href="{{site.baseurl}}{{page_next_chapter.url}}" />
+      {% if page_next_chapter %}
+        <link rel="next" href="{{site.baseurl}}{{page_next_chapter.url}}" />
+      {% endif %}
     {% endif %}
 
   </head>
   <body>
     <div class="book">
-
       {{ chapter-nav }}
 
       <div class="book-body">
@@ -33,7 +35,7 @@
             </a>
           {% endif %}
           <h1>
-            <a href="{{site.baseurl}}/">{{ site.title | escape }}</a>
+            <a href="{{site.baseurl}}/index.html">{{ site.title | escape }}</a>
           </h1>
         </div>
         <!-- .book-header -->

@@ -16,10 +16,10 @@ Here's an example citation to be included in a text,
 with a link to the references chapter:
 
 ```
-[(Berg, 1997)](references#berg-1997)
+[(Berg, 1997)](references.html#berg-1997)
 ```
 
-...which renders as [(Berg, 1997)](references#berg-1997).
+...which renders as [(Berg, 1997)](references.html#berg-1997).
 
 ### Reference list
 

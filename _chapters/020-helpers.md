@@ -38,14 +38,14 @@ Parameters:
 - `show_drafts`: If `true`, also show draft chapters. Useful for showing an "outline" view of the book.
 
 
-See example [Table of Contents](toc), rendered with:
+See example [Table of Contents](toc.html), rendered with:
 {% raw %}
 ```liquid
 {% include chapterbook-toc.html %}
 ```
 {% endraw %}
 
-See example [draft outline](outline), rendered with:
+See example [draft outline](outline.html), rendered with:
 {% raw %}
 ```liquid
 {% include chapterbook-toc.html show_drafts=true %}

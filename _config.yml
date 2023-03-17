@@ -18,7 +18,7 @@ copyright:
   link_slug: 
 
 # Customize the link favicon in header. Will be {{site.baseurl}}/{{site.favicon_path}}
-favicon_path: /assets/gitbook/images/favicon.ico
+favicon_path: assets/gitbook/images/favicon.ico
 
 #
 # Navigation menus
@@ -27,23 +27,23 @@ favicon_path: /assets/gitbook/images/favicon.ico
 # Links shown above the TOC in the sidebar
 sidebar_nav_top:
 - label: About this theme
-  url: /
+  url: /index.html
 
 # Links shown below the TOC in the sidebar
 sidebar_nav_bottom:
 - label: Example book - draft outline
-  url: /outline
+  url: /outline.html
 - label: Fork at GitHub
   url: https://github.com/jasongrimes/jekyll-chapterbook/fork
 
 # Navigation shown at the bottom of the page
 bottom_nav:
 - label: Home
-  url: /
+  url: /index.html
 - label: Table of Contents
-  url: /toc
+  url: /toc.html
 - label: Privacy
-  url: /privacy
+  url: /privacy.html
 - label: GitHub
   url: https://github.com/jasongrimes/jekyll-chapterbook
 
@@ -86,6 +86,7 @@ show_drafts_in_dev: false
 
 exclude:
   - _drafts
+  - tmp
 
 page_width: 800px
 

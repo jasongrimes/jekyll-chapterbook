@@ -116,14 +116,15 @@ github_edit:
 
 ### Internal links
 
-To help ensure internal links don't break in different environments,
-when linking to another page in markdown, 
-use the page's `slug` or `permalink`. 
+To help ensure internal links don't break in different environments and support offline browsing,
+links to other pages in markdown
+should use the page's `slug` or `permalink` 
+and **include the .html extension**. 
 For example, to link to a page with `slug:toc`:
 
 {% raw %}
 ```
-See the [table of contents](toc).
+See the [table of contents](toc.html).
 ```
 {% endraw %}
 
@@ -139,7 +140,7 @@ See {% include chapter-link.html slug="variables" %}.
 ```
 {% endraw %}
 
-See an [example chapter link](https://jasongrimes.github.io/jekyll-chapterbook/helpers#chapter-links) in the demo.
+See an [example chapter link](https://jasongrimes.github.io/jekyll-chapterbook/helpers.html#chapter-links) in the demo.
 
 ## File organization
 
