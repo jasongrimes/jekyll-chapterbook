@@ -7,7 +7,6 @@
 
     {% if page.collection == "chapters" %}
       {% if page_prev_chapter %}
-        {{ page_prev_chapter }}
         <link rel="prev" href="{{site.baseurl}}{{page_prev_chapter.url}}" />
       {% else %}
         <link rel="prev" href="{{site.baseurl}}/index.html" />
