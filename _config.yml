@@ -104,6 +104,8 @@ collections:
     output: true
   pages:
     output: true
+    permalink: /:slug:output_ext
+
 
 defaults:
   -

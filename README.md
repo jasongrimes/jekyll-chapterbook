@@ -118,7 +118,7 @@ github_edit:
 
 To help ensure internal links don't break in different environments and support offline browsing,
 links to other pages in markdown
-should use the page's `slug` or `permalink` 
+should use the page's `slug` 
 and **include the .html extension**. 
 For example, to link to a page with `slug:toc`:
 
@@ -281,23 +281,23 @@ and an [example outline](https://jasongrimes.github.io/jekyll-chapterbook/outlin
 Your site will probably have other pages besides the contents of your book
 (like an about page, a home page, etc.).
 
-Create these like a regular Jekyll page and store them in the project root directory.
+Create these like a regular Jekyll page and store them in the `_pages` directory.
 In the page front matter,
-set `layout: page` and make sure to set the `title` and `permalink`.
+set `layout: page` and make sure to set the `title` and `slug`.
 
 ```yaml
 title: About this site
-permalink: /about
+slug: about
 layout: page
 ```
 
-Then manually add links to your page using the permalink.
+Then manually add links to the page using the slug.
 
 Here's an [example of a non-book page](https://jasongrimes.github.io/jekyll-chapterbook/privacy.html).
 
 ## Home page
 
-Create your site's home page at `/index.md`,
+Create your site's home page at `_pages/index.md`,
 and use `layout: home`.
 
 ```yaml
@@ -308,7 +308,7 @@ subtitle: Practical building-blocks for intermediate guitarists.
 ---
 ```
 
-If there is no `/index.md`,
+If there is no `_pages/index.md`,
 the `/README.md` will be used instead.
 
 ## Navigation
@@ -321,7 +321,7 @@ define them in `sidebar_nav_top` in [_config.yml](https://github.com/jasongrimes
 ```yaml
 sidebar_nav_top:
 - label: About this site
-  url: /about
+  url: /about.html
 ```
 
 To show additional links at the bottom of the sidebar,
@@ -330,7 +330,7 @@ define them in `sidebar_nav_bottom` in [_config.yml](https://github.com/jasongri
 ```yaml
 sidebar_nav_bottom:
 - label: Privacy statement
-  url: /privacy
+  url: /privacy.html
 ```
 
 To change the links shown at the bottom of every page,
@@ -339,13 +339,13 @@ define them in `bottom_nav` in [_config.yml](https://github.com/jasongrimes/jeky
 ```yaml
 bottom_nav:
 - label: Home
-  url: /
+  url: /index.html
 - label: Contents
-  url: /toc
+  url: /toc.html
 - label: About
-  url: /about
+  url: /about.html
 - label: Privacy
-  url: /privacy
+  url: /privacy.html
 ```
 
 ## Include "helpers"
