@@ -385,7 +385,6 @@ including chapter abstracts (if any).
 Parameters:
 - `show_drafts`: If `true`, also show draft chapters. Useful for showing an "outline" view of the book.
 
-
 {% raw %}
 ```liquid
 {% include chapterbook-toc.html %}
