@@ -8,12 +8,11 @@
   {% endcomment %}{% assign i_chapter_is_draft = false %}
   {% assign i_chapter_is_visible = true %}
   {% assign i_chapter_sort_index = i_chapter.path | split: "/" | last | split: "-" | first %}
+  {% assign i_chapter_sort_index_ext = nil %}
   {% if i_chapter_sort_index == "index.md" %}
     {% assign i_chapter_is_visible = false %}
   {% else if i_chapter_sort_index contains "." %}
     {% assign i_chapter_sort_index_ext = i_chapter_sort_index | split: "." | last %}
-  {% else %}
-    {% assign i_chapter_sort_index_ext = nil %}
   {% endif %}
   {% if i_chapter_sort_index_ext == "draft" %}
     {% assign i_chapter_is_draft = true %}
