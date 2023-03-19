@@ -568,7 +568,7 @@ table.inspect-chapter-iterate-vars th.divider {
 .breadcrumb {
     /*padding: 0 .5rem;*/
     padding: 0;
-    line-height: normal;
+    line-height: 2rem;
 }
 
 .breadcrumb ul {
@@ -578,11 +578,19 @@ table.inspect-chapter-iterate-vars th.divider {
     margin: 0;
     padding: 0;
 }
+.breadcrumb li {
+    margin-right: .5rem;
+}
+.breadcrumb .book-icon {
+    height: 16px;
+    width: 16px;
+    vertical-align: text-bottom;
+}
     
 /*.breadcrumb li:not(:last-child)::after {*/
 .breadcrumb li:not(.no-arrow)::after {
     display: inline-block;
-    margin: 0 .25rem 0 0;
+    margin-left: .25rem;
     content: '\203a';
 }
 
