@@ -48,7 +48,7 @@ html {
     /*scroll-padding-top: 0;*/
 }
 .book.with-summary .book-body .body-inner {
-    margin-top: 0;
+    margin-top: 1em;
 }
 /* Override gitbook styles */
 @media (min-width: 600px) {
