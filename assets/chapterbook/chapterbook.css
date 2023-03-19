@@ -279,7 +279,7 @@ html {
     bottom: auto;
 }
 .book-body .body-inner .page-wrapper .page-inner {
-    padding-top: 10px;
+    padding-top: 0;
     padding-bottom: 150px;
 }
 /*
@@ -405,10 +405,12 @@ html {
     }
 }
 
+.page-inner h1 {
+    margin: 0.5em 0;
+}
 h1 + .page-subtitle {
-    margin-top: -10px;
-    margin-bottom: 30px;
-    font-size: 16px;
+    margin-bottom: 1em;
+    font-size: 1em;
     font-style: italic;
 }
 
