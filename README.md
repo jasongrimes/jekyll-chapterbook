@@ -144,6 +144,8 @@ See an [example chapter link](https://jasongrimes.github.io/jekyll-chapterbook/h
 
 ## File organization
 
+### Builds portable, flat, static html files
+
 ### Chapter file names
 
 Each chapter is written in its own [Jekyll page](https://jekyllrb.com/docs/pages/),
