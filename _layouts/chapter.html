@@ -24,10 +24,21 @@ layout: default
       {% endif %}
 
       {% if site.bookcrumbs.contents_url %}
-        <li>
-          <a href="{{site.baseurl}}/{{ site.bookcrumbs.contents_url }}">
+        {% capture contents_url %}{{site.baseurl}}/{{site.bookcrumbs.contents_url}}{% endcapture %}
+        <li {% if contents_url == page.url %}class="no-arrow"{% endif %}>
+          {% if contents_url != page.url %}
+            <a href="{{site.baseurl}}/{{ site.bookcrumbs.contents_url }}">
+          {% endif %}
             Contents
-          </a>
+          {% if contents_url != page.url %}
+            </a>
+          {% endif %}
+        </li>
+      {% endif %}
+
+      {% if page_chapter_is_part_index and page_part_num%}
+        <li class="breadcrumb-part no-arrow">
+          Part {{ page_part_num }}:
         </li>
       {% endif %}
 
@@ -63,7 +74,6 @@ layout: default
 
   {% if page_part_num or page_part_label %}
       <h1 class="heading-chapter-title heading-part">       
-        {% if page_part_num %}Part {{ page_part_num }}:{% endif %}
         {{ page_part_label | escape }}
       </h1>
   {% endif %}

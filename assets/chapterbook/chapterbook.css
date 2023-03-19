@@ -568,7 +568,7 @@ table.inspect-chapter-iterate-vars th.divider {
 .breadcrumb {
     /*padding: 0 .5rem;*/
     padding: 0;
-    line-height: 2rem;
+    line-height: 2em;
 }
 
 .breadcrumb ul {
@@ -579,23 +579,32 @@ table.inspect-chapter-iterate-vars th.divider {
     padding: 0;
 }
 .breadcrumb li {
-    margin-right: .5rem;
+    margin-right: .75em;
+    color: #000;
 }
 .breadcrumb .book-icon {
     height: 16px;
     width: 16px;
     vertical-align: text-bottom;
+    margin-right: .25em;
 }
     
 /*.breadcrumb li:not(:last-child)::after {*/
 .breadcrumb li:not(.no-arrow)::after {
     display: inline-block;
-    margin-left: .25rem;
+    margin-left: .5em;
     content: '\203a';
 }
 
 .breadcrumb-part {
     text-transform: uppercase;
+}
+
+.book.color-theme-1 .breadcrumb li a {
+    color: inherit;
+}
+.book.color-theme-2 .breadcrumb li {
+    color: #ccc;
 }
 
 .heading-chapter-title {
