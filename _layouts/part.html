@@ -1,0 +1,16 @@
+---
+layout: chapter
+---
+
+<div class="part-index">
+  <section class="normal markdown-section">
+    {{ content }}
+  </section>
+
+  {% include chapter-vars.html id=page.id %}
+
+  {% if part_folder %}
+    {% include chapterbook-toc.html part=part_folder %}
+  {% endif %}
+</div>
+

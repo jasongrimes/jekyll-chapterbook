@@ -24,6 +24,13 @@ favicon_path: assets/gitbook/images/favicon.ico
 # Navigation menus
 #
 
+# Breadcrumbs for book contents.
+# The book and contents pages need to be made manually.
+bookcrumbs:
+#  book_url: book.html
+#  contents_url: contents.html
+#  book_icon: assets/gitbook/images/apple-touch-icon-precomposed-152.png
+
 # Links shown above the TOC in the sidebar
 sidebar_nav_top:
 - label: About this theme

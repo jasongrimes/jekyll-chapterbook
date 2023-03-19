@@ -557,3 +557,42 @@ table.inspect-chapter-iterate-vars th.divider {
     text-align: center; 
     text-transform: uppercase;
 }
+
+.book-summary ul.summary li.header a {
+    padding: 0;
+}
+.part-index h1 {
+    text-transform: uppercase;
+}
+
+.breadcrumb {
+    /*padding: 0 .5rem;*/
+    padding: 0;
+    line-height: normal;
+}
+
+.breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+    
+/*.breadcrumb li:not(:last-child)::after {*/
+.breadcrumb li:not(.no-arrow)::after {
+    display: inline-block;
+    margin: 0 .25rem 0 0;
+    content: '\203a';
+}
+
+.breadcrumb-part {
+    text-transform: uppercase;
+}
+
+.heading-chapter-title {
+    margin-top: 0.25em;
+}
+.heading-part {
+    text-transform: uppercase;
+}

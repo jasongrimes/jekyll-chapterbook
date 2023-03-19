@@ -8,38 +8,77 @@ layout: default
   <div class="markdown-section color-callout-light with-border" style="padding: 5px; padding-left: 10px; font-size: 16px; margin-bottom: 20px;">
     This chapter is a
     <b>draft</b>.
-    <a href="{{site.baseurl}}/outline">See the outline.</a>
+    <a href="{{site.baseurl}}/outline.html">See the outline.</a>
   </div>
 {% endif %}
 
-{% if page_chapter %}
-  {% unless page_part_unnumbered and page_chapter_num == nil %}
-    <div class="header-chapter-num">
-      {% if page_part_folder %}
-        {% unless page_part_unnumbered %}
-          <span class="part-label">
-            Part {{ page_part_num }}:
-            {{ page_part_label }} -
-          </span>
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      {% if site.bookcrumbs.book_url %}
+        <li>
+          <a href="{{site.baseurl}}/{{ site.bookcrumbs.book_url }}">
+            {% if site.bookcrumbs.book_icon %}<img class="book-icon" src="{{site.baseurl}}/{{ site.bookcrumbs.book_icon }}" style="height: 16px; vertical-align: top;">{% endif %}
+            Book
+          </a>
+        </li>
+      {% endif %}
+
+      {% if site.bookcrumbs.contents_url %}
+        <li>
+          <a href="{{site.baseurl}}/{{ site.bookcrumbs.contents_url }}">
+            Contents
+          </a>
+        </li>
+      {% endif %}
+
+      {% if page_chapter and page_chapter_is_part_index != true %}
+        {% unless page_part_unnumbered and page_chapter_num == nil %}
+
+          {% if page_part_folder %}
+            {% unless page_part_unnumbered %}
+              <li class="breadcrumb-part">
+                {% if page_part_index_chapter %}
+                  <a href="{{ page_part_index_chapter.url }}">
+                {% endif %}
+                Part {{ page_part_num }}: {{ page_part_label }}
+                {% if page_part_index_chapter %}
+                  </a>
+                {% endif %}
+              </li>
+            {% endunless %}
+          {% endif %}
+
+          {% if page_chapter_num %}
+            <li class="no-arrow">
+              Chapter {{ page_chapter_num }}.
+            </li>
+          {% endif %}
+
         {% endunless %}
       {% endif %}
-      {% if page_chapter_num %}
-        Chapter {{ page_chapter_num }}.
-      {% endif %}
-    </div>
-    <!-- .header-chapter-num -->
-  {% endunless %}
-{% endif %}
+    </ul>
+  </nav>
 
-{% if page.title %}
-  <h1
-    id="{{ page.id }}"
-    data-level="1.1"
-    class="no_toc">{{ page.title | escape }}</h1>
+{% if page_chapter_is_part_index %}
+
+  {% if page_part_num or page_part_label %}
+      <h1 class="heading-chapter-title heading-part">       
+        {% if page_part_num %}Part {{ page_part_num }}:{% endif %}
+        {{ page_part_label | escape }}
+      </h1>
+  {% endif %}
+
+{% else %}
+
+  {% if page.title %}
+    <h1
+      id="{{ page.slug }}"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">{{ page.title | escape }}</h1>
+  {% endif %}
 {% endif %}
 
 <section class="normal markdown-section">
-
 
   {% if page.abstract %}
     <div class="chapter-abstract color-callout-dark">
@@ -47,10 +86,12 @@ layout: default
     </div>
   {% endif %}
 
-  {% if site.in_chapter_toc.enabled and page.disable_toc != true %}
-    {% capture in_chapter_toc %}{% include toc.html html=content h_min=site.sidebar_toc.h_min h_max=site.sidebar_toc.h_max %}{% endcapture %}
+  {% if site.in_chapter_toc.enabled and page.disable_toc != true and page_chapter_is_part_index != true %}
+    {% capture in_chapter_toc %}
+      {% include toc.html html=content h_min=site.sidebar_toc.h_min h_max=site.sidebar_toc.h_max %}{% endcapture %}
     {% capture in_chapter_toc %}{{ in_chapter_toc | strip }}{% endcapture %}
-    {% if in_chapter_toc != "" %}
+
+    {% if in_chapter_toc and in_chapter_toc != "" %}
       <div class="page-toc">
         <div class="page-toc-heading">
           In this chapter:
@@ -69,10 +110,15 @@ layout: default
   <div class="chapter-pager">
 
     {% if page_next_chapter %}
+      {% if page_next_chapter_is_part_index %}
+        {% assign next_title = page_next_part_label %}
+      {% else %}
+        {% assign next_title = page_next_chapter.title %}
+      {% endif %}
       <a
         href="{{site.baseurl}}{{ page_next_chapter.url }}"
         class="chapter-next {% unless page_prev_chapter %}pager-unique{% endunless %}"
-        aria-label="Next page: {{ page_next_chapter.title | escape }}"
+        aria-label="Next page: {{ next_title | escape }}"
         data-level="1.1"
         data-path="{{site.baseurl}}{{ page_next_chapter.url }}">
         <div class="pager-arrow">
@@ -80,22 +126,34 @@ layout: default
         </div>
         <div class="pager-labels">
           <div class="part">
-            Next
-            {% if page_next_part_label %}- {{ page_next_part_label }}{% endif %}
-            {%- if page_next_chapter_num %}: Chapter {{ page_next_chapter_num }}.{% endif %}
+            Next:
+            {% if page_next_chapter_is_part_index %}
+              Part {{ page_next_part_num }}.
+            {% else %}
+              {% if page_next_part_label %}
+                {{ page_next_part_label }}
+                {% if page_next_chapter_num %} &#8250;{% endif %}
+              {% endif %}
+              {% if page_next_chapter_num %}Chapter {{ page_next_chapter_num }}.{% endif %}
+            {% endif %}
           </div>
           <div class="chapter-label">
-            {{ page_next_chapter.title | escape }}
+            {{ next_title | escape }}
           </div>
         </div>
       </a>
     {% endif %}
 
     {% if page_prev_chapter %}
+      {% if page_prev_chapter_is_part_index %}
+        {% assign prev_title = page_prev_part_label %}
+      {% else %}
+        {% assign prev_title = page_prev_chapter.title %}
+      {% endif %}
       <a
         href="{{site.baseurl}}{{ page_prev_chapter.url }}"
         class="chapter-prev {% unless page_next_chapter %}pager-unique{% endunless %}"
-        aria-label="Previous page: {{ page_prev_chapter.title | escape }}"
+        aria-label="Previous page: {{ prev_title | escape }}"
         data-level="1.1"
         data-path="{{site.baseurl}}{{ page_prev_chapter.url }}">
         <div class="pager-arrow">
@@ -103,12 +161,19 @@ layout: default
         </div>
         <div class="pager-labels">
           <div class="part">
-            Previous
-            {% if page_prev_part_label %}- {{ page_prev_part_label }}{% endif %}
-            {%- if page_prev_chapter_num %}: Chapter {{ page_prev_chapter_num }}.{% endif %}
+            Previous:
+            {% if page_prev_chapter_is_part_index %}
+              Part {{ page_prev_part_num }}.
+            {% else %}
+              {% if page_prev_part_label %}
+                {{ page_prev_part_label }}
+                {% if page_prev_chapter_num %}&#8250;{% endif %}
+              {% endif %}
+              {% if page_prev_chapter_num %}Chapter {{ page_prev_chapter_num }}.{% endif %}
+            {% endif %}
           </div>
           <div class="chapter-label">
-            {{ page_prev_chapter.title | escape }}
+            {{ prev_title | escape }}
           </div>
         </div>
       </a>

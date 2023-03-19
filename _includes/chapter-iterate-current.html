@@ -3,34 +3,43 @@
   {% if i_chapter %}
   {% comment %}
   #
-  # Determine if chapter is visible and/or draft
+  # Determine if chapter is visible and/or draft and/or an index page for a part
   #
-  {% endcomment %}{% assign i_chapter_is_draft = false %}
+  {% endcomment %}
+  {% assign i_chapter_is_draft = false %}
   {% assign i_chapter_is_visible = true %}
-  {% assign i_chapter_sort_index = i_chapter.path | split: "/" | last | split: "-" | first %}
+  {% assign i_chapter_basename = i_chapter.path | split: "/" | last %}
+  {% assign i_chapter_sort_index = i_chapter_basename | split: "-" | first %}
   {% assign i_chapter_sort_index_ext = nil %}
-  {% if i_chapter_sort_index == "index.md" %}
-    {% assign i_chapter_is_visible = false %}
-  {% else if i_chapter_sort_index contains "." %}
-    {% assign i_chapter_sort_index_ext = i_chapter_sort_index | split: "." | last %}
+
+  {% assign i_chapter_is_part_index = false %}
+  {% if i_chapter_basename == "000-index.md" %}
+    {% assign i_chapter_is_part_index = true %}
   {% endif %}
-  {% if i_chapter_sort_index_ext == "draft" %}
-    {% assign i_chapter_is_draft = true %}
-    {% unless jekyll.environment == "development" and site.show_drafts_in_dev %}
-      {% assign i_chapter_is_visible = false %}
-    {% endunless %}
-  {% endif %}
+  
+  {% unless i_chapter_is_part_index %}
+    {% if i_chapter_sort_index contains "." %}
+      {% assign i_chapter_sort_index_ext = i_chapter_sort_index | split: "." | last %}
+    {% endif %}
+    {% if i_chapter_sort_index_ext == "draft" %}
+      {% assign i_chapter_is_draft = true %}
+      {% unless jekyll.environment == "development" and site.show_drafts_in_dev %}
+        {% assign i_chapter_is_visible = false %}
+      {% endunless %}
+    {% endif %}
+  {% endunless %}
 
   {% comment %}
   #
   # Determine part info other than number
   #
   {% endcomment %}
-
   {% assign i_part_folder = i_chapter.path | split: "/" | slice: -2 | first %}
   {% if i_part_folder == "_chapters" %}
     {% assign i_part_folder = nil %}
     {% assign i_part_unnumbered = false %}
+    {% assign i_part_label = nil %}
+    {% assign i_part_index_chapter = nil %}
   {% endif %}
   {% if i_part_folder %}
     {% assign i_part_sort_index = i_part_folder | split: "-" | first %}
@@ -45,6 +54,9 @@
     {% else %}
       {% assign i_part_is_draft = false %}
     {% endif %}
+
+    {% capture _part_index_path %}_chapters/{{ i_part_folder}}/000-index.md{% endcapture %}
+    {% assign i_part_index_chapter = site.chapters | where: "path", _part_index_path | first  %}  
 
     {% if i_part_sort_index == "000" or i_part_sort_index == "999" %}
       {% assign i_part_unnumbered = true %}
@@ -68,12 +80,15 @@
   {% else %}
     {% if i_chapter_is_draft %}
       {% assign i_chapter_num = "X" %}
-    {% else if i_chapter_is_visible %}
+    {% elsif i_chapter_is_part_index %}
+      {% assign i_chapter_num = "" %}
+    {% elsif i_chapter_is_visible %}
       {% assign i_chapter_num = i_last_numeric_chapter_num | plus: 1 %}
       {% assign i_last_numeric_chapter_num = i_chapter_num %}
     {% else %}
       {% assign i_chapter_num = "" %}
     {% endif %}
+
     {% if i_part_folder and i_part_folder != i_prev_part_folder %}
       {% if i_part_is_draft %}
         {% assign i_part_num = "X" %}

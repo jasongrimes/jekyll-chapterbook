@@ -3,12 +3,14 @@
 {% assign chapter_is_visible = nil %}
 {% assign chapter_sort_index = nil %}
 {% assign chapter_sort_index_ext = nil %}
+{% assign chapter_is_part_index = nil %}
 {% assign part_label = nil %}
 {% assign part_unnumbered = nil %}
 {% assign part_is_draft = nil %}
 {% assign part_folder = nil %}
 {% assign part_sort_index = nil %}
 {% assign part_sort_index_ext = nil %}
+{% assign part_index_chapter = nil %}
 
 {% comment %} Only set if specified via include.withnum: {% endcomment %}
 {% assign chapter_num = nil %}
@@ -25,13 +27,20 @@
 {% if chapter %}
   {% assign chapter_is_draft = false %}
   {% assign chapter_is_visible = true %}
-  {% assign chapter_sort_index = chapter.path | split: "/" | last | split: "-" | first %}
+  {% assign chapter_basename = chapter.path | split: "/" | last %}
+  {% assign chapter_sort_index = chapter_basename | split: "-" | first %}
+  {% assign chapter_sort_index_ext = nil %}
+  {% assign chapter_is_part_index = false %}
 
-  {% if chapter_sort_index contains "." %}
-    {% assign chapter_sort_index_ext = chapter_sort_index | split: "." | last %}
-  {% else %}
-    {% assign chapter_sort_index_ext = nil %}
+  {% if chapter_basename == "000-index.md" %}
+    {% assign chapter_is_part_index = true %}
   {% endif %}
+
+  {% unless chapter_is_part_index %}
+    {% if chapter_sort_index contains "." %}
+      {% assign chapter_sort_index_ext = chapter_sort_index | split: "." | last %}
+    {% endif %}
+  {% endunless %}
 
   {% if chapter_sort_index_ext == "draft" %}
     {% assign chapter_is_draft = true %}
@@ -51,6 +60,9 @@
     {% else %}
       {% assign part_sort_index_ext = nil %}
     {% endif %}
+
+    {% capture part_index_path %}_chapters/{{ part_folder}}/000-index.md{% endcapture %}
+    {% assign part_index_chapter = site.chapters | where: "path", part_index_path | first  %}  
 
     {% if part_sort_index_ext == "draft" %}
       {% assign part_is_draft = true %}
@@ -72,12 +84,16 @@
     {% unless part_unnumbered %}
       {% if include.withnum == "chapter" and chapter_is_draft %}
         {% assign chapter_num = "X" %}
+      {% elsif include.withnum == "chapter" and chapter_is_visible != true %}
+        {% assign chapter_num = "" %}
+      {% elsif include.withnum == "chapter" and chapter_is_part_index %}
+        {% assign chapter_num = "" %}
       {% elsif include.withnum == "part" and part_is_draft %}
         {% assign part_num = "X" %}
       {% elsif part_is_draft and chapter_is_draft %}
         {% assign part_num = "X" %}
         {% assign chapter_num = "X" %}
-        {% else %}
+      {% else %}
         {% comment %} Iterate over chapters if it can't be avoided {% endcomment %}
         {% include chapter-iterate-init.html %}
         {% for i in (0..site.chapters.size) %}
@@ -99,9 +115,14 @@
       <th colspan="2" class="divider">
         chapter inherits from page
         <div style="font-weight: normal; text-align: left; text-transform: none;">
-          The <b>chapter</b> object is identical to the 
-          <a href="https://jekyllrb.com/docs/variables/#page-variables">built-in Jekyll <b>page</b></a>
-          object with the same <b>id</b>.
+          The
+          <b>chapter</b>
+          object is identical to the
+          <a href="https://jekyllrb.com/docs/variables/#page-variables">built-in Jekyll
+            <b>page</b>
+          </a>
+          object with the same
+          <b>id</b>.
         </div>
       </th>
     </tr>
@@ -114,16 +135,27 @@
       <td>{{ chapter.id }}</td>
     </tr>
     <tr>
-      <th>chapter.title </th>
+      <th>chapter.title
+      </th>
       <td>{{ chapter.title }}</td>
     </tr>
     <tr>
-      <th>chapter.slug </th>
+      <th>chapter.slug
+      </th>
       <td>{{ chapter.slug }}</td>
     </tr>
     <tr>
+      <th>chapter.url
+      </th>
+      <td>{{ chapter.url }}</td>
+    </tr>
+    <tr>
       <th>...</th>
-      <td>See <a href="https://jekyllrb.com/docs/variables/#page-variables"><b>page</b> documentation</a></td>
+      <td>See
+        <a href="https://jekyllrb.com/docs/variables/#page-variables">
+          <b>page</b>
+          documentation</a>
+      </td>
     </tr>
     <tr>
       <th colspan="2" class="divider">
@@ -137,6 +169,10 @@
     <tr>
       <th>chapter_is_visible</th>
       <td>{{ chapter_is_visible }}</td>
+    </tr>
+    <tr>
+      <th>chapter_is_part_index</th>
+      <td>{{ chapter_is_part_index }}</td>
     </tr>
     <tr>
       <th>chapter_sort_index</th>
@@ -174,6 +210,10 @@
     <tr>
       <th>part_sort_index_ext</th>
       <td>{{ part_sort_index_ext }}</td>
+    </tr>
+    <tr>
+      <th>part_index_chapter.url</th>
+      <td>{{ part_index_chapter.url }}</td>
     </tr>
     <tr>
       <th colspan="2" class="divider">

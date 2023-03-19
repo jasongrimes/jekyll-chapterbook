@@ -1,10 +1,15 @@
-<ul class="toc-chapters-full {% if include.show_drafts %}show-drafts{% endif %}">
+<ul class="toc-chapters-full {% if include.part %}part{% endif %} {% if include.show_drafts %}show-drafts{% endif %}">
 
   {% include chapter-iterate-init.html %}
 
   {% for i in (0..site.chapters.size) %}
 
     {% if i_chapter.id == page.id %}
+      {% include chapter-iterate-next.html %}
+      {% continue %}
+    {% endif %}
+
+    {% if include.part and include.part != i_part_folder %}
       {% include chapter-iterate-next.html %}
       {% continue %}
     {% endif %}
@@ -26,32 +31,38 @@
       {% endunless %}
     {% endunless %}
 
-
     {% if _is_new_part and i_part_label %}
       <li class="part">
         <div class="part-label">
+          {% if i_chapter_is_part_index %}
+            <a href="{{site.baseurl}}{{i_chapter.url}}">
+          {% endif %}
           Part {{ i_part_num }}: {{ i_part_label }}
+          {% if i_chapter_is_part_index %}
+            </a>
+          {% endif %}
         </div>
         <ul>
       {% assign _in_nested_part = true %}
     {% endif %}
 
-    <li class="chapter {% if include.show_drafts %}{% if i_chapter_is_draft %}draft{% else %}not-draft{% endif %}{% endif %}">
-      <a href="{{site.baseurl}}{{ i_chapter.url }}">
-        <div class="chapter-label">
-          {% unless i_part_unnumbered %}
-            <span class="chapter-num">Chapter {{ i_chapter_num }}.</span>
-          {% endunless %}
-          {{ i_chapter.title | escape }}
-        </div>
-        {% if i_chapter.abstract %}
-        <div class="abstract">
-          {{ i_chapter.abstract }}
-        </div>
-        {% endif %}
-      </a>
-    </li>
-
+    {% unless i_chapter_is_part_index %}
+      <li class="chapter {% if include.show_drafts %}{% if i_chapter_is_draft %}draft{% else %}not-draft{% endif %}{% endif %}">
+        <a href="{{site.baseurl}}{{ i_chapter.url }}">
+          <div class="chapter-label">
+            {% unless i_part_unnumbered %}
+              <span class="chapter-num">Chapter {{ i_chapter_num }}.</span>
+            {% endunless %}
+            {{ i_chapter.title | escape }}
+          </div>
+          {% if i_chapter.abstract %}
+          <div class="abstract">
+            {{ i_chapter.abstract }}
+          </div>
+          {% endif %}
+        </a>
+      </li>
+   {% endunless %}
 
     {% include chapter-iterate-next.html %}
   {% endfor %}

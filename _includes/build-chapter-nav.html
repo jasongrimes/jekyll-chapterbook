@@ -39,7 +39,20 @@
           {% endunless %}
 
           {% if i_part_folder and i_part_folder != i_prev_part_folder and i_part_unnumbered == false %}
-            <li class="header {% if i_part_is_draft %}draft{% endif %}">Part {{ i_part_num }}: {{ i_part_label }}</li>
+            <li class="header {% if i_part_is_draft %}draft{% endif %}">
+              {% if i_chapter_is_part_index %}
+                <a href="{{site.baseurl}}{{i_chapter.url}}">
+              {% endif %}
+              Part {{ i_part_num }}: {{ i_part_label }}
+              {% if i_chapter_is_part_index %}
+                </a>
+              {% endif %}
+            </li>
+          {% endif %}
+
+          {% if i_chapter_is_part_index %}
+            {% include chapter-iterate-next.html %}
+            {% continue %}
           {% endif %}
 
           {% if page.url == i_chapter.url %}
