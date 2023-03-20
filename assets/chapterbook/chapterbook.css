@@ -594,7 +594,7 @@ table.inspect-chapter-iterate-vars th.divider {
 /*.breadcrumb li:not(:last-child)::after {*/
 .breadcrumb li:not(.no-arrow)::after {
     display: inline-block;
-    margin-left: .5em;
+    /*margin-left: .5em;*/
     content: '\203a';
 }
 
