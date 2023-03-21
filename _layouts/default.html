@@ -5,6 +5,10 @@
 
     {%- include head.html -%}
 
+    {% if site.baseurl_canonical %}
+      <link rel="canonical" href="{{site.baseurl_canonical}}{{page.url}}" />
+    {% endif %}
+
     {% if page.collection == "chapters" %}
       {% if page_prev_chapter %}
         <link rel="prev" href="{{site.baseurl}}{{page_prev_chapter.url}}" />

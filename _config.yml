@@ -1,12 +1,16 @@
 remote_theme: jasongrimes/jekyll-chapterbook
 
-# Configurations
-title:            Jekyll Chapterbook
-longtitle:        Jekyll Chapterbook
-author:           Jason Grimes
-email:            jason@grimesit.com
+title: Jekyll Chapterbook
+longtitle: Jekyll Chapterbook
+author: Jason Grimes
+email: jason@grimesit.com
 description: >
   A Jekyll theme based on GitBook with support for chapters and parts.
+
+# If baseurl_canonical is set, 
+# a <link rel="canonical"> tag will be added to the head of each page,
+# to disambiguate links for search engines.
+#baseurl_canonical: https://jasongrimes.github.io/jekyll-chapterbook
 
 # A copyright notice will be shown at the bottom of each page,
 # with the current year and the author name.
@@ -27,9 +31,9 @@ favicon_path: assets/gitbook/images/favicon.ico
 # Breadcrumbs for book contents.
 # The book and contents pages need to be made manually.
 bookcrumbs:
-#  book_url: book.html
-#  contents_url: contents.html
-#  book_icon: assets/gitbook/images/apple-touch-icon-precomposed-152.png
+  book_url: book.html
+  contents_url: toc.html
+  book_icon: assets/gitbook/images/apple-touch-icon-precomposed-152.png
 
 # Links shown above the TOC in the sidebar
 sidebar_nav_top:

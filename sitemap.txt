@@ -1,12 +1,3 @@
 ---
-layout: null
+layout: sitemap
 ---
-{% for pg in site.chapters -%}
-{%- capture url -%}{% include chapter-vars.html id=pg.id %}{% unless chapter_is_draft %}{{- site.canonicalurl | default: site.url }}{{ pg.url -}}{% endunless %}{%- endcapture %}
-{%- capture sitemap_url %}{{ url|strip }}{% endcapture -%}
-{%- if sitemap_url.size > 0 %}{{ sitemap_url }}
-{% endif %}
-{%- endfor %}
-{%- for pg in site.pages %}
-{{- site.canonicalurl | default: site.url }}{{ pg.url }}
-{% endfor %}
