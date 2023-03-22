@@ -51,12 +51,13 @@ sidebar_nav_bottom:
 bottom_nav:
 - label: Home
   url: index.html
-- label: Contents
-  url: contents.html
-- label: Privacy
-  url: privacy.html
+- label: Book
+  url: book.html
 - label: GitHub
   url: https://github.com/jasongrimes/jekyll-chapterbook
+- label: Privacy
+  url: privacy.html
+
 
 # Whether to show chapter headings as a table of contents at the top of each chapter page.
 # Override in page front matter with disable_toc: true
