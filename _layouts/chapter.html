@@ -52,7 +52,7 @@ layout: default
             {% unless page_part_unnumbered %}
               <li class="breadcrumb-part">
                 {% if page_part_index_chapter %}
-                  <a href="{{ page_part_index_chapter.url }}">
+                  <a href="{{ site.baseurl }}{{ page_part_index_chapter.url }}">
                 {% endif %}
                 Part {{ page_part_num }}: {{ page_part_label }}
                 {% if page_part_index_chapter %}
