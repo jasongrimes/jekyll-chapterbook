@@ -54,13 +54,13 @@ like this:
 
 {% raw %}
 ```
-{% include chapter-vars.html slug="toc" withnum="true" inspect="true" %}
+{% include chapter-vars.html slug="contents" withnum="true" inspect="true" %}
 ```
 {% endraw %}
 
 ...which renders this:
 
-{% include chapter-vars.html slug="toc" withnum="true" inspect="true" %}
+{% include chapter-vars.html slug="contents" withnum="true" inspect="true" %}
 
 
 ---
