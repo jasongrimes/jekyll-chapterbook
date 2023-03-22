@@ -15,19 +15,22 @@ layout: default
   <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
     <ul>
       {% if site.bookcrumbs.book_url %}
-        <li>
-          <a href="{{site.baseurl}}/{{ site.bookcrumbs.book_url }}">
-            {% if site.bookcrumbs.book_icon %}<img class="book-icon" src="{{site.baseurl}}/{{ site.bookcrumbs.book_icon }}">{% endif %}
-            Book
-          </a>
-        </li>
+        {% capture book_url %}{{site.baseurl}}/{{site.bookcrumbs.book_url}}{% endcapture %}
+        {% unless book_url == page.url %}  
+          <li>
+            <a href="{{ book_url }}">
+              {% if site.bookcrumbs.book_icon %}<img class="book-icon" src="{{site.baseurl}}/{{ site.bookcrumbs.book_icon }}">{% endif %}
+              Book
+            </a>
+          </li>
+        {% endunless %}
       {% endif %}
 
       {% if site.bookcrumbs.contents_url %}
         {% capture contents_url %}{{site.baseurl}}/{{site.bookcrumbs.contents_url}}{% endcapture %}
         <li {% if contents_url == page.url %}class="no-arrow"{% endif %}>
           {% if contents_url != page.url %}
-            <a href="{{site.baseurl}}/{{ site.bookcrumbs.contents_url }}">
+            <a href="{{ contents_url }}">
           {% endif %}
             Contents
           {% if contents_url != page.url %}
@@ -69,7 +72,6 @@ layout: default
       {% endif %}
     </ul>
   </nav>
-
 {% if page_chapter_is_part_index %}
 
   {% if page_part_num or page_part_label %}
@@ -77,9 +79,7 @@ layout: default
         {{ page_part_label | escape }}
       </h1>
   {% endif %}
-
 {% else %}
-
   {% if page.title %}
     <h1
       id="{{ page.slug }}"
