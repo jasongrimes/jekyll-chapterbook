@@ -410,7 +410,7 @@ html {
 }
 h1 + .page-subtitle {
     margin-bottom: 1em;
-    font-size: 1em;
+    font-size: 1.5em;
     font-style: italic;
 }
 
