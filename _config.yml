@@ -1,7 +1,7 @@
 remote_theme: jasongrimes/jekyll-chapterbook
 
 title: Jekyll Chapterbook
-longtitle: Jekyll Chapterbook
+longtitle: Jekyll Chapterbook Theme
 author: Jason Grimes
 email: jason@grimesit.com
 description: >
@@ -10,7 +10,7 @@ description: >
 # If baseurl_canonical is set, 
 # a <link rel="canonical"> tag will be added to the head of each page,
 # to disambiguate links for search engines.
-#baseurl_canonical: https://jasongrimes.github.io/jekyll-chapterbook
+baseurl_canonical: https://jasongrimes.github.io/jekyll-chapterbook
 
 # A copyright notice will be shown at the bottom of each page,
 # with the current year and the author name.
@@ -19,7 +19,7 @@ description: >
 # Set copyright: false to disable.
 copyright:
   start_year: 2023
-  url: 
+  url: book.html
 
 # Customize the link favicon in header. Will be {{site.baseurl}}/{{site.favicon_path}}
 favicon_path: assets/gitbook/images/favicon.ico
@@ -32,29 +32,29 @@ favicon_path: assets/gitbook/images/favicon.ico
 # The book and contents pages need to be made manually.
 bookcrumbs:
   book_url: book.html
-  contents_url: toc.html
+  contents_url: contents.html
   book_icon: assets/gitbook/images/apple-touch-icon-precomposed-152.png
 
 # Links shown above the TOC in the sidebar
 sidebar_nav_top:
-- label: About this theme
-  url: /index.html
+- label: Jekyll Chapterbook Theme
+  url: index.html
 
 # Links shown below the TOC in the sidebar
 sidebar_nav_bottom:
-- label: Example book - draft outline
-  url: /outline.html
+- label: Draft outline
+  url: outline.html
 - label: Fork at GitHub
   url: https://github.com/jasongrimes/jekyll-chapterbook/fork
 
 # Navigation shown at the bottom of the page
 bottom_nav:
 - label: Home
-  url: /index.html
-- label: Table of Contents
-  url: /toc.html
+  url: index.html
+- label: Contents
+  url: contents.html
 - label: Privacy
-  url: /privacy.html
+  url: privacy.html
 - label: GitHub
   url: https://github.com/jasongrimes/jekyll-chapterbook
 
