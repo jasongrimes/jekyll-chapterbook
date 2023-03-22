@@ -35,6 +35,7 @@ starting from an idea and slowly building out chapters and parts.
 
 It was created with the following objectives:
 
+- Output a portable, flat folder of static html that can be used offline or hosted anywhere.
 - Support all standard parts of a book, including front matter, back matter, chapters, parts, etc.
 - Support frequently reorganizing chapters and parts without breaking existing links.
 - Make the work in progress publicly available in a useful way, 
@@ -120,11 +121,11 @@ To help ensure internal links don't break in different environments and support 
 links to other pages in markdown
 should use the page's `slug` 
 and **include the .html extension**. 
-For example, to link to a page with `slug:toc`:
+For example, to link to a page with `slug: privacy`:
 
 {% raw %}
 ```
-See the [table of contents](toc.html).
+See the [privacy policy](privacy.html) for details.
 ```
 {% endraw %}
 
@@ -145,6 +146,17 @@ See an [example chapter link](https://jasongrimes.github.io/jekyll-chapterbook/h
 ## File organization
 
 ### Builds portable, flat, static html files
+
+This theme deliberately causes all the static HTML files to be generated in the root of the `_site` folder,
+with no subfolders.
+
+Ordinarily this might seem like a poor practice for organizing information,
+but in this case it works well for the following reasons.
+
+- There aren't that many HTML pages. With one page per chapter, even an enormous book will end up with only a handful of HTML pages.
+- The theme provides a lot of structured metadata to make the page organization explicit and clear to search engines and other automated tools. The folder hierarchy isn't needed to convey this information.
+- With a flat folder structure, the book can be reorganized without breaking existing links. Chapters can be reorganized, parts can be added and removed, titles can be changed, but as long as the `slug` stays the same, links continue to work.
+- A flat folder structure allows browsing the generated HTML pages offline. Perhaps surprisingly, even static site generators typically create HTML pages that depend on some routing capabilities of a web server, and can't be run on a local file system. A flat HTML folder solves this problem magically.
 
 ### Chapter file names
 
@@ -226,7 +238,7 @@ and the chapters within them are not numbered.
 ```
 _chapters/
     000-front/
-        010-toc.md
+        010-contents.md
         015-preface.md
         020-introduction.md
     010-thesis/
@@ -252,8 +264,28 @@ The above would render as something like this:
 - References
 
 See a live site with multiple parts and front and back matter at
-[fretboardfoundation.com/toc](https://fretboardfoundation.com/toc)
+[fretboardfoundation.com](https://fretboardfoundation.com)
 and its [_chapters/](https://github.com/jasongrimes/fretboardfoundation/tree/main/_chapters) directory.
+
+### Part index pages
+
+To add a dedicated page for a part,
+with a subset of the table of contents for just the chapters in that part,
+create a part index page.
+
+In the part folder,
+add a file named `000-index.md`.
+Give it the following front matter:
+
+```yaml
+---
+slug: your-part-name
+layout: part
+---
+```
+
+See an example [part index in the demo](https://jasongrimes.github.io/jekyll-chapterbook/theme.html),
+and its source at [_chapters/010-chapterbook-theme/000-index.md](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_chapters/010-chapterbook-theme/000-index.md).
 
 ### Drafts and outlines
 
@@ -315,15 +347,17 @@ the `/README.md` will be used instead.
 
 ## Navigation
 
+### Sidebar 
+
 The book's automatically-generated table of contents is shown in the sidebar.
 
-To show additional links above the toc in the sidebar,
+To show additional links above the table of contents in the sidebar,
 define them in `sidebar_nav_top` in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
 
 ```yaml
 sidebar_nav_top:
 - label: About this site
-  url: /about.html
+  url: about.html
 ```
 
 To show additional links at the bottom of the sidebar,
@@ -332,8 +366,10 @@ define them in `sidebar_nav_bottom` in [_config.yml](https://github.com/jasongri
 ```yaml
 sidebar_nav_bottom:
 - label: Privacy statement
-  url: /privacy.html
+  url: privacy.html
 ```
+
+### Bottom of page 
 
 To change the links shown at the bottom of every page,
 define them in `bottom_nav` in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
@@ -341,13 +377,25 @@ define them in `bottom_nav` in [_config.yml](https://github.com/jasongrimes/jeky
 ```yaml
 bottom_nav:
 - label: Home
-  url: /index.html
-- label: Contents
-  url: /toc.html
-- label: About
-  url: /about.html
+  url: index.html
+- label: Book
+  url: book.html
+- label: GitHub
+  url: https://github.com/jasongrimes/jekyll-chapterbook
 - label: Privacy
-  url: /privacy.html
+  url: privacy.html
+```
+
+### Breadcrumbs
+
+To configure links to the book title page and table of contents in the chapter breadcrumbs,
+specify the urls in `bookcrumbs` in [_config.yml](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml). Each item is optional; comment it out to disable it.
+
+```yaml
+bookcrumbs:
+  book_url: book.html
+  contents_url: contents.html
+  book_icon: assets/gitbook/images/apple-touch-icon-precomposed-152.png
 ```
 
 ## Include "helpers"
@@ -393,8 +441,8 @@ Parameters:
 ```
 {% endraw %}
 
-See an [example table of contents](https://jasongrimes.github.io/jekyll-chapterbook/toc.html) 
-and [draft outline](https://jasongrimes.github.io/jekyll-chapterbook/outline) in the demo.
+See an [example table of contents](https://jasongrimes.github.io/jekyll-chapterbook/contents.html) 
+and [draft outline](https://jasongrimes.github.io/jekyll-chapterbook/outline.html) in the demo.
 
 ### Figures
 
