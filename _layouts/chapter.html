@@ -15,7 +15,7 @@ layout: default
   <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
     <ul>
       {% if site.bookcrumbs.book_url %}
-        {% capture book_url %}{{site.baseurl}}/{{site.bookcrumbs.book_url}}{% endcapture %}
+        {% capture book_url %}{{site.baseurl}}{{site.bookcrumbs.book_url}}{% endcapture %}
         {% unless book_url == page.url %}  
           <li>
             <a href="{{ book_url }}">
@@ -27,7 +27,7 @@ layout: default
       {% endif %}
 
       {% if site.bookcrumbs.contents_url %}
-        {% capture contents_url %}{{site.baseurl}}/{{site.bookcrumbs.contents_url}}{% endcapture %}
+        {% capture contents_url %}{{site.baseurl}}{{site.bookcrumbs.contents_url}}{% endcapture %}
         <li {% if contents_url == page.url %}class="no-arrow"{% endif %}>
           {% if contents_url != page.url %}
             <a href="{{ contents_url }}">
