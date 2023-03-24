@@ -16,14 +16,16 @@ layout: default
     <ul>
       {% if site.bookcrumbs.book_url %}
         {% capture book_url %}{{site.baseurl}}{{site.bookcrumbs.book_url}}{% endcapture %}
-        {% unless book_url == page.url %}  
           <li>
-            <a href="{{ book_url }}">
+            {% unless book_url == page.url %}  
+              <a href="{{ book_url }}">
+            {% endunless %}
               {% if site.bookcrumbs.book_icon %}<img class="book-icon" src="{{site.baseurl}}/{{ site.bookcrumbs.book_icon }}">{% endif %}
               Book
-            </a>
+            {% unless book_url == page.url %}
+              </a>
+            {% endunless %}
           </li>
-        {% endunless %}
       {% endif %}
 
       {% if site.bookcrumbs.contents_url %}
