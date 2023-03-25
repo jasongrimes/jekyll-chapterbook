@@ -91,7 +91,7 @@ though they are less common.
 - `disable_toc`: If `true`, don't render the chapter's headings as a table of contents at the top of the page.
 - `class`: Optionally specify CSS class(es) to add to the `<div>` wrapping the page.
 
-Here's the [markdown for an example chapter](https://raw.githubusercontent.com/jasongrimes/jekyll-chapterbook/master/_chapters/010-getting-started.md)
+Here's the [markdown for an example chapter](https://raw.githubusercontent.com/jasongrimes/jekyll-chapterbook/master/_chapters/010-chapterbook-theme/010-getting-started.md)
 and here is that [example chapter rendered in the demo](https://jasongrimes.github.io/jekyll-chapterbook/getting-started.html).
 
 ### Configure GitHub edit links
