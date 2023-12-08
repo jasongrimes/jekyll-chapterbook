@@ -63,6 +63,8 @@
         </div>
         <!-- .body-inner -->
         <div class="page-footer">
+          {% include footer-extra.html %}
+
           {% if site.bottom_nav %}
             <div class="bottom-nav">
               {% for item in site.bottom_nav %}
