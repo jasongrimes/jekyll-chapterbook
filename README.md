@@ -23,7 +23,7 @@ Also see its
 ### Example live site
 
 A live site with a more complex configuration can be seen at 
-[fretboardfoundation.com](https://fretboardfoundation.com).
+[book.fretboardfoundation.com](https://book.fretboardfoundation.com).
 
 Also see its 
 [GitHub repo](https://github.com/jasongrimes/fretboardfoundation).
